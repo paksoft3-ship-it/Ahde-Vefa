@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { CONTACT, FOOTER_LINKS, LEGAL, SITE } from "@/lib/constants";
 import { routes } from "@/lib/routes";
 import { Logo } from "@/components/ui/Logo";
+import { DevCredit } from "@/components/layout/DevCredit";
 
 function LinkColumn({
   title,
@@ -74,6 +75,12 @@ export function PublicFooter() {
             <Link href={routes.yasal} className="hover:text-white">Bağış Bilgilendirme</Link>
             <Link href={routes.yasal} className="hover:text-white">Yasal Metinler</Link>
           </div>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="container-page flex justify-center py-5">
+          <DevCredit />
         </div>
       </div>
     </footer>
