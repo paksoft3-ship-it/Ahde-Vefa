@@ -68,19 +68,14 @@ export function PublicFooter() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-page flex flex-col items-center justify-between gap-3 py-5 text-sm text-white/60 sm:flex-row">
+        <div className="container-page flex flex-col items-center justify-between gap-4 py-5 text-sm text-white/60 sm:flex-row">
           <p>© {new Date().getFullYear()} {SITE.fullName}. Tüm hakları saklıdır.</p>
-          <div className="flex flex-wrap items-center gap-4">
+          <DevCredit />
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <Link href={routes.yasal} className="hover:text-white">KVKK</Link>
             <Link href={routes.yasal} className="hover:text-white">Bağış Bilgilendirme</Link>
             <Link href={routes.yasal} className="hover:text-white">Yasal Metinler</Link>
           </div>
-        </div>
-      </div>
-
-      <div className="border-t border-white/10">
-        <div className="container-page flex justify-center py-5">
-          <DevCredit />
         </div>
       </div>
     </footer>
