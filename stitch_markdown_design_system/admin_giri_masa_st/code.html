@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ahde Vefa Admin - Giriş</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#d9e3f1",
+                      "surface-tint": "#2a6a48",
+                      "tertiary": "#254f3c",
+                      "on-secondary-container": "#006773",
+                      "on-error": "#ffffff",
+                      "secondary-fixed-dim": "#4cd8ec",
+                      "background": "#f7f9ff",
+                      "surface-dim": "#d1dbe8",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-surface": "#121d26",
+                      "primary": "#0a5132",
+                      "tertiary-container": "#3d6752",
+                      "donation-gold": "#F4B740",
+                      "on-error-container": "#93000a",
+                      "inverse-on-surface": "#e8f2ff",
+                      "warm-cream": "#FFF8EF",
+                      "on-secondary-fixed-variant": "#004f58",
+                      "error-container": "#ffdad6",
+                      "surface-variant": "#d9e3f1",
+                      "primary-container": "#2a6a48",
+                      "surface-container": "#e4effd",
+                      "surface-bright": "#f7f9ff",
+                      "surface": "#f7f9ff",
+                      "secondary-container": "#61e9fe",
+                      "on-background": "#121d26",
+                      "on-tertiary-fixed-variant": "#254f3b",
+                      "muted-text": "#667085",
+                      "secondary-fixed": "#9af0ff",
+                      "light-border": "#E5E7EB",
+                      "on-secondary-fixed": "#001f24",
+                      "on-tertiary-fixed": "#002114",
+                      "on-primary": "#ffffff",
+                      "surface-container-high": "#dfe9f7",
+                      "tertiary-fixed": "#bfedd3",
+                      "secondary": "#006874",
+                      "outline-variant": "#bfc9c0",
+                      "inverse-primary": "#93d5ab",
+                      "primary-fixed-dim": "#93d5ab",
+                      "on-surface-variant": "#404942",
+                      "on-primary-fixed-variant": "#0a5132",
+                      "inverse-surface": "#27313c",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed": "#aef1c6",
+                      "surface-container-low": "#edf4ff",
+                      "on-primary-container": "#a5e7bd",
+                      "tertiary-fixed-dim": "#a4d1b7",
+                      "on-primary-fixed": "#002111",
+                      "soft-mint": "#EEF8F4",
+                      "outline": "#707971",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#b6e3c9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "0.25rem",
+                      "sm": "0.5rem",
+                      "2xl": "4rem",
+                      "3xl": "6rem",
+                      "xl": "2.5rem",
+                      "lg": "1.5rem",
+                      "md": "1rem",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "section-heading": ["Manrope"],
+                      "page-heading-mobile": ["Manrope"],
+                      "card-title": ["Manrope"],
+                      "body-lg": ["Manrope"],
+                      "page-heading": ["Manrope"],
+                      "body": ["Manrope"],
+                      "hero-heading": ["Manrope"],
+                      "label": ["Manrope"],
+                      "button": ["Manrope"],
+                      "hero-heading-mobile": ["Manrope"],
+                      "section-heading-mobile": ["Manrope"]
+              },
+              "fontSize": {
+                      "section-heading": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "page-heading-mobile": ["34px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                      "card-title": ["22px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                      "page-heading": ["48px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                      "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "hero-heading": ["64px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                      "label": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                      "hero-heading-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                      "section-heading-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col overflow-x-hidden">
+<!-- Header Suppression: This is a focused login page, so we only show minimal branding if needed, but per prompt we stick to the 2-column layout. -->
+<main class="flex-grow flex flex-col lg:flex-row h-screen overflow-hidden">
+<!-- Left Column (Brand Panel) -->
+<section class="lg:w-1/2 bg-soft-mint hidden lg:flex flex-col justify-center items-center p-xl relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute inset-0" style="background-image: radial-gradient(#0a5132 1px, transparent 1px); background-size: 40px 40px;"></div>
+</div>
+<div class="relative z-10 max-w-lg">
+<!-- Branding -->
+<div class="mb-xl">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[32px]">volunteer_activism</span>
+</div>
+<h1 class="text-card-title font-card-title text-primary tracking-tight">AHDE VEFA</h1>
+</div>
+</div>
+<h2 class="text-page-heading font-page-heading text-primary mb-lg leading-tight">
+                    İyiliği güvenle yönetmek için
+                </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-2xl">
+                    Bağışlar, kampanyalar, gönüllü başvuruları ve saha raporları bu panel üzerinden yönetilir.
+                </p>
+<!-- Trust Points Grid (Bento-style) -->
+<div class="grid grid-cols-2 gap-md">
+<div class="bg-white/50 p-lg rounded-xl border border-primary/10 flex items-start gap-md">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+<div>
+<span class="block font-bold text-on-surface">Bağış Yönetimi</span>
+<span class="text-label font-label text-muted-text">Şeffaf takip</span>
+</div>
+</div>
+<div class="bg-white/50 p-lg rounded-xl border border-primary/10 flex items-start gap-md">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<div>
+<span class="block font-bold text-on-surface">Kampanya Takibi</span>
+<span class="text-label font-label text-muted-text">Gerçek zamanlı</span>
+</div>
+</div>
+<div class="bg-white/50 p-lg rounded-xl border border-primary/10 flex items-start gap-md">
+<span class="material-symbols-outlined text-primary">description</span>
+<div>
+<span class="block font-bold text-on-surface">Raporlama</span>
+<span class="text-label font-label text-muted-text">Detaylı analiz</span>
+</div>
+</div>
+<div class="bg-white/50 p-lg rounded-xl border border-primary/10 flex items-start gap-md">
+<span class="material-symbols-outlined text-primary">group</span>
+<div>
+<span class="block font-bold text-on-surface">Gönüllü Yönetimi</span>
+<span class="text-label font-label text-muted-text">Koordinasyon</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Asset Placeholder -->
+<div class="absolute bottom-10 -right-20 opacity-20 transform rotate-12">
+<span class="material-symbols-outlined text-[300px] text-primary">shield_with_heart</span>
+</div>
+</section>
+<!-- Right Column (Login Form) -->
+<section class="flex-grow flex items-center justify-center p-gutter bg-white lg:bg-background">
+<div class="w-full max-w-md">
+<!-- Mobile Branding -->
+<div class="lg:hidden flex justify-center mb-xl">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">volunteer_activism</span>
+</div>
+<h1 class="text-section-heading-mobile font-section-heading-mobile text-primary">AHDE VEFA</h1>
+</div>
+</div>
+<div class="bg-white p-xl lg:p-2xl rounded-2xl lg:shadow-xl lg:shadow-primary/5 transition-all duration-300">
+<header class="mb-xl text-center lg:text-left">
+<h2 class="text-section-heading font-section-heading text-on-surface mb-xs">Admin Panel Girişi</h2>
+<p class="text-body font-body text-on-surface-variant">Yetkili hesabınızla giriş yapın.</p>
+</header>
+<!-- Alert Example: Error (Hidden by default) -->
+<div class="hidden mb-lg p-md bg-error-container text-on-error-container rounded-xl flex items-center gap-md" id="login-error">
+<span class="material-symbols-outlined">error</span>
+<span class="text-label font-label">E-posta adresi veya şifre hatalı.</span>
+</div>
+<!-- Main Login Form -->
+<form class="space-y-lg" id="login-form">
+<div class="space-y-sm">
+<label class="block text-label font-label text-on-surface" for="email">E-posta Adresi</label>
+<input class="w-full px-lg py-md rounded-xl border-light-border focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-surface" id="email" name="email" placeholder="ornek@ahdevefa.org" required="" type="email"/>
+</div>
+<div class="space-y-sm">
+<label class="block text-label font-label text-on-surface" for="password">Şifre</label>
+<div class="relative">
+<input class="w-full px-lg py-md rounded-xl border-light-border focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-surface" id="password" name="password" placeholder="Şifrenizi girin" required="" type="password"/>
+<button class="absolute right-md top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors" onclick="togglePassword()" type="button">
+<span class="material-symbols-outlined" id="pass-icon">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 rounded border-light-border text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-label font-label text-on-surface-variant group-hover:text-primary transition-colors">Beni hatırla</span>
+</label>
+<button class="text-label font-label text-primary hover:underline" onclick="showForgotPassword()" type="button">Şifremi unuttum</button>
+</div>
+<button class="w-full py-md bg-primary text-on-primary rounded-xl font-button text-button hover:bg-primary-container transition-all active:scale-[0.98] shadow-lg shadow-primary/20" type="submit">
+                            Giriş Yap
+                        </button>
+</form>
+<!-- 2FA Verification (Hidden Overlay State) -->
+<div class="hidden space-y-lg animate-in fade-in duration-300" id="two-fa-form">
+<header class="text-center lg:text-left">
+<h3 class="text-card-title font-card-title text-on-surface mb-xs">Güvenlik Doğrulaması</h3>
+<p class="text-body font-body text-on-surface-variant">Lütfen e-posta adresinize gönderilen 6 haneli kodu girin.</p>
+</header>
+<div class="flex justify-between gap-xs">
+<input class="w-12 h-14 text-center text-card-title rounded-xl border-light-border focus:border-primary focus:ring-1 focus:ring-primary bg-surface" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center text-card-title rounded-xl border-light-border focus:border-primary focus:ring-1 focus:ring-primary bg-surface" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center text-card-title rounded-xl border-light-border focus:border-primary focus:ring-1 focus:ring-primary bg-surface" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center text-card-title rounded-xl border-light-border focus:border-primary focus:ring-1 focus:ring-primary bg-surface" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center text-card-title rounded-xl border-light-border focus:border-primary focus:ring-1 focus:ring-primary bg-surface" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center text-card-title rounded-xl border-light-border focus:border-primary focus:ring-1 focus:ring-primary bg-surface" maxlength="1" type="text"/>
+</div>
+<button class="w-full py-md bg-primary text-on-primary rounded-xl font-button text-button" onclick="resetFormState()" type="button">Doğrula</button>
+<button class="w-full text-label font-label text-muted-text hover:text-primary" onclick="resetFormState()" type="button">Geri Dön</button>
+</div>
+<!-- Password Reset (Hidden Overlay State) -->
+<div class="hidden space-y-lg animate-in fade-in duration-300" id="reset-password-form">
+<header class="text-center lg:text-left">
+<h3 class="text-card-title font-card-title text-on-surface mb-xs">Şifre Sıfırlama</h3>
+<p class="text-body font-body text-on-surface-variant">E-posta adresinizi girin, size bir sıfırlama bağlantısı gönderelim.</p>
+</header>
+<input class="w-full px-lg py-md rounded-xl border-light-border bg-surface focus:ring-primary" placeholder="ornek@ahdevefa.org" type="email"/>
+<button class="w-full py-md bg-primary text-on-primary rounded-xl font-button text-button" onclick="resetFormState()" type="button">Sıfırlama Bağlantısı Gönder</button>
+<button class="w-full text-label font-label text-muted-text hover:text-primary" onclick="resetFormState()" type="button">Giriş Ekranına Dön</button>
+</div>
+<footer class="mt-xl pt-lg border-t border-light-border text-center">
+<div class="flex items-center justify-center gap-xs text-muted-text mb-md">
+<span class="material-symbols-outlined text-[18px]">security</span>
+<p class="text-[12px] leading-tight">Bu alan yalnızca yetkili dernek personeli içindir. Giriş işlemleri güvenlik amacıyla kayıt altına alınabilir.</p>
+</div>
+</footer>
+</div>
+</div>
+</section>
+</main>
+<!-- Global Footer Component -->
+<footer class="bg-surface lg:bg-transparent py-md border-t border-light-border lg:border-none">
+<div class="w-full max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-md">
+<span class="text-label font-label text-muted-text">© 2024 Ahde Vefa İnsani Yardım Derneği. Tüm hakları saklıdır.</span>
+<div class="flex gap-lg">
+<a class="text-label font-label text-muted-text hover:text-primary transition-all" href="#">Ana Sayfa</a>
+<a class="text-label font-label text-muted-text hover:text-primary transition-all" href="#">Yardım</a>
+<a class="text-label font-label text-muted-text hover:text-primary transition-all" href="#">KVKK</a>
+</div>
+</div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+        function togglePassword() {
+            const input = document.getElementById('password');
+            const icon = document.getElementById('pass-icon');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.textContent = 'visibility_off';
+            } else {
+                input.type = 'password';
+                icon.textContent = 'visibility';
+            }
+        }
+
+        const loginForm = document.getElementById('login-form');
+        const twoFaForm = document.getElementById('two-fa-form');
+        const resetForm = document.getElementById('reset-password-form');
+        const errorAlert = document.getElementById('login-error');
+
+        function showForgotPassword() {
+            loginForm.classList.add('hidden');
+            resetForm.classList.remove('hidden');
+            twoFaForm.classList.add('hidden');
+        }
+
+        function resetFormState() {
+            loginForm.classList.remove('hidden');
+            resetForm.classList.add('hidden');
+            twoFaForm.classList.add('hidden');
+            errorAlert.classList.add('hidden');
+        }
+
+        // Demo behavior for login error
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            if (email === 'error@ahdevefa.org') {
+                errorAlert.classList.remove('hidden');
+            } else {
+                loginForm.classList.add('hidden');
+                twoFaForm.classList.remove('hidden');
+            }
+        });
+    </script>
+</body></html>

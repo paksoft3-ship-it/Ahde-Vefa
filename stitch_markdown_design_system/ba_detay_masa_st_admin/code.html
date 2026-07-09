@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AHDE VEFA Admin - Bağış Detayı</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#2a6a48",
+                    "surface-dim": "#d1dbe8",
+                    "secondary": "#006874",
+                    "primary-fixed-dim": "#93d5ab",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#a4d1b7",
+                    "surface-container-high": "#dfe9f7",
+                    "on-background": "#121d26",
+                    "light-border": "#E5E7EB",
+                    "primary-fixed": "#aef1c6",
+                    "on-tertiary-fixed-variant": "#254f3b",
+                    "warm-cream": "#FFF8EF",
+                    "surface-variant": "#d9e3f1",
+                    "on-primary-container": "#a5e7bd",
+                    "on-primary-fixed": "#002111",
+                    "secondary-container": "#61e9fe",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "soft-mint": "#EEF8F4",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#254f3c",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#bfc9c0",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#002114",
+                    "background": "#f7f9ff",
+                    "outline": "#707971",
+                    "inverse-primary": "#93d5ab",
+                    "primary-container": "#2a6a48",
+                    "surface-container-low": "#edf4ff",
+                    "secondary-fixed-dim": "#4cd8ec",
+                    "muted-text": "#667085",
+                    "surface-container": "#e4effd",
+                    "secondary-fixed": "#9af0ff",
+                    "on-surface-variant": "#404942",
+                    "donation-gold": "#F4B740",
+                    "primary": "#0a5132",
+                    "tertiary-container": "#3d6752",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#006773",
+                    "on-tertiary-container": "#b6e3c9",
+                    "on-secondary-fixed": "#001f24",
+                    "on-primary-fixed-variant": "#0a5132",
+                    "surface-bright": "#f7f9ff",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "on-surface": "#121d26",
+                    "inverse-on-surface": "#e8f2ff",
+                    "inverse-surface": "#27313c",
+                    "surface": "#f7f9ff",
+                    "surface-container-highest": "#d9e3f1",
+                    "tertiary-fixed": "#bfedd3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "0.25rem",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "2xl": "4rem",
+                    "sm": "0.5rem",
+                    "3xl": "6rem",
+                    "md": "1rem",
+                    "container-max": "1280px",
+                    "xl": "2.5rem",
+                    "lg": "1.5rem"
+            },
+            "fontFamily": {
+                    "section-heading": ["Manrope"],
+                    "page-heading": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"],
+                    "card-title": ["Manrope"]
+            },
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #d1dbe8; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- SideNavBar Anchor -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-primary dark:bg-inverse-surface shadow-lg flex flex-col py-6 z-50">
+<div class="px-6 mb-8">
+<h1 class="font-page-heading text-page-heading text-white leading-tight">AHDE VEFA</h1>
+<p class="text-secondary-container opacity-80 text-xs tracking-widest uppercase">İnsani Yardım Derneği</p>
+</div>
+<nav class="flex-1 overflow-y-auto custom-scrollbar space-y-1">
+<a class="flex items-center text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 mx-2 hover:bg-primary-container/20" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center bg-surface-tint text-white font-bold rounded-lg mx-2 px-4 py-3" href="#">
+<span class="material-symbols-outlined mr-3">payments</span>
+<span class="font-label text-label">Donations</span>
+</a>
+<a class="flex items-center text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 mx-2 hover:bg-primary-container/20" href="#">
+<span class="material-symbols-outlined mr-3">campaign</span>
+<span class="font-label text-label">Campaigns</span>
+</a>
+<a class="flex items-center text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 mx-2 hover:bg-primary-container/20" href="#">
+<span class="material-symbols-outlined mr-3">featured_seasonal_and_gifts</span>
+<span class="font-label text-label">Kurban</span>
+</a>
+<a class="flex items-center text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 mx-2 hover:bg-primary-container/20" href="#">
+<span class="material-symbols-outlined mr-3">volunteer_activism</span>
+<span class="font-label text-label">Ramazan</span>
+</a>
+<a class="flex items-center text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 mx-2 hover:bg-primary-container/20" href="#">
+<span class="material-symbols-outlined mr-3">group</span>
+<span class="font-label text-label">Donors</span>
+</a>
+<a class="flex items-center text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 mx-2 hover:bg-primary-container/20" href="#">
+<span class="material-symbols-outlined mr-3">person_celebrate</span>
+<span class="font-label text-label">Volunteers</span>
+</a>
+<a class="flex items-center text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 mx-2 hover:bg-primary-container/20" href="#">
+<span class="material-symbols-outlined mr-3">assessment</span>
+<span class="font-label text-label">Reports</span>
+</a>
+</nav>
+<div class="mt-auto px-2 space-y-1">
+<a class="flex items-center text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 hover:bg-primary-container/20" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="font-label text-label">Settings</span>
+</a>
+<a class="flex items-center text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 hover:bg-primary-container/20" href="#">
+<span class="material-symbols-outlined mr-3 text-error">logout</span>
+<span class="font-label text-label">Logout</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar Anchor -->
+<header class="h-16 fixed top-0 right-0 left-64 bg-surface dark:bg-surface-dim border-b border-light-border dark:border-outline flex justify-between items-center px-lg z-40">
+<div class="flex items-center space-x-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-muted-text group-focus-within:text-secondary">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-sm w-80 focus:ring-2 focus:ring-secondary outline-none transition-all" placeholder="Bağışlarda ara..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<div class="flex items-center space-x-4">
+<button class="text-muted-text hover:bg-surface-container-low p-2 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-muted-text hover:bg-surface-container-low p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="text-muted-text hover:bg-surface-container-low p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">apps</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-light-border"></div>
+<div class="flex items-center space-x-3">
+<div class="text-right">
+<p class="text-sm font-bold leading-none">Ahmet Yılmaz</p>
+<p class="text-[10px] text-muted-text uppercase tracking-tighter mt-1">Sistem Yöneticisi</p>
+</div>
+<img class="w-10 h-10 rounded-full border-2 border-primary-fixed object-cover" data-alt="A professional headshot of a middle-aged male administrative user with a kind expression, wearing a clean white shirt. The background is a soft, blurred office environment with corporate green and cream tones, maintaining a modern and clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLAhWo_bsxyoo93QfD551YkQY6mrX69si_5LjQ3bDGs0EWrKBTMXpLeEmC9fZjb6BVuA6gfN58HKz-VIXrpvpJF7gtUmZ_kOZ-KEn7fTsTWAo1hnyuIeA5GSH2U9XYhUV9inULf76KpHgJRlgZsPCCySGaqMEL-LjJwxbMZjj1x9GzLUJ1z3CQqM5rH189rLYl0zGMIstxO_kNQkafoUvHZ2LvbRozsuK_yVaxH9hS3ZPv0sLM_Mw3oljSFiM19fWQOn0SyfccfAFI"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-lg pb-32">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-8">
+<div class="space-y-2">
+<nav class="flex items-center text-xs text-muted-text space-x-2 mb-2">
+<span>Yönetim Paneli</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Bağışlar</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Bağış Detayı</span>
+</nav>
+<h2 class="font-page-heading text-page-heading text-on-surface">Bağış Detayı</h2>
+<p class="text-muted-text text-sm max-w-2xl">Bağış işlemi, ödeme durumu, bağışçı bilgileri ve süreç geçmişini buradan inceleyebilirsiniz.</p>
+</div>
+<div class="flex items-center space-x-3">
+<button class="px-5 py-2.5 rounded-xl border border-light-border hover:bg-surface-container text-sm font-bold flex items-center transition-colors">
+<span class="material-symbols-outlined text-[20px] mr-2">send</span>
+                    Mesaj Gönder
+                </button>
+<button class="px-5 py-2.5 rounded-xl border border-light-border hover:bg-surface-container text-sm font-bold flex items-center transition-colors">
+<span class="material-symbols-outlined text-[20px] mr-2">edit</span>
+                    Durumu Güncelle
+                </button>
+<button class="px-6 py-2.5 rounded-xl bg-primary text-white text-sm font-bold flex items-center shadow-md hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined text-[20px] mr-2">receipt_long</span>
+                    Makbuz Oluştur
+                </button>
+</div>
+</div>
+<!-- 1. Status Summary Card -->
+<div class="bg-white rounded-2xl p-6 mb-8 border border-light-border shadow-sm flex items-center justify-between">
+<div class="flex items-center space-x-8">
+<div class="flex flex-col">
+<span class="text-[10px] text-muted-text uppercase tracking-widest mb-1">Durum</span>
+<span class="px-3 py-1 bg-soft-mint text-primary border border-primary-fixed-dim rounded-full text-xs font-bold w-fit flex items-center">
+<span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
+                        Onaylandı
+                    </span>
+</div>
+<div class="h-10 w-[1px] bg-light-border"></div>
+<div>
+<p class="text-[10px] text-muted-text uppercase tracking-widest mb-1">Tutar (TL)</p>
+<p class="text-2xl font-extrabold text-on-surface">₺4.500,00</p>
+</div>
+<div class="h-10 w-[1px] bg-light-border"></div>
+<div>
+<p class="text-[10px] text-muted-text uppercase tracking-widest mb-1">Kampanya</p>
+<p class="text-sm font-bold text-on-surface">Acil İnsani Yardım</p>
+</div>
+<div class="h-10 w-[1px] bg-light-border"></div>
+<div>
+<p class="text-[10px] text-muted-text uppercase tracking-widest mb-1">İşlem No</p>
+<p class="text-sm font-bold text-on-surface">#AV-2024-9912</p>
+</div>
+<div class="h-10 w-[1px] bg-light-border"></div>
+<div>
+<p class="text-[10px] text-muted-text uppercase tracking-widest mb-1">Tarih</p>
+<p class="text-sm font-bold text-on-surface">12 Mart 2024, 14:35</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[10px] text-muted-text uppercase tracking-widest mb-1">Bölge Durumu</span>
+<span class="px-3 py-1 bg-warm-cream text-donation-gold border border-donation-gold/30 rounded-full text-xs font-bold flex items-center">
+<span class="material-symbols-outlined text-[16px] mr-1">history</span>
+                    Pakistan: Hazırlık Aşamasında
+                </span>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Left Column -->
+<div class="col-span-8 space-y-gutter">
+<!-- Bağış Bilgileri Card -->
+<div class="bg-white rounded-2xl border border-light-border shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-light-border flex justify-between items-center">
+<h3 class="font-card-title text-card-title flex items-center">
+<span class="material-symbols-outlined text-primary mr-2">receipt</span>
+                            Bağış Bilgileri
+                        </h3>
+</div>
+<div class="p-6 grid grid-cols-2 gap-6">
+<div class="space-y-4">
+<div>
+<label class="text-[10px] text-muted-text uppercase font-bold tracking-widest block mb-1">Bağış Türü</label>
+<div class="bg-surface-container-low p-3 rounded-xl border border-transparent hover:border-outline-variant transition-colors">Genel Bağış</div>
+</div>
+<div>
+<label class="text-[10px] text-muted-text uppercase font-bold tracking-widest block mb-1">Hizmet Bölgesi</label>
+<div class="bg-surface-container-low p-3 rounded-xl">Pakistan / Pencap Eyaleti</div>
+</div>
+<div>
+<label class="text-[10px] text-muted-text uppercase font-bold tracking-widest block mb-1">Vekalet Durumu</label>
+<div class="bg-soft-mint text-primary p-3 rounded-xl border border-primary-fixed-dim font-bold">Vekalet Alındı</div>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<label class="text-[10px] text-muted-text uppercase font-bold tracking-widest block mb-1">Ödeme Yöntemi</label>
+<div class="bg-surface-container-low p-3 rounded-xl flex items-center">
+<span class="material-symbols-outlined mr-2 text-secondary">account_balance</span>
+                                    Banka Havalesi / EFT
+                                </div>
+</div>
+<div>
+<label class="text-[10px] text-muted-text uppercase font-bold tracking-widest block mb-1">Para Birimi</label>
+<div class="bg-surface-container-low p-3 rounded-xl">Türk Lirası (TRY)</div>
+</div>
+<div>
+<label class="text-[10px] text-muted-text uppercase font-bold tracking-widest block mb-1">Bağış Sıklığı</label>
+<div class="bg-surface-container-low p-3 rounded-xl">Tek Seferlik</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bağışçı Bilgileri Card -->
+<div class="bg-white rounded-2xl border border-light-border shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-light-border flex justify-between items-center">
+<h3 class="font-card-title text-card-title flex items-center">
+<span class="material-symbols-outlined text-primary mr-2">person_pin</span>
+                            Bağışçı Bilgileri
+                        </h3>
+<div class="flex space-x-2">
+<button class="px-3 py-1.5 rounded-lg text-xs font-bold border border-light-border hover:bg-surface-container transition-colors">Profil Aç</button>
+<button class="px-3 py-1.5 rounded-lg text-xs font-bold bg-primary text-white transition-colors">Mesaj Gönder</button>
+</div>
+</div>
+<div class="p-6">
+<div class="flex items-start space-x-6">
+<img class="w-20 h-20 rounded-2xl object-cover border-4 border-surface-container" data-alt="A portrait of a distinguished Turkish businessman in his 40s, looking professional yet compassionate. He has short groomed hair and is wearing a high-quality navy blue blazer. The photography is professional studio style with soft-focus office background and clean corporate lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcCw8DuEe_sjs4IOYkqsNR-02pprjMm2JBUYTJBtiKbSIwYdaMDQoRpaMsZiXknt0vb-AGGqJWujeAnSPBgoMAbsRQcSGSwlN4ItC_S8dykUXgE9KxGCsmYZkF6CNWP6dZcKzJPpUYISg3Uph0mJ1_2sOYzUch5krxOvXP2AYon6aGgijTycYKLNkUnOVaCEfHFMfYiqK-_SVOLyOEWnn3Lb19WJBGNd10LH61GPuStFHJPHNcItdy1f-vudflGowKBWE8s5wsRxWu"/>
+<div class="flex-1 grid grid-cols-2 gap-x-8 gap-y-4">
+<div>
+<label class="text-[10px] text-muted-text uppercase font-bold tracking-widest block mb-1">Ad Soyad</label>
+<p class="font-bold text-lg text-on-surface">Ömer Faruk Erdem</p>
+</div>
+<div>
+<label class="text-[10px] text-muted-text uppercase font-bold tracking-widest block mb-1">E-posta</label>
+<p class="text-sm">o.erdem@domain.com</p>
+</div>
+<div>
+<label class="text-[10px] text-muted-text uppercase font-bold tracking-widest block mb-1">Telefon</label>
+<p class="text-sm">+90 532 000 00 00</p>
+</div>
+<div>
+<label class="text-[10px] text-muted-text uppercase font-bold tracking-widest block mb-1">KVKK İzni</label>
+<span class="flex items-center text-xs text-primary font-bold">
+<span class="material-symbols-outlined text-[18px] mr-1">check_circle</span>
+                                        Onaylı (12.02.2024)
+                                    </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Ödeme ve Dekont Kontrolü Card -->
+<div class="bg-white rounded-2xl border border-light-border shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-light-border flex justify-between items-center">
+<h3 class="font-card-title text-card-title flex items-center">
+<span class="material-symbols-outlined text-primary mr-2">verified_user</span>
+                            Ödeme ve Dekont Kontrolü
+                        </h3>
+</div>
+<div class="p-6 bg-surface-container-low/30">
+<div class="grid grid-cols-3 gap-6 mb-6">
+<div class="bg-white p-4 rounded-xl border border-light-border">
+<label class="text-[10px] text-muted-text uppercase font-bold tracking-widest block mb-1">Banka</label>
+<p class="text-sm font-bold">Kuveyt Türk Katılım</p>
+</div>
+<div class="bg-white p-4 rounded-xl border border-light-border col-span-2">
+<label class="text-[10px] text-muted-text uppercase font-bold tracking-widest block mb-1">Gönderici Açıklaması</label>
+<p class="text-sm">Ahde Vefa - Pakistan Acil Yardım Bağışı</p>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-primary/5 rounded-xl border border-primary/10">
+<div class="flex items-center">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">picture_as_pdf</span>
+</div>
+<div class="ml-4">
+<p class="text-sm font-bold">dekont_2024_0312.pdf</p>
+<p class="text-[10px] text-muted-text">245 KB • Yüklendi: 12 Mart 14:35</p>
+</div>
+</div>
+<div class="flex space-x-2">
+<button class="px-4 py-2 rounded-lg text-sm font-bold bg-white border border-light-border shadow-sm hover:bg-surface-container transition-all">Görüntüle</button>
+<button class="px-4 py-2 rounded-lg text-sm font-bold bg-primary text-white shadow-md hover:opacity-90 transition-all">Onayla</button>
+<button class="px-4 py-2 rounded-lg text-sm font-bold bg-error/10 text-error border border-error/20 hover:bg-error/20 transition-all">Reddet</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Related Donations Table -->
+<div class="bg-white rounded-2xl border border-light-border shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-light-border">
+<h3 class="font-card-title text-card-title">Bağışçının Diğer İşlemleri</h3>
+</div>
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-[11px] uppercase tracking-widest text-muted-text font-bold">
+<th class="px-6 py-3">İşlem No</th>
+<th class="px-6 py-3">Tarih</th>
+<th class="px-6 py-3">Kampanya</th>
+<th class="px-6 py-3">Tutar</th>
+<th class="px-6 py-3">Durum</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-light-border">
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4 text-xs font-bold">#AV-2024-8110</td>
+<td class="px-6 py-4 text-xs">05.02.2024</td>
+<td class="px-6 py-4 text-xs">Su Kuyusu Projesi</td>
+<td class="px-6 py-4 text-xs font-bold">₺12.000,00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-soft-mint text-primary text-[10px] font-bold rounded">Onaylandı</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="px-6 py-4 text-xs font-bold">#AV-2023-7455</td>
+<td class="px-6 py-4 text-xs">20.12.2023</td>
+<td class="px-6 py-4 text-xs">Yetim Giydirme</td>
+<td class="px-6 py-4 text-xs font-bold">₺1.200,00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-soft-mint text-primary text-[10px] font-bold rounded">Onaylandı</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right Column -->
+<div class="col-span-4 space-y-gutter">
+<!-- Hızlı İşlemler Action Panel -->
+<div class="bg-white rounded-2xl border border-light-border shadow-sm p-6">
+<h3 class="font-card-title text-card-title mb-6">Hızlı İşlemler</h3>
+<div class="space-y-3">
+<button class="w-full py-3 rounded-xl bg-surface-container-low text-on-surface font-bold text-sm flex items-center px-4 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined mr-3 text-secondary">mail</span>
+                            Bilgilendirme SMS/E-posta
+                        </button>
+<button class="w-full py-3 rounded-xl bg-surface-container-low text-on-surface font-bold text-sm flex items-center px-4 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined mr-3 text-secondary">update</span>
+                            Durumu Beklemede Yap
+                        </button>
+<button class="w-full py-3 rounded-xl bg-surface-container-low text-on-surface font-bold text-sm flex items-center px-4 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined mr-3 text-secondary">share</span>
+                            Bağışçıya Form Gönder
+                        </button>
+</div>
+</div>
+<!-- Bağış Süreç Geçmişi (Timeline) -->
+<div class="bg-white rounded-2xl border border-light-border shadow-sm p-6">
+<h3 class="font-card-title text-card-title mb-6">Süreç Geçmişi</h3>
+<div class="relative space-y-8 before:absolute before:left-3 before:top-2 before:bottom-2 before:w-[2px] before:bg-light-border">
+<!-- Step 1 -->
+<div class="relative pl-10">
+<div class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center text-white z-10">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<p class="text-sm font-bold text-on-surface">Ödeme Onaylandı</p>
+<p class="text-xs text-muted-text">12 Mart 2024, 15:10 - Admin: Mehmet</p>
+</div>
+<!-- Step 2 -->
+<div class="relative pl-10">
+<div class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center text-white z-10">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<p class="text-sm font-bold text-on-surface">Dekont Yüklendi</p>
+<p class="text-xs text-muted-text">12 Mart 2024, 14:35 - Bağışçı</p>
+</div>
+<!-- Step 3 -->
+<div class="relative pl-10">
+<div class="absolute left-0 top-0 w-6 h-6 rounded-full bg-primary-fixed text-primary flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px]">rocket_launch</span>
+</div>
+<p class="text-sm font-bold text-on-surface">Bağış Oluşturuldu</p>
+<p class="text-xs text-muted-text">12 Mart 2024, 14:30 - Web Site</p>
+</div>
+</div>
+</div>
+<!-- İç Notlar Area -->
+<div class="bg-white rounded-2xl border border-light-border shadow-sm flex flex-col h-[400px]">
+<div class="px-6 py-4 border-b border-light-border">
+<h3 class="font-card-title text-card-title">İç Notlar</h3>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar">
+<div class="bg-surface-container-low p-4 rounded-xl rounded-tl-none text-xs italic">
+                            "Bağışçı özellikle Pakistan bölgesindeki yetimhaneye aktarılmasını rica etti. Lojistik birimiyle görüşüldü."
+                            <p class="mt-2 text-[10px] text-muted-text not-italic font-bold">Zeynep Kaya • 12 Mart, 16:00</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl rounded-tl-none text-xs italic">
+                            "Ödeme kontrol edildi, tutar hesapta görüldü."
+                            <p class="mt-2 text-[10px] text-muted-text not-italic font-bold">Mehmet Öz • 12 Mart, 15:10</p>
+</div>
+</div>
+<div class="p-4 border-t border-light-border">
+<div class="relative">
+<textarea class="w-full bg-surface-container-lowest border border-light-border rounded-xl p-3 text-xs focus:ring-primary outline-none transition-all resize-none h-20" placeholder="Not ekleyin..."></textarea>
+<button class="absolute bottom-3 right-3 p-1.5 bg-primary text-white rounded-lg">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Audit Trail Compact -->
+<div class="bg-surface-container-low/50 rounded-2xl p-4">
+<p class="text-[10px] font-bold uppercase tracking-widest text-muted-text mb-4">Kayıt Günlüğü</p>
+<div class="space-y-3">
+<div class="flex justify-between text-[11px]">
+<span class="text-muted-text">Oluşturulma:</span>
+<span class="font-bold">12.03.2024 - 14:30</span>
+</div>
+<div class="flex justify-between text-[11px]">
+<span class="text-muted-text">Son Güncelleme:</span>
+<span class="font-bold">12.03.2024 - 16:00</span>
+</div>
+<div class="flex justify-between text-[11px]">
+<span class="text-muted-text">ID:</span>
+<span class="font-bold">DON_AF_291032</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Attached Files Section -->
+<div class="mt-8 bg-white rounded-2xl border border-light-border shadow-sm p-6">
+<h3 class="font-card-title text-card-title mb-6">Ekli Dosyalar &amp; Raporlar</h3>
+<div class="grid grid-cols-4 gap-4">
+<div class="border border-light-border rounded-xl p-4 flex items-center hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[32px] mr-3">receipt</span>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">Resmi_Makbuz.pdf</p>
+<p class="text-[10px] text-muted-text">PDF • 1.2 MB</p>
+</div>
+</div>
+<div class="border border-light-border rounded-xl p-4 flex items-center hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-secondary text-[32px] mr-3">image</span>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">Saha_Fotografi_1.jpg</p>
+<p class="text-[10px] text-muted-text">IMG • 3.4 MB</p>
+</div>
+</div>
+<div class="border border-light-border rounded-xl p-4 flex items-center hover:bg-surface-container transition-all cursor-pointer">
+<span class="material-symbols-outlined text-donation-gold text-[32px] mr-3">analytics</span>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">Etki_Raporu_Taslak.docx</p>
+<p class="text-[10px] text-muted-text">DOCX • 0.8 MB</p>
+</div>
+</div>
+<div class="border border-dashed border-light-border rounded-xl p-4 flex items-center justify-center hover:bg-surface-container transition-all cursor-pointer text-muted-text">
+<span class="material-symbols-outlined mr-2">upload_file</span>
+<span class="text-xs font-bold">Yeni Dosya Ekle</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Anchor -->
+<footer class="fixed bottom-0 right-0 left-64 bg-surface-container-lowest dark:bg-surface-dim border-t border-light-border flex justify-between items-center text-xs w-full py-4 px-lg z-40">
+<div class="flex items-center space-x-2">
+<span class="font-label text-label font-bold text-primary">AHDE VEFA</span>
+<span class="text-muted-text">© 2024 AHDE VEFA İnsani Yardım Derneği. All rights reserved.</span>
+</div>
+<div class="flex items-center space-x-6">
+<a class="text-muted-text hover:text-secondary transition-colors" href="#">Security Policy</a>
+<a class="text-muted-text hover:text-secondary transition-colors" href="#">System Status</a>
+<a class="text-muted-text hover:text-secondary transition-colors" href="#">Support</a>
+</div>
+</footer>
+<!-- Micro-interactions Script -->
+<script>
+        // Simple hover effect for status cards
+        document.querySelectorAll('.rounded-xl').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-1px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

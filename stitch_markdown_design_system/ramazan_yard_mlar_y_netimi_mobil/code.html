@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ramazan Yardımları Yönetimi - Vefa Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "donation-gold": "#F4B740",
+                    "on-primary-container": "#a5e7bd",
+                    "primary-container": "#2a6a48",
+                    "secondary-container": "#61e9fe",
+                    "on-tertiary-fixed": "#002114",
+                    "tertiary": "#254f3c",
+                    "primary": "#0a5132",
+                    "surface-variant": "#d9e3f1",
+                    "on-secondary-container": "#006773",
+                    "inverse-on-surface": "#e8f2ff",
+                    "surface-container-high": "#dfe9f7",
+                    "on-error-container": "#93000a",
+                    "warm-cream": "#FFF8EF",
+                    "surface-tint": "#2a6a48",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#27313c",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#aef1c6",
+                    "on-secondary-fixed": "#001f24",
+                    "on-surface": "#121d26",
+                    "inverse-primary": "#93d5ab",
+                    "outline-variant": "#bfc9c0",
+                    "on-primary-fixed-variant": "#0a5132",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#d9e3f1",
+                    "secondary": "#006874",
+                    "outline": "#707971",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#121d26",
+                    "on-surface-variant": "#404942",
+                    "primary-fixed-dim": "#93d5ab",
+                    "tertiary-container": "#3d6752",
+                    "surface-bright": "#f7f9ff",
+                    "tertiary-fixed": "#bfedd3",
+                    "soft-mint": "#EEF8F4",
+                    "on-tertiary-fixed-variant": "#254f3b",
+                    "secondary-fixed": "#9af0ff",
+                    "surface-container": "#e4effd",
+                    "surface-dim": "#d1dbe8",
+                    "background": "#f7f9ff",
+                    "light-border": "#E5E7EB",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#a4d1b7",
+                    "surface": "#f7f9ff",
+                    "muted-text": "#667085",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "on-tertiary-container": "#b6e3c9",
+                    "on-primary-fixed": "#002111",
+                    "surface-container-low": "#edf4ff",
+                    "secondary-fixed-dim": "#4cd8ec"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "0.25rem",
+                    "2xl": "4rem",
+                    "3xl": "6rem",
+                    "md": "1rem",
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "lg": "1.5rem",
+                    "sm": "0.5rem",
+                    "xl": "2.5rem",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "page-heading-mobile": ["Manrope"],
+                    "hero-heading-mobile": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "section-heading": ["Manrope"],
+                    "page-heading": ["Manrope"],
+                    "label": ["Manrope"],
+                    "card-title": ["Manrope"],
+                    "section-heading-mobile": ["Manrope"],
+                    "button": ["Manrope"],
+                    "body": ["Manrope"],
+                    "hero-heading": ["Manrope"]
+            },
+            "fontSize": {
+                    "page-heading-mobile": ["34px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "hero-heading-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "section-heading": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "page-heading": ["48px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "label": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "card-title": ["22px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "section-heading-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "hero-heading": ["64px", {"lineHeight": "1.2", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .modal-enter { animation: modalEnter 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes modalEnter {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        .pipeline-card::before {
+            content: '';
+            position: absolute;
+            left: 23px;
+            top: 48px;
+            bottom: -24px;
+            width: 2px;
+            background-color: #E5E7EB;
+        }
+        .pipeline-card:last-child::before { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen pb-20">
+<!-- Mobile Top Navigation -->
+<header class="sticky top-0 z-40 bg-surface/80 backdrop-blur-md px-4 h-16 flex items-center justify-between border-b border-light-border">
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<h1 class="font-button text-button text-primary">Vefa Admin</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a Middle Eastern male NGO administrator in a professional setting with soft lighting and a clean, high-end office background. The style is modern corporate, emphasizing trust and competence, using a natural color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3_FCuN-Pr4NT3l5li6z2RzCEVjxEjRNTsz59MFMBE_MtydI-KLpkt0KF8up2z3eBAN2jXfkqYqlKTj4Z1D6cB7-pmZkMBRL9X3zeSyyHn7q7aMZKoLXyS7PpOpgTvb7XvlvJ4BaTIqryP4cVEqoihIxWDthhGUq8-TbB66YM5mGGrCNuofhnrUshH_nGqa4rtfwxyOWvN1lBcTVFe_H86T472cZQv6uBMH68CoVX8ZanltHMgR-ocDeQCIy0nxGC2kdjnfRgTg653"/>
+</div>
+</div>
+</header>
+<main class="px-4 py-6 max-w-lg mx-auto">
+<!-- Page Header -->
+<div class="mb-8">
+<h2 class="font-section-heading-mobile text-section-heading-mobile text-on-surface mb-1">Ramazan Yardımları</h2>
+<p class="text-on-surface-variant text-label font-label mb-6">2024 Ramazan Kampanyası Genel Yönetimi</p>
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-4 px-6 rounded-xl font-button text-button shadow-lg shadow-primary/20 active:scale-95 transition-all" onclick="toggleModal('add-record-modal')">
+<span class="material-symbols-outlined">add_circle</span>
+                Manuel Ramazan Kaydı Ekle
+            </button>
+</div>
+<!-- Summary Cards Horizontal Scroll -->
+<div class="mb-8 overflow-x-auto hide-scrollbar -mx-4 px-4">
+<div class="flex gap-4 w-max pb-2">
+<!-- Card 1 -->
+<div class="w-40 p-4 bg-soft-mint rounded-2xl border border-primary/10 shadow-sm">
+<span class="material-symbols-outlined text-primary mb-2">volunteer_activism</span>
+<div class="text-on-surface-variant text-label font-label">Toplam İftar</div>
+<div class="text-card-title font-card-title text-primary">12.450</div>
+</div>
+<!-- Card 2 -->
+<div class="w-40 p-4 bg-surface-container-low rounded-2xl border border-light-border shadow-sm">
+<span class="material-symbols-outlined text-secondary mb-2">shopping_basket</span>
+<div class="text-on-surface-variant text-label font-label">Kumanya Paketi</div>
+<div class="text-card-title font-card-title text-secondary">4.200</div>
+</div>
+<!-- Card 3 -->
+<div class="w-40 p-4 bg-warm-cream rounded-2xl border border-donation-gold/20 shadow-sm">
+<span class="material-symbols-outlined text-donation-gold mb-2">payments</span>
+<div class="text-on-surface-variant text-label font-label">Zekat Fonu</div>
+<div class="text-card-title font-card-title text-on-surface">₺850k</div>
+</div>
+<!-- Card 4 -->
+<div class="w-40 p-4 bg-soft-mint rounded-2xl border border-primary/10 shadow-sm">
+<span class="material-symbols-outlined text-primary mb-2">groups</span>
+<div class="text-on-surface-variant text-label font-label">Gönüllü Sayısı</div>
+<div class="text-card-title font-card-title text-primary">312</div>
+</div>
+<!-- Card 5 -->
+<div class="w-40 p-4 bg-surface-container-low rounded-2xl border border-light-border shadow-sm">
+<span class="material-symbols-outlined text-secondary mb-2">location_on</span>
+<div class="text-on-surface-variant text-label font-label">Aktif Bölge</div>
+<div class="text-card-title font-card-title text-secondary">18</div>
+</div>
+<!-- Card 6 -->
+<div class="w-40 p-4 bg-error-container rounded-2xl border border-error/10 shadow-sm">
+<span class="material-symbols-outlined text-error mb-2">pending_actions</span>
+<div class="text-on-surface-variant text-label font-label">Onay Bekleyen</div>
+<div class="text-card-title font-card-title text-error">42</div>
+</div>
+</div>
+</div>
+<!-- Planning Tabbed Section -->
+<section class="mb-10">
+<h3 class="font-card-title text-card-title mb-4">Bölgesel Planlama</h3>
+<div class="flex p-1 bg-surface-variant rounded-xl mb-4">
+<button class="flex-1 py-2 rounded-lg bg-surface text-primary font-button text-label shadow-sm">Yurt İçi</button>
+<button class="flex-1 py-2 rounded-lg text-on-surface-variant font-button text-label">Yurt Dışı</button>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-4 bg-surface rounded-xl border border-light-border">
+<div class="flex justify-between items-start mb-2">
+<span class="font-bold text-primary">Hatay</span>
+<span class="text-[10px] bg-donation-gold/20 text-donation-gold px-2 py-0.5 rounded-full font-bold uppercase">Kritik</span>
+</div>
+<div class="text-[12px] text-on-surface-variant mb-1">Hedef: 2000 Paket</div>
+<div class="w-full bg-surface-variant h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[75%]"></div>
+</div>
+</div>
+<div class="p-4 bg-surface rounded-xl border border-light-border">
+<div class="flex justify-between items-start mb-2">
+<span class="font-bold text-primary">Adıyaman</span>
+<span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-bold uppercase">Normal</span>
+</div>
+<div class="text-[12px] text-on-surface-variant mb-1">Hedef: 1500 Paket</div>
+<div class="w-full bg-surface-variant h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[45%]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Pipeline -->
+<section class="mb-10">
+<h3 class="font-card-title text-card-title mb-6">Operasyonel Süreç</h3>
+<div class="space-y-6 relative">
+<!-- Step 1 -->
+<div class="pipeline-card flex gap-4 relative">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0 z-10 border-4 border-background">
+<span class="material-symbols-outlined text-white text-xl">inventory</span>
+</div>
+<div class="pt-1">
+<h4 class="font-bold text-on-surface">Tedarik &amp; Depolama</h4>
+<p class="text-sm text-on-surface-variant">Kumanya paketlerinin yerel depolara sevkiyatı.</p>
+<span class="inline-block mt-2 text-[10px] bg-primary/10 text-primary px-2 py-1 rounded-md font-bold">%82 Tamamlandı</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="pipeline-card flex gap-4 relative">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0 z-10 border-4 border-background">
+<span class="material-symbols-outlined text-white text-xl">person_search</span>
+</div>
+<div class="pt-1">
+<h4 class="font-bold text-on-surface">Saha Tespiti</h4>
+<p class="text-sm text-on-surface-variant">Yardım alacak ailelerin listelenmesi ve doğrulama.</p>
+<span class="inline-block mt-2 text-[10px] bg-donation-gold/20 text-donation-gold px-2 py-1 rounded-md font-bold">Devam Ediyor</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="pipeline-card flex gap-4 relative">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center shrink-0 z-10 border-4 border-background">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">local_shipping</span>
+</div>
+<div class="pt-1">
+<h4 class="font-bold text-on-surface-variant">Dağıtım Organizasyonu</h4>
+<p class="text-sm text-on-surface-variant">Ramazan'ın ilk haftası başlayacak dağıtım rotaları.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Campaign List Header & Filters -->
+<section class="mb-6">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-card-title text-card-title">Kayıtlar</h3>
+<button class="flex items-center gap-1 text-primary font-bold text-sm" onclick="toggleDrawer('filter-drawer')">
+<span class="material-symbols-outlined text-lg">tune</span>
+                    Filtrele
+                </button>
+</div>
+<div class="flex gap-2 overflow-x-auto hide-scrollbar mb-4">
+<span class="shrink-0 bg-primary text-white px-4 py-1.5 rounded-full text-xs font-bold">Hepsi</span>
+<span class="shrink-0 bg-white border border-light-border text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-bold">Kumanya</span>
+<span class="shrink-0 bg-white border border-light-border text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-bold">İftar</span>
+<span class="shrink-0 bg-white border border-light-border text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-bold">Fitre/Zekat</span>
+<span class="shrink-0 bg-white border border-light-border text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-bold">Yurt Dışı</span>
+</div>
+<!-- Campaign Cards Stack -->
+<div class="space-y-4">
+<!-- Card 1 -->
+<div class="bg-white p-5 rounded-2xl border border-light-border shadow-sm active:bg-soft-mint transition-colors cursor-pointer" onclick="openDetail()">
+<div class="flex justify-between items-start mb-3">
+<div>
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Kayıt No: #RMZ-2045</div>
+<h4 class="font-bold text-lg text-primary">Ahmed Yılmaz</h4>
+</div>
+<span class="bg-primary/10 text-primary text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">Tamamlandı</span>
+</div>
+<div class="grid grid-cols-2 gap-y-3 border-t border-light-border pt-3">
+<div>
+<p class="text-[10px] text-on-surface-variant font-label">Yardım Türü</p>
+<p class="text-sm font-bold">Kumanya Paketi</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-label">Bölge</p>
+<p class="text-sm font-bold">Gazze / Filistin</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-label">Adet / Tutar</p>
+<p class="text-sm font-bold">5 Paket / ₺3.750</p>
+</div>
+<div class="flex justify-end items-end">
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-5 rounded-2xl border border-light-border shadow-sm active:bg-soft-mint transition-colors">
+<div class="flex justify-between items-start mb-3">
+<div>
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Kayıt No: #RMZ-2046</div>
+<h4 class="font-bold text-lg text-primary">Zeynep K.</h4>
+</div>
+<span class="bg-donation-gold/20 text-donation-gold text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">Beklemede</span>
+</div>
+<div class="grid grid-cols-2 gap-y-3 border-t border-light-border pt-3">
+<div>
+<p class="text-[10px] text-on-surface-variant font-label">Yardım Türü</p>
+<p class="text-sm font-bold">İftar Sofrası</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-label">Bölge</p>
+<p class="text-sm font-bold">Kahramanmaraş</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-label">Adet / Tutar</p>
+<p class="text-sm font-bold">10 Kişi / ₺1.500</p>
+</div>
+<div class="flex justify-end items-end">
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-5 rounded-2xl border border-light-border shadow-sm active:bg-soft-mint transition-colors">
+<div class="flex justify-between items-start mb-3">
+<div>
+<div class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">Kayıt No: #RMZ-2047</div>
+<h4 class="font-bold text-lg text-primary">Anonim Bağışçı</h4>
+</div>
+<span class="bg-primary/10 text-primary text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">Tamamlandı</span>
+</div>
+<div class="grid grid-cols-2 gap-y-3 border-t border-light-border pt-3">
+<div>
+<p class="text-[10px] text-on-surface-variant font-label">Yardım Türü</p>
+<p class="text-sm font-bold">Zekat / Fitre</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-label">Bölge</p>
+<p class="text-sm font-bold">Genel</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-label">Adet / Tutar</p>
+<p class="text-sm font-bold">-- / ₺12.000</p>
+</div>
+<div class="flex justify-end items-end">
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-light-border flex items-center justify-around px-2 z-50">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Panel</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">campaign</span>
+<span class="text-[10px] font-bold">Ramazan</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-bold">Bağışlar</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-[10px] font-bold">Gönüllü</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Ayarlar</span>
+</button>
+</nav>
+<!-- Modal: Add Record (Bottom Sheet Style) -->
+<div class="fixed inset-0 z-[60] hidden" id="add-record-modal">
+<div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="toggleModal('add-record-modal')"></div>
+<div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl p-6 modal-enter max-h-[795px] overflow-y-auto">
+<div class="w-12 h-1.5 bg-light-border rounded-full mx-auto mb-6"></div>
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-bold text-on-surface">Manuel Kayıt Ekle</h3>
+<button class="text-on-surface-variant" onclick="toggleModal('add-record-modal')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form class="space-y-4">
+<div>
+<label class="block text-sm font-bold mb-2">Bağışçı Adı Soyadı</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary" placeholder="Örn: Mehmet Öz" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-bold mb-2">Yardım Türü</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary">
+<option>Kumanya Paketi</option>
+<option>İftar Sofrası</option>
+<option>Zekat</option>
+<option>Bayramlık</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-bold mb-2">Miktar/Adet</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary" placeholder="1" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-bold mb-2">Toplam Tutar</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary" placeholder="₺0.00" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-bold mb-2">Bölge Seçimi</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary">
+<option>Hatay / Türkiye</option>
+<option>Gazze / Filistin</option>
+<option>İdlib / Suriye</option>
+<option>Mogadişu / Somali</option>
+</select>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold shadow-lg shadow-primary/20" type="button">Kaydı Oluştur</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Detail Modal (Full Screen) -->
+<div class="fixed inset-0 z-[70] hidden bg-background" id="detail-modal">
+<div class="flex flex-col h-full">
+<header class="px-4 h-16 flex items-center justify-between border-b border-light-border bg-white shrink-0">
+<button class="flex items-center gap-2 text-primary font-bold" onclick="closeDetail()">
+<span class="material-symbols-outlined">arrow_back</span>
+                    Geri
+                </button>
+<h3 class="font-bold text-on-surface">Kayıt Detayı</h3>
+<button class="text-primary"><span class="material-symbols-outlined">share</span></button>
+</header>
+<div class="flex-1 overflow-y-auto p-6">
+<div class="flex items-center justify-between mb-8">
+<div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Kayıt Durumu</span>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-primary rounded-full"></div>
+<span class="font-bold text-primary">Tamamlandı</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Tarih</span>
+<p class="font-bold">14 Mart 2024</p>
+</div>
+</div>
+<div class="bg-soft-mint p-6 rounded-2xl border border-primary/10 mb-8">
+<div class="text-center">
+<h4 class="text-sm font-bold text-on-surface-variant mb-1">Ahmed Yılmaz</h4>
+<div class="text-3xl font-extrabold text-primary mb-2">₺3.750,00</div>
+<p class="text-xs bg-white/50 px-3 py-1 rounded-full inline-block font-bold">5x Ramazan Kumanyası</p>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<h5 class="text-[10px] font-bold text-on-surface-variant uppercase mb-2 tracking-widest">Bağışçı Bilgileri</h5>
+<div class="space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">E-posta:</span>
+<span class="font-bold">ahmed@vefayardim.org</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Telefon:</span>
+<span class="font-bold">+90 532 *** ** 45</span>
+</div>
+</div>
+</div>
+<div class="border-t border-light-border pt-6">
+<h5 class="text-[10px] font-bold text-on-surface-variant uppercase mb-2 tracking-widest">Lojistik &amp; Teslimat</h5>
+<div class="space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Hedef Bölge:</span>
+<span class="font-bold">Gazze / Filistin</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Durum:</span>
+<span class="font-bold">Depodan Çıktı</span>
+</div>
+</div>
+<div class="mt-4 rounded-xl overflow-hidden h-32 relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A detailed aerial map view of a humanitarian aid corridor in a Middle Eastern urban setting with marker pins indicating distribution centers. The style is professional and clean, using a color palette of soft greens and neutral greys to signify progress and planning." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiVP2zVkySClNpv-jjr78IaU4UShBiGGzORC-FP1_RSH4UyT6yBGqr3mglVIQxYM0wdatS_EW0KDWNlmlVyESWBMpp5PLkcQhKhiBIF6Pw8CK73L7q5k-hGh_VqM-X4ae92oZlRRS3ScdowGFmldeh5fCb9EPttFoUx1I4537vbTV4ap2oOx4G0fhEB46LAI7_Vt0IQJKa4fq6gisaGRkSAm1szEPS8ZzZwhO77plsKyfMACNiOI_ws2ZCUNbtIyePSdoQt_RciwZu')"></div>
+<div class="absolute inset-0 bg-primary/10"></div>
+</div>
+</div>
+<div class="border-t border-light-border pt-6">
+<h5 class="text-[10px] font-bold text-on-surface-variant uppercase mb-4 tracking-widest">Vekalet Durumu</h5>
+<div class="flex items-center gap-3 p-4 bg-surface rounded-xl border border-light-border">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">Vekalet sözlü olarak alınmıştır. (Sistem Onayı)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-white border-t border-light-border shrink-0">
+<button class="w-full bg-secondary text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">description</span>
+                    Bağış Makbuzu Oluştur (PDF)
+                </button>
+</div>
+</div>
+</div>
+<!-- Filter Drawer (Right Side) -->
+<div class="fixed inset-0 z-[80] hidden" id="filter-drawer">
+<div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="toggleDrawer('filter-drawer')"></div>
+<div class="absolute right-0 top-0 bottom-0 w-[80%] bg-white p-6 shadow-2xl overflow-y-auto transition-transform duration-300 translate-x-full" id="drawer-content">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-xl font-bold text-on-surface">Filtreleme</h3>
+<button class="text-on-surface-variant" onclick="toggleDrawer('filter-drawer')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="space-y-8">
+<div>
+<h4 class="text-sm font-bold mb-4">Yardım Türü</h4>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-lg bg-soft-mint text-primary border border-primary/20 text-xs font-bold">Kumanya</button>
+<button class="px-4 py-2 rounded-lg bg-surface border border-light-border text-on-surface-variant text-xs font-bold">İftar</button>
+<button class="px-4 py-2 rounded-lg bg-surface border border-light-border text-on-surface-variant text-xs font-bold">Zekat</button>
+<button class="px-4 py-2 rounded-lg bg-surface border border-light-border text-on-surface-variant text-xs font-bold">Fitre</button>
+<button class="px-4 py-2 rounded-lg bg-surface border border-light-border text-on-surface-variant text-xs font-bold">Giyim</button>
+</div>
+</div>
+<div>
+<h4 class="text-sm font-bold mb-4">Bölge</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-3 rounded-xl border border-light-border">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm">Türkiye (Deprem Bölgesi)</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl border border-light-border">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm">Filistin / Gazze</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl border border-light-border">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm">Afrika Genel</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-xl border border-light-border">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm">Asya / Arakan</span>
+</label>
+</div>
+</div>
+<div>
+<h4 class="text-sm font-bold mb-4">Tutar Aralığı</h4>
+<div class="grid grid-cols-2 gap-4">
+<input class="w-full bg-surface-container-low border-none rounded-xl p-3 text-sm" placeholder="Min" type="number"/>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-3 text-sm" placeholder="Max" type="number"/>
+</div>
+</div>
+</div>
+<div class="mt-12 flex gap-4">
+<button class="flex-1 py-4 border border-light-border rounded-xl font-bold text-on-surface-variant">Temizle</button>
+<button class="flex-1 py-4 bg-primary text-on-primary rounded-xl font-bold shadow-lg shadow-primary/20">Uygula</button>
+</div>
+</div>
+</div>
+<script>
+        function toggleModal(id) {
+            const modal = document.getElementById(id);
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function toggleDrawer(id) {
+            const drawer = document.getElementById(id);
+            const content = document.getElementById('drawer-content');
+            if (drawer.classList.contains('hidden')) {
+                drawer.classList.remove('hidden');
+                setTimeout(() => {
+                    content.classList.remove('translate-x-full');
+                    content.classList.add('translate-x-0');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                content.classList.remove('translate-x-0');
+                content.classList.add('translate-x-full');
+                setTimeout(() => {
+                    drawer.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+        }
+
+        function openDetail() {
+            const detail = document.getElementById('detail-modal');
+            detail.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDetail() {
+            const detail = document.getElementById('detail-modal');
+            detail.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Simple touch interaction for cards
+        document.querySelectorAll('.active\\:scale-95').forEach(button => {
+            button.addEventListener('touchstart', () => button.classList.add('scale-95'));
+            button.addEventListener('touchend', () => button.classList.remove('scale-95'));
+        });
+    </script>
+</body></html>

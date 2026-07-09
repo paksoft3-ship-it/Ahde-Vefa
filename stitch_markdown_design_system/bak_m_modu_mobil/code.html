@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bakım Modu | AHDE VEFA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "surface-container-lowest": "#ffffff",
+                "light-border": "#E5E7EB",
+                "on-primary-container": "#a5e7bd",
+                "secondary-fixed-dim": "#4cd8ec",
+                "outline": "#707971",
+                "on-secondary-container": "#006773",
+                "surface-container-highest": "#d9e3f1",
+                "error": "#ba1a1a",
+                "tertiary-fixed-dim": "#a4d1b7",
+                "surface-bright": "#f7f9ff",
+                "surface-variant": "#d9e3f1",
+                "primary-container": "#2a6a48",
+                "inverse-primary": "#93d5ab",
+                "tertiary-container": "#3d6752",
+                "surface-container": "#e4effd",
+                "outline-variant": "#bfc9c0",
+                "secondary-container": "#61e9fe",
+                "surface": "#f7f9ff",
+                "on-tertiary-container": "#b6e3c9",
+                "on-secondary": "#ffffff",
+                "surface-container-high": "#dfe9f7",
+                "surface-tint": "#2a6a48",
+                "secondary-fixed": "#9af0ff",
+                "warm-cream": "#FFF8EF",
+                "on-surface": "#121d26",
+                "on-error": "#ffffff",
+                "on-background": "#121d26",
+                "on-primary-fixed": "#002111",
+                "error-container": "#ffdad6",
+                "on-tertiary": "#ffffff",
+                "secondary": "#006874",
+                "on-tertiary-fixed": "#002114",
+                "primary": "#0a5132",
+                "surface-container-low": "#edf4ff",
+                "on-primary": "#ffffff",
+                "muted-text": "#667085",
+                "primary-fixed": "#aef1c6",
+                "on-secondary-fixed-variant": "#004f58",
+                "donation-gold": "#F4B740",
+                "tertiary": "#254f3c",
+                "on-secondary-fixed": "#001f24",
+                "on-primary-fixed-variant": "#0a5132",
+                "surface-dim": "#d1dbe8",
+                "on-tertiary-fixed-variant": "#254f3b",
+                "on-surface-variant": "#404942",
+                "on-error-container": "#93000a",
+                "inverse-surface": "#27313c",
+                "background": "#f7f9ff",
+                "tertiary-fixed": "#bfedd3",
+                "soft-mint": "#EEF8F4",
+                "primary-fixed-dim": "#93d5ab",
+                "inverse-on-surface": "#e8f2ff"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "xs": "0.25rem",
+                "md": "1rem",
+                "lg": "1.5rem",
+                "sm": "0.5rem",
+                "3xl": "6rem",
+                "xl": "2.5rem",
+                "gutter": "24px",
+                "2xl": "4rem",
+                "container-max": "1280px",
+                "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                "button": ["Manrope"],
+                "label": ["Manrope"],
+                "card-title": ["Manrope"],
+                "hero-heading": ["Manrope"],
+                "body": ["Manrope"],
+                "section-heading": ["Manrope"],
+                "page-heading-mobile": ["Manrope"],
+                "page-heading": ["Manrope"],
+                "hero-heading-mobile": ["Manrope"],
+                "section-heading-mobile": ["Manrope"],
+                "body-lg": ["Manrope"]
+              },
+              "fontSize": {
+                "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                "label": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                "card-title": ["22px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                "hero-heading": ["64px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "section-heading": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "page-heading-mobile": ["34px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                "page-heading": ["48px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                "hero-heading-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                "section-heading-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-soft-mint min-h-screen flex flex-col items-center justify-center px-margin-mobile py-lg overflow-x-hidden">
+<!-- Top Branding -->
+<header class="mb-xl text-center">
+<div class="flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[48px]" data-icon="volunteer_activism">volunteer_activism</span>
+<h1 class="font-page-heading-mobile text-page-heading-mobile text-primary tracking-tight">AHDE VEFA</h1>
+</div>
+</header>
+<!-- Main Message Card -->
+<main class="w-full max-w-md bg-surface-container-lowest rounded-[20px] p-lg shadow-xl shadow-primary/5 text-center flex flex-col gap-lg border border-light-border">
+<div class="flex flex-col gap-sm">
+<h2 class="font-section-heading-mobile text-section-heading-mobile text-on-surface">Web sitemiz kısa süreli bakımda</h2>
+<p class="font-body text-body text-on-surface-variant">
+                Sizlere daha şeffaf ve hızlı bir bağış deneyimi sunabilmek için teknik güncellemeler yapıyoruz. Çok yakında buradayız.
+            </p>
+</div>
+<!-- Compact Status Info -->
+<div class="bg-surface-container-low rounded-xl p-md flex flex-col gap-sm text-left">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="update">update</span>
+<span class="font-label text-label text-on-surface-variant">Planlanan Bitiş: <b class="text-primary">Bugün 18:00</b></span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="check_circle">check_circle</span>
+<span class="font-label text-label text-on-surface-variant">Durum: Verileriniz ve bağışlarınız güvende.</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-md">
+<a class="flex items-center justify-center gap-sm bg-soft-mint text-primary py-md rounded-full font-button text-button border border-primary/20 active:scale-95 transition-transform" href="https://wa.me/9000000000">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                WhatsApp'tan Bize Ulaşın
+            </a>
+<button class="bg-primary text-on-primary py-md rounded-full font-button text-button shadow-lg shadow-primary/20 active:scale-95 transition-all">
+                Hakkımızda Detaylı Bilgi
+            </button>
+</div>
+<!-- Emergency Donation Box -->
+<div class="bg-warm-cream rounded-[20px] p-md border border-donation-gold/20">
+<div class="flex flex-col gap-xs mb-md">
+<h3 class="font-label text-label text-secondary font-bold flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="campaign">campaign</span>
+                    ACİL YARDIM ÇAĞRISI
+                </h3>
+<p class="text-[12px] text-on-surface-variant leading-tight">Bakım süresince acil projelerimiz için banka hesaplarımız üzerinden bağış yapabilirsiniz.</p>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-center bg-white p-sm rounded-lg border border-light-border">
+<span class="text-[11px] font-bold text-on-surface-variant">IBAN: TR00 ... 0000 00</span>
+<button class="text-primary material-symbols-outlined text-[18px] p-xs hover:bg-soft-mint rounded-md" data-icon="content_copy">content_copy</button>
+</div>
+<button class="text-primary font-button text-[14px] hover:underline decoration-2">Hesap Numaralarını Görüntüle</button>
+</div>
+</div>
+<!-- Social Icons -->
+<div class="flex items-center justify-center gap-lg">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="language">language</span>
+</a>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-2xl text-center w-full max-w-xs">
+<div class="flex flex-col gap-sm mb-lg">
+<a class="font-label text-label text-on-surface-variant hover:text-primary transition-colors" href="#">Banka Hesaplarımız</a>
+<a class="font-label text-label text-on-surface-variant hover:text-primary transition-colors" href="#">Faaliyet Raporları</a>
+<a class="font-label text-label text-on-surface-variant hover:text-primary transition-colors" href="#">KVKK ve Gizlilik</a>
+</div>
+<p class="font-label text-[12px] text-on-surface-variant/60 leading-relaxed">
+            © 2024 Ahde Vefa Derneği. Tüm Hakları Saklıdır.<br/>
+            Güveniniz, Emanetimizdir.
+        </p>
+</footer>
+<!-- Success Feedback Overlay (Hidden by default) -->
+<div class="fixed bottom-margin-mobile left-1/2 -translate-x-1/2 bg-on-surface text-surface-container-lowest px-lg py-sm rounded-full font-label text-label opacity-0 pointer-events-none transition-all duration-300" id="copyFeedback">
+        Kopyalandı!
+    </div>
+<script>
+        // Simple Interaction Logic
+        document.querySelectorAll('[data-icon="content_copy"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const feedback = document.getElementById('copyFeedback');
+                feedback.classList.remove('opacity-0');
+                feedback.classList.add('opacity-100', '-translate-y-4');
+                
+                setTimeout(() => {
+                    feedback.classList.add('opacity-0');
+                    feedback.classList.remove('opacity-100', '-translate-y-4');
+                }, 2000);
+            });
+        });
+
+        // Atmospheric Micro-interaction: Periodic Logo Pulse
+        setInterval(() => {
+            const logoIcon = document.querySelector('header span[data-icon="volunteer_activism"]');
+            logoIcon.style.transition = 'transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            logoIcon.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                logoIcon.style.transform = 'scale(1)';
+            }, 800);
+        }, 5000);
+    </script>
+</body></html>

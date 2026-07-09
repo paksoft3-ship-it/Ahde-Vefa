@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AHDE VEFA | Yasal Metinler ve Bilgilendirme</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "donation-gold": "#F4B740",
+                        "secondary-container": "#61e9fe",
+                        "tertiary-fixed-dim": "#a4d1b7",
+                        "primary-fixed": "#aef1c6",
+                        "surface": "#f7f9ff",
+                        "primary": "#0a5132",
+                        "on-tertiary-fixed": "#002114",
+                        "surface-bright": "#f7f9ff",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#dfe9f7",
+                        "on-surface-variant": "#404942",
+                        "tertiary-container": "#3d6752",
+                        "secondary-fixed-dim": "#4cd8ec",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#b6e3c9",
+                        "surface-container-low": "#edf4ff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#a5e7bd",
+                        "soft-mint": "#EEF8F4",
+                        "on-primary-fixed": "#002111",
+                        "surface-variant": "#d9e3f1",
+                        "surface-container-highest": "#d9e3f1",
+                        "outline-variant": "#bfc9c0",
+                        "on-primary-fixed-variant": "#0a5132",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "tertiary-fixed": "#bfedd3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#254f3b",
+                        "surface-dim": "#d1dbe8",
+                        "surface-container": "#e4effd",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#93d5ab",
+                        "background": "#f7f9ff",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#27313c",
+                        "muted-text": "#667085",
+                        "primary-fixed-dim": "#93d5ab",
+                        "primary-container": "#2a6a48",
+                        "on-secondary-fixed": "#001f24",
+                        "inverse-on-surface": "#e8f2ff",
+                        "outline": "#707971",
+                        "surface-tint": "#2a6a48",
+                        "on-secondary": "#ffffff",
+                        "warm-cream": "#FFF8EF",
+                        "on-surface": "#121d26",
+                        "secondary-fixed": "#9af0ff",
+                        "light-border": "#E5E7EB",
+                        "secondary": "#006874",
+                        "on-background": "#121d26",
+                        "tertiary": "#254f3c",
+                        "on-secondary-container": "#006773"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "0.5rem",
+                        "container-max": "1280px",
+                        "xs": "0.25rem",
+                        "md": "1rem",
+                        "xl": "2.5rem",
+                        "gutter": "24px",
+                        "3xl": "6rem",
+                        "margin-mobile": "20px",
+                        "lg": "1.5rem",
+                        "2xl": "4rem"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "button": ["Manrope"],
+                        "label": ["Manrope"],
+                        "hero-heading": ["Manrope"],
+                        "body": ["Manrope"],
+                        "section-heading-mobile": ["Manrope"],
+                        "section-heading": ["Manrope"],
+                        "page-heading-mobile": ["Manrope"],
+                        "page-heading": ["Manrope"],
+                        "hero-heading-mobile": ["Manrope"],
+                        "card-title": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "label": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "hero-heading": ["64px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "section-heading-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "section-heading": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "page-heading-mobile": ["34px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "page-heading": ["48px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "hero-heading-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "card-title": ["22px", {"lineHeight": "1.4", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .active-nav-border {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: #0a5132;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed-variant">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-on-surface border-b border-light-border">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
+<a class="font-page-heading text-[32px] text-primary dark:text-primary-fixed tracking-tight font-extrabold" href="#">AHDE VEFA</a>
+<nav class="hidden md:flex gap-lg items-center">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-medium" href="#">Anasayfa</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-medium" href="#">Bağış Yap</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-medium" href="#">Kurban</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-medium" href="#">Ramazan</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-medium" href="#">Faaliyetler</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1" href="#">Hakkımızda</a>
+</nav>
+<button class="bg-primary hover:opacity-80 transition-all text-on-primary font-button px-lg py-sm rounded-full active:scale-95 duration-150">
+                Bağış Yap
+            </button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="bg-soft-mint pt-3xl pb-2xl">
+<div class="max-w-container-max mx-auto px-gutter text-center md:text-left">
+<span class="bg-primary/10 text-primary px-md py-xs rounded-full font-label text-label mb-md inline-block">Yasal Bilgilendirme</span>
+<h1 class="font-page-heading text-page-heading md:text-page-heading text-on-surface mb-md">KVKK, bağış ve resmi bilgilendirme metinleri</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+                Ahde Vefa İnsani Yardım Derneği olarak şeffaflık ilkemiz gereği tüm yasal süreçlerimizi ve veri işleme politikalarımızı kamuoyu ile paylaşıyoruz. Emanetiniz, güvenliğimiz altındadır.
+            </p>
+</div>
+</section>
+<!-- Main Content Cluster -->
+<main class="max-w-container-max mx-auto px-gutter py-2xl grid grid-cols-1 lg:grid-cols-12 gap-xl relative">
+<!-- Sidebar Navigation -->
+<aside class="lg:col-span-3 hidden lg:block">
+<div class="sticky top-24 space-y-xs">
+<a class="group flex items-center gap-md p-md rounded-xl hover:bg-soft-mint transition-colors bg-soft-mint border-l-4 border-primary" href="#resmi-bilgiler">
+<span class="material-symbols-outlined text-primary">corporate_fare</span>
+<span class="font-label text-label text-primary font-bold">Resmi Dernek Bilgileri</span>
+</a>
+<a class="group flex items-center gap-md p-md rounded-xl hover:bg-soft-mint transition-colors text-on-surface-variant" href="#kvkk">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-label text-label">KVKK Aydınlatma Metni</span>
+</a>
+<a class="group flex items-center gap-md p-md rounded-xl hover:bg-soft-mint transition-colors text-on-surface-variant" href="#bagis">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-label text-label">Bağış Bilgilendirme</span>
+</a>
+<a class="group flex items-center gap-md p-md rounded-xl hover:bg-soft-mint transition-colors text-on-surface-variant" href="#iletisim-izni">
+<span class="material-symbols-outlined">mark_email_read</span>
+<span class="font-label text-label">İletişim İzni</span>
+</a>
+<a class="group flex items-center gap-md p-md rounded-xl hover:bg-soft-mint transition-colors text-on-surface-variant" href="#cerez-politikasi">
+<span class="material-symbols-outlined">cookie</span>
+<span class="font-label text-label">Çerez Politikası</span>
+</a>
+<a class="group flex items-center gap-md p-md rounded-xl hover:bg-soft-mint transition-colors text-on-surface-variant" href="#kullanim-sartlari">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label text-label">Kullanım Şartları</span>
+</a>
+</div>
+</aside>
+<!-- Content Area -->
+<div class="lg:col-span-9 space-y-3xl">
+<!-- Official Info Card -->
+<section class="scroll-mt-24" id="resmi-bilgiler">
+<div class="bg-white rounded-xl p-xl shadow-[0_4px_20px_-1px_rgba(0,0,0,0.05)] border border-light-border">
+<div class="flex items-center gap-md mb-lg">
+<div class="w-12 h-12 rounded-lg bg-soft-mint flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[28px]">verified</span>
+</div>
+<h2 class="font-section-heading text-section-heading text-on-surface">Resmi Dernek Bilgileri</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-sm">
+<label class="text-muted-text font-label text-[12px] uppercase tracking-wider">Dernek Tam Adı</label>
+<p class="font-body-lg text-on-surface font-bold">Ahde Vefa İnsani Yardım Derneği</p>
+</div>
+<div class="space-y-sm">
+<label class="text-muted-text font-label text-[12px] uppercase tracking-wider">Kütük Numarası</label>
+<p class="font-body-lg text-on-surface">[Eklenecek]</p>
+</div>
+<div class="space-y-sm">
+<label class="text-muted-text font-label text-[12px] uppercase tracking-wider">Vergi Numarası / Dairesi</label>
+<p class="font-body-lg text-on-surface">[Eklenecek]</p>
+</div>
+<div class="space-y-sm">
+<label class="text-muted-text font-label text-[12px] uppercase tracking-wider">Merkez Adresi</label>
+<p class="font-body-lg text-on-surface">[Eklenecek]</p>
+</div>
+</div>
+<!-- Highlighted Permission Box -->
+<div class="mt-xl p-lg bg-soft-mint border border-primary/20 rounded-xl flex gap-md items-start">
+<span class="material-symbols-outlined text-primary mt-1">info</span>
+<div>
+<h4 class="font-card-title text-primary mb-1">Yardım Toplama İzni</h4>
+<p class="text-on-surface-variant font-body">
+                                2860 Sayılı Yardım Toplama Kanunu kapsamında resmi izin numarası: <span class="font-bold text-primary">[Eklenecek]</span>. 
+                                Tüm faaliyetlerimiz ilgili valilik ve sivil toplum kuruluşları birimleri denetimine tabidir.
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- KVKK Section -->
+<section class="scroll-mt-24" id="kvkk">
+<h2 class="font-section-heading text-section-heading text-on-surface mb-lg">KVKK Aydınlatma Metni</h2>
+<div class="prose prose-green max-w-none space-y-lg text-on-surface-variant font-body">
+<div class="bg-white p-lg rounded-xl border border-light-border">
+<h3 class="font-card-title text-on-surface mb-sm">1. Veri Sorumlusu</h3>
+<p>[Bu bölüm dernek tarafından tamamlanacaktır. Veri sorumlusunun kimliği, adresi ve iletişim bilgileri buraya gelecektir.]</p>
+</div>
+<div class="bg-white p-lg rounded-xl border border-light-border">
+<h3 class="font-card-title text-on-surface mb-sm">2. Kişisel Verilerin İşlenme Amaçları</h3>
+<p>[Bu bölüm dernek tarafından tamamlanacaktır. Bağışçı kayıtları, insani yardım organizasyonları ve bilgilendirme faaliyetleri hakkındaki detaylar buraya gelecektir.]</p>
+</div>
+<div class="bg-white p-lg rounded-xl border border-light-border">
+<h3 class="font-card-title text-on-surface mb-sm">3. Veri Aktarımı ve Alıcı Grupları</h3>
+<p>[Bu bölüm dernek tarafından tamamlanacaktır. Resmi makamlar, bankalar ve hizmet sağlayıcılarla paylaşılan veri protokolleri buraya gelecektir.]</p>
+</div>
+</div>
+</section>
+<!-- Donation Info Section -->
+<section class="scroll-mt-24" id="bagis">
+<h2 class="font-section-heading text-section-heading text-on-surface mb-lg">Bağış Bilgilendirme</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="bg-white p-lg rounded-xl border border-light-border hover:shadow-lg transition-shadow">
+<span class="material-symbols-outlined text-primary mb-md" style="font-size: 40px;">payments</span>
+<h3 class="font-card-title text-on-surface mb-sm">Online Bağış</h3>
+<p class="text-on-surface-variant text-label">[Bu bölüm dernek tarafından tamamlanacaktır. Kart güvenliği ve sanal pos bilgileri.]</p>
+</div>
+<div class="bg-white p-lg rounded-xl border border-light-border hover:shadow-lg transition-shadow">
+<span class="material-symbols-outlined text-primary mb-md" style="font-size: 40px;">account_balance</span>
+<h3 class="font-card-title text-on-surface mb-sm">Banka Transferi</h3>
+<p class="text-on-surface-variant text-label">[Bu bölüm dernek tarafından tamamlanacaktır. IBAN ve açıklama standartları.]</p>
+</div>
+<div class="bg-white p-lg rounded-xl border border-light-border hover:shadow-lg transition-shadow">
+<span class="material-symbols-outlined text-primary mb-md" style="font-size: 40px;">assignment_turned_in</span>
+<h3 class="font-card-title text-on-surface mb-sm">Raporlama</h3>
+<p class="text-on-surface-variant text-label">[Bu bölüm dernek tarafından tamamlanacaktır. Bağışların kullanım raporları.]</p>
+</div>
+</div>
+</section>
+<!-- Document Download Section -->
+<section class="scroll-mt-24" id="downloads">
+<h2 class="font-section-heading text-section-heading text-on-surface mb-lg">Dökümanlar</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-lg">
+<div class="flex items-center justify-between p-lg bg-white border border-light-border rounded-xl">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-error text-[32px]">picture_as_pdf</span>
+<div>
+<h4 class="font-bold text-on-surface">KVKK Politikası</h4>
+<span class="text-muted-text text-[12px]">PDF - 2.4 MB</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-soft-mint flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-lg bg-white border border-light-border rounded-xl">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-error text-[32px]">picture_as_pdf</span>
+<div>
+<h4 class="font-bold text-on-surface">Bağışçı Hakları</h4>
+<span class="text-muted-text text-[12px]">PDF - 1.1 MB</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-soft-mint flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="scroll-mt-24" id="sss">
+<h2 class="font-section-heading text-section-heading text-on-surface mb-lg">Sıkça Sorulan Sorular</h2>
+<div class="space-y-md">
+<details class="group bg-white border border-light-border rounded-xl p-lg [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between cursor-pointer list-none">
+<h3 class="font-card-title text-on-surface text-[18px]">Bağışlarımın güvenliği nasıl sağlanıyor?</h3>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="mt-md text-on-surface-variant font-body">
+                            Tüm online bağışlar 256-bit SSL şifreleme ve 3D Secure altyapısı ile korunmaktadır. Ayrıca fiziksel makbuzlarınız dernek merkezimizde muhafaza edilir.
+                        </div>
+</details>
+<details class="group bg-white border border-light-border rounded-xl p-lg [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex items-center justify-between cursor-pointer list-none">
+<h3 class="font-card-title text-on-surface text-[18px]">KVKK kapsamında verilerimi nasıl sildirebilirim?</h3>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="mt-md text-on-surface-variant font-body">
+                            info@ahdevefa.org.tr adresine yazılı talebinizi ileterek ilgili kanun maddeleri çerçevesinde verilerinizin silinmesini veya anonimleştirilmesini talep edebilirsiniz.
+                        </div>
+</details>
+</div>
+</section>
+</div>
+</main>
+<!-- Final CTA Section -->
+<section class="bg-warm-cream py-3xl mt-3xl">
+<div class="max-w-container-max mx-auto px-gutter text-center">
+<h2 class="font-page-heading text-page-heading text-on-surface mb-md">Güvenilir ve şeffaf bağış süreci</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-2xl mx-auto">
+                Tüm yardımlarınız ihtiyaç sahiplerine ulaştırılana kadar şeffaf bir şekilde takip edilmektedir.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-md">
+<button class="bg-primary text-on-primary font-button px-2xl py-md rounded-full shadow-lg hover:shadow-xl transition-all">
+                    Bağış Yap
+                </button>
+<button class="bg-white border-2 border-primary text-primary font-button px-2xl py-md rounded-full hover:bg-soft-mint transition-all">
+                    Raporları İncele
+                </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-soft-mint dark:bg-on-tertiary-fixed border-t border-light-border pt-3xl pb-xl">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-xl">
+<div class="col-span-1 md:col-span-1">
+<h3 class="font-section-heading text-section-heading text-primary dark:text-primary-fixed mb-md">AHDE VEFA</h3>
+<p class="text-on-surface-variant font-body mb-lg">
+                    İnsanlığın derdiyle dertleniyor, ahdimize sadık kalarak vefa ile yolumuza devam ediyoruz.
+                </p>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-lg">Kurumsal</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Hakkımızda</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Yönetim Kurulu</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Tüzük ve Belgeler</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Banka Hesapları</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-lg">Hızlı Bağış</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Su Kuyusu</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Yetim Bağışı</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Acil Yardım</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Eğitim</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-lg">Yasal Metinler</h4>
+<ul class="space-y-sm">
+<li><a class="text-primary font-bold underline" href="#">KVKK Aydınlatma Metni</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Vekalet Bilgisi</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Sıkça Sorulan Sorular</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">İletişim</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-2xl pt-lg border-t border-light-border/30 text-center md:text-left">
+<p class="text-on-surface-variant text-sm font-label">
+                © 2024 AHDE VEFA İnsani Yardım Derneği. Tüm Hakları Saklıdır.
+            </p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-margin-mobile pb-safe bg-surface border-t border-light-border z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] mt-1 font-label-mobile">Anasayfa</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-soft-mint rounded-xl px-4 py-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-[10px] mt-1 font-label-mobile">Bağış</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] mt-1 font-label-mobile">Kurban</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">menu</span>
+<span class="text-[10px] mt-1 font-label-mobile">Menü</span>
+</a>
+</nav>
+<script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Sticky sidebar active state interaction
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('aside nav a, aside .sticky a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('bg-soft-mint', 'border-l-4', 'border-primary', 'text-primary', 'font-bold');
+                link.classList.add('text-on-surface-variant');
+                const icon = link.querySelector('.material-symbols-outlined');
+                if (icon) icon.classList.remove('text-primary');
+
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('bg-soft-mint', 'border-l-4', 'border-primary', 'text-primary', 'font-bold');
+                    link.classList.remove('text-on-surface-variant');
+                    if (icon) icon.classList.add('text-primary');
+                }
+            });
+        });
+    </script>
+</body></html>

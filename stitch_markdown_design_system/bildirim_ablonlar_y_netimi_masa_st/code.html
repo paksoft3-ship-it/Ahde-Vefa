@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bildirim Şablonları | AHDE VEFA Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#27313c",
+                    "secondary-fixed": "#9af0ff",
+                    "on-error": "#ffffff",
+                    "background": "#f7f9ff",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "on-secondary-fixed": "#001f24",
+                    "warm-cream": "#FFF8EF",
+                    "surface-container-lowest": "#ffffff",
+                    "donation-gold": "#F4B740",
+                    "on-surface": "#121d26",
+                    "on-tertiary-fixed-variant": "#254f3b",
+                    "surface-variant": "#d9e3f1",
+                    "primary": "#0a5132",
+                    "surface": "#f7f9ff",
+                    "surface-container-high": "#dfe9f7",
+                    "primary-fixed": "#aef1c6",
+                    "on-tertiary-container": "#b6e3c9",
+                    "on-primary-fixed-variant": "#0a5132",
+                    "on-secondary-container": "#006773",
+                    "on-background": "#121d26",
+                    "inverse-on-surface": "#e8f2ff",
+                    "soft-mint": "#EEF8F4",
+                    "primary-fixed-dim": "#93d5ab",
+                    "outline-variant": "#bfc9c0",
+                    "surface-container-highest": "#d9e3f1",
+                    "tertiary": "#254f3c",
+                    "secondary": "#006874",
+                    "on-tertiary-fixed": "#002114",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#e4effd",
+                    "primary-container": "#2a6a48",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#a4d1b7",
+                    "surface-dim": "#d1dbe8",
+                    "surface-container-low": "#edf4ff",
+                    "outline": "#707971",
+                    "muted-text": "#667085",
+                    "secondary-container": "#61e9fe",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#3d6752",
+                    "surface-tint": "#2a6a48",
+                    "on-primary-container": "#a5e7bd",
+                    "secondary-fixed-dim": "#4cd8ec",
+                    "inverse-primary": "#93d5ab",
+                    "tertiary-fixed": "#bfedd3",
+                    "on-surface-variant": "#404942",
+                    "light-border": "#E5E7EB",
+                    "surface-bright": "#f7f9ff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#002111",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "0.25rem",
+                    "md": "1rem",
+                    "3xl": "6rem",
+                    "sm": "0.5rem",
+                    "lg": "1.5rem",
+                    "xl": "2.5rem",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "2xl": "4rem"
+            },
+            "fontFamily": {
+                    "body": ["Manrope"],
+                    "card-title": ["Manrope"],
+                    "section-heading": ["Manrope"],
+                    "page-heading": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab {
+            font-variation-settings: 'FILL' 1;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0a5132;
+            border-radius: 10px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-body overflow-x-hidden">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar (Authority: JSON) -->
+<aside class="docked left-0 h-screen w-64 bg-primary dark:bg-primary-container shadow-md flex flex-col py-md px-md transition-all duration-200">
+<div class="mb-xl px-sm">
+<h1 class="font-page-heading text-[24px] text-on-primary dark:text-on-primary-container font-extrabold tracking-tight">AHDE VEFA</h1>
+<p class="text-on-primary/60 text-[12px] font-medium tracking-wide">Yönetim Paneli</p>
+</div>
+<nav class="flex-1 space-y-sm overflow-y-auto">
+<a class="flex items-center gap-md px-md py-sm text-on-primary/70 hover:text-on-primary hover:bg-primary-container/10 transition-colors duration-200 active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-medium">Bağış Yönetimi</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-primary/70 hover:text-on-primary hover:bg-primary-container/10 transition-colors duration-200 active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-medium">Kampanyalar</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-primary/70 hover:text-on-primary hover:bg-primary-container/10 transition-colors duration-200 active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-medium">Raporlar</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-primary/70 hover:text-on-primary hover:bg-primary-container/10 transition-colors duration-200 active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-medium">Gönüllüler</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-primary/70 hover:text-on-primary hover:bg-primary-container/10 transition-colors duration-200 active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-medium">Projeler</span>
+</a>
+<!-- Active Intent: Settings mapping to Template Management -->
+<a class="flex items-center gap-md px-md py-sm text-primary-fixed font-bold bg-primary-container/20 rounded-lg transition-colors duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined active-tab" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-medium">Ayarlar</span>
+</a>
+</nav>
+<button class="mt-md w-full py-sm bg-secondary text-white font-button rounded-full shadow-lg hover:bg-secondary/90 transition-all active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">add_circle</span>
+                Yeni Bağış Ekle
+            </button>
+<div class="mt-xl pt-md border-t border-on-primary/10">
+<a class="flex items-center gap-md px-md py-sm text-on-primary/70 hover:text-on-primary hover:bg-primary-container/10 transition-colors duration-200 active:scale-95 rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-medium">Çıkış Yap</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-screen overflow-y-auto">
+<!-- TopNavBar (Authority: JSON) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest dark:bg-inverse-surface h-16 px-lg flex justify-between items-center w-full transition-all duration-200">
+<div class="flex items-center gap-xl">
+<span class="font-card-title text-card-title text-primary dark:text-primary-fixed font-bold">AHDE VEFA Admin</span>
+<div class="relative hidden lg:block w-96">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-muted-text">search</span>
+<input class="w-full pl-xl pr-md py-sm bg-soft-mint dark:bg-surface-container-high border-none rounded-full text-label focus:ring-2 focus:ring-primary/20" placeholder="Şablon, kanal, kampanya ara..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-md border-r border-light-border dark:border-outline-variant pr-lg">
+<a class="text-muted-text hover:text-on-surface dark:text-surface-variant transition-all font-medium" href="#">Dashboard</a>
+<a class="text-muted-text hover:text-on-surface dark:text-surface-variant transition-all font-medium" href="#">Destek</a>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-sm text-on-surface hover:bg-soft-mint dark:hover:bg-surface-container-high rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-sm text-on-surface hover:bg-soft-mint dark:hover:bg-surface-container-high rounded-full transition-all">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="flex items-center gap-sm ml-md cursor-pointer hover:bg-soft-mint dark:hover:bg-surface-container-high p-sm rounded-lg transition-all">
+<img class="w-8 h-8 rounded-full border-2 border-primary-fixed" data-alt="A professional headshot of a middle-aged Turkish man with a kind expression, wearing a smart casual blazer. The background is a clean, modern office with soft-focus greenery, lit with bright, natural daylight following a light-mode humanitarian corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh6kWWHJxB3vZIi6Q3phQQPH0HndTk_FaP-hoT9l4RYohZeahYsTlytr6ZI28Zo7-eh81Td4d7M5zlmklq6Kz0Mf8fR0qe1D4MKVYTJeiIC3iqLC30I0qI2qJ0dlhlhfZR_JNatEJjYB7tw-yJavxRvwUKy_z-NX3J9RvNo6wfGxhHW9nTTHJt7c5EOLQX2MvskkC4cZuN9ex3XeRSWQJK0s55OqSGW99xm_9_g8A455JOHGOgc5v14LxnASFbmVJ2DXYAGzToJ7YW"/>
+<span class="font-medium text-primary">Profil</span>
+</div>
+</div>
+</div>
+</header>
+<div class="p-xl space-y-xl">
+<!-- 1. Header Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<nav class="flex items-center gap-sm text-muted-text text-[13px] mb-xs">
+<span>Yönetim Paneli</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span>Mesajlar</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">Bildirim Şablonları</span>
+</nav>
+<h2 class="font-page-heading text-page-heading text-on-surface font-extrabold">Bildirim Şablonları</h2>
+<p class="text-muted-text max-w-2xl mt-xs">Bağışçı, gönüllü ve kurum iletişimlerinde kullanılan WhatsApp, SMS ve e-posta şablonlarını buradan yönetin.</p>
+</div>
+<div class="flex items-center gap-sm">
+<button class="px-lg py-sm border border-primary text-primary font-button rounded-full hover:bg-soft-mint transition-all flex items-center gap-xs">
+<span class="material-symbols-outlined">visibility</span>
+                            Önizle
+                        </button>
+<button class="px-lg py-sm bg-secondary text-white font-button rounded-full shadow-md hover:bg-secondary/90 transition-all flex items-center gap-xs">
+<span class="material-symbols-outlined">add</span>
+                            Yeni Şablon
+                        </button>
+</div>
+</section>
+<!-- 2. Overview Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+<div class="bg-white p-lg rounded-xl shadow-sm border border-light-border hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-md">
+<div class="p-sm bg-soft-mint rounded-lg">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<span class="text-primary text-[12px] font-bold">+2 Bu Ay</span>
+</div>
+<h4 class="text-muted-text text-label font-bold uppercase tracking-wider">Toplam Şablon</h4>
+<p class="text-[28px] font-extrabold text-on-surface mt-xs">42</p>
+</div>
+<div class="bg-white p-lg rounded-xl shadow-sm border border-light-border hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-md">
+<div class="p-sm bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+</div>
+<h4 class="text-muted-text text-label font-bold uppercase tracking-wider">Aktif Şablon</h4>
+<p class="text-[28px] font-extrabold text-on-surface mt-xs">38</p>
+</div>
+<div class="bg-white p-lg rounded-xl shadow-sm border border-light-border hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-md">
+<div class="p-sm bg-error/10 rounded-lg">
+<span class="material-symbols-outlined text-error">assignment_late</span>
+</div>
+<span class="bg-error text-white text-[10px] px-sm py-xs rounded-full">Kritik</span>
+</div>
+<h4 class="text-muted-text text-label font-bold uppercase tracking-wider">İnceleme Gereken</h4>
+<p class="text-[28px] font-extrabold text-on-surface mt-xs">3</p>
+</div>
+<div class="bg-white p-lg rounded-xl shadow-sm border border-light-border hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-md">
+<div class="p-sm bg-donation-gold/10 rounded-lg">
+<span class="material-symbols-outlined text-donation-gold">history</span>
+</div>
+</div>
+<h4 class="text-muted-text text-label font-bold uppercase tracking-wider">Son Güncellenen</h4>
+<p class="text-[14px] font-extrabold text-on-surface mt-md leading-tight">Pakistan Hazırlık...</p>
+<p class="text-[12px] text-muted-text">Bugün, 14:20</p>
+</div>
+</section>
+<!-- 3. Filters -->
+<section class="bg-white p-md rounded-xl border border-light-border shadow-sm flex flex-wrap items-center gap-md">
+<div class="relative flex-1 min-w-[200px]">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-muted-text text-[20px]">search</span>
+<input class="w-full pl-xl pr-md py-sm bg-surface rounded-lg border-light-border focus:ring-primary focus:border-primary text-label" placeholder="Şablon adı ara..." type="text"/>
+</div>
+<select class="rounded-lg border-light-border bg-surface text-label focus:ring-primary focus:border-primary px-md py-sm min-w-[140px]">
+<option>Kanal: Tümü</option>
+<option>WhatsApp</option>
+<option>SMS</option>
+<option>E-posta</option>
+<option>Sistem</option>
+</select>
+<select class="rounded-lg border-light-border bg-surface text-label focus:ring-primary focus:border-primary px-md py-sm min-w-[140px]">
+<option>Tür: Tümü</option>
+<option>Bağış Onayı</option>
+<option>Kurban</option>
+<option>Ramazan</option>
+<option>Pakistan Hazırlık</option>
+</select>
+<select class="rounded-lg border-light-border bg-surface text-label focus:ring-primary focus:border-primary px-md py-sm min-w-[140px]">
+<option>Durum: Tümü</option>
+<option>Aktif</option>
+<option>Taslak</option>
+<option>Arşiv</option>
+</select>
+<button class="bg-primary text-white px-lg py-sm rounded-lg font-button hover:bg-primary-container transition-all flex items-center gap-xs">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+                        Filtrele
+                    </button>
+</section>
+<!-- 4. Template Table -->
+<section class="bg-white rounded-xl border border-light-border shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-soft-mint/50 border-b border-light-border">
+<tr>
+<th class="px-lg py-md text-label font-bold text-primary">Şablon Adı</th>
+<th class="px-lg py-md text-label font-bold text-primary">Kanal</th>
+<th class="px-lg py-md text-label font-bold text-primary">Tür</th>
+<th class="px-lg py-md text-label font-bold text-primary">Durum</th>
+<th class="px-lg py-md text-label font-bold text-primary">Son Güncelleme</th>
+<th class="px-lg py-md text-label font-bold text-primary text-center">Varsayılan</th>
+<th class="px-lg py-md text-label font-bold text-primary text-right">İşlem</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-light-border">
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-lg py-md">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Bağış Onay Mesajı</span>
+<span class="text-[12px] text-muted-text">TR_GENEL_DONATION_01</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-xs text-label">
+<span class="material-symbols-outlined text-green-600 text-[20px]">chat</span>
+                                            WhatsApp
+                                        </div>
+</td>
+<td class="px-lg py-md">
+<span class="text-label text-on-surface-variant bg-surface-container rounded-full px-sm py-xs">Bağış Onayı</span>
+</td>
+<td class="px-lg py-md">
+<span class="flex items-center gap-xs text-label text-green-700 bg-green-100 rounded-full px-sm py-xs w-fit">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+                                            Aktif
+                                        </span>
+</td>
+<td class="px-lg py-md text-label text-muted-text">12.05.2024</td>
+<td class="px-lg py-md text-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex items-center justify-end gap-sm">
+<button class="p-xs text-primary hover:bg-soft-mint rounded-lg transition-all" title="Düzenle">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-xs text-muted-text hover:bg-surface rounded-lg transition-all" title="Önizle">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-xs text-error/60 hover:bg-error-container/20 rounded-lg transition-all" title="Pasifleştir">
+<span class="material-symbols-outlined">block</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="px-lg py-md">
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Pakistan Hazırlık Bilgilendirmesi</span>
+<span class="text-[12px] text-muted-text">TR_PAK_PREP_05</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-xs text-label">
+<span class="material-symbols-outlined text-blue-600 text-[20px]">sms</span>
+                                            SMS
+                                        </div>
+</td>
+<td class="px-lg py-md">
+<span class="text-label text-on-surface-variant bg-surface-container rounded-full px-sm py-xs">Pakistan Hazırlık</span>
+</td>
+<td class="px-lg py-md">
+<span class="flex items-center gap-xs text-label text-donation-gold bg-donation-gold/10 rounded-full px-sm py-xs w-fit">
+<span class="w-2 h-2 rounded-full bg-donation-gold"></span>
+                                            Hazırlık Aşamasında
+                                        </span>
+</td>
+<td class="px-lg py-md text-label text-muted-text">Bugün 14:20</td>
+<td class="px-lg py-md text-center">
+<span class="material-symbols-outlined text-muted-text">radio_button_unchecked</span>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex items-center justify-end gap-sm">
+<button class="p-xs text-primary hover:bg-soft-mint rounded-lg transition-all" title="Düzenle">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-xs text-muted-text hover:bg-surface rounded-lg transition-all" title="Önizle">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+<button class="p-xs text-error/60 hover:bg-error-container/20 rounded-lg transition-all" title="Sildir">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- 5 & 6. Editor Panel & Live Preview Panel (Split View) -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+<!-- Editor Form -->
+<div class="lg:col-span-2 space-y-lg">
+<div class="bg-white p-xl rounded-2xl border border-light-border shadow-md">
+<div class="flex items-center justify-between mb-xl">
+<h3 class="font-card-title text-card-title text-primary">Şablon Düzenleyici</h3>
+<div class="flex items-center gap-sm">
+<span class="bg-soft-mint text-primary text-label px-md py-xs rounded-full border border-primary-fixed">Kaydedildi (14:42)</span>
+</div>
+</div>
+<form class="space-y-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-xs">
+<label class="text-label font-bold text-on-surface">Şablon Adı</label>
+<input class="w-full rounded-xl border-light-border bg-surface text-body px-md py-sm focus:ring-primary focus:border-primary" type="text" value="Pakistan Hazırlık Bilgilendirmesi"/>
+</div>
+<div class="space-y-xs">
+<label class="text-label font-bold text-on-surface">Kanal</label>
+<select class="w-full rounded-xl border-light-border bg-surface text-body px-md py-sm focus:ring-primary focus:border-primary">
+<option>WhatsApp</option>
+<option selected="">SMS</option>
+<option>E-posta</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="text-label font-bold text-on-surface">Tür</label>
+<select class="w-full rounded-xl border-light-border bg-surface text-body px-md py-sm focus:ring-primary focus:border-primary">
+<option>Bağış Onayı</option>
+<option selected="">Pakistan Hazırlık</option>
+<option>Ramazan Projeleri</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="text-label font-bold text-on-surface">Durum</label>
+<div class="flex items-center gap-md py-sm">
+<label class="flex items-center gap-xs cursor-pointer">
+<input checked="" class="text-donation-gold focus:ring-donation-gold" name="status" type="radio"/>
+<span class="text-label">Hazırlıkta</span>
+</label>
+<label class="flex items-center gap-xs cursor-pointer">
+<input class="text-primary focus:ring-primary" name="status" type="radio"/>
+<span class="text-label">Yayında</span>
+</label>
+</div>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="text-label font-bold text-on-surface">Konu Başlığı (E-posta için)</label>
+<input class="w-full rounded-xl border-light-border bg-surface text-body px-md py-sm focus:ring-primary focus:border-primary" placeholder="Gelecek Yardımlar Hakkında..." type="text"/>
+</div>
+<div class="space-y-xs">
+<div class="flex items-center justify-between">
+<label class="text-label font-bold text-on-surface">Mesaj Metni</label>
+<div class="flex items-center gap-sm">
+<button class="p-xs hover:bg-surface rounded text-muted-text" type="button"><span class="material-symbols-outlined text-[20px]">format_bold</span></button>
+<button class="p-xs hover:bg-surface rounded text-muted-text" type="button"><span class="material-symbols-outlined text-[20px]">format_italic</span></button>
+<button class="p-xs hover:bg-surface rounded text-muted-text" type="button"><span class="material-symbols-outlined text-[20px]">link</span></button>
+</div>
+</div>
+<textarea class="w-full rounded-xl border-light-border bg-surface text-body px-md py-md focus:ring-primary focus:border-primary" rows="6">Merhaba {{ad_soyad}}, Pakistan'daki bağışlarınız için hazırlıklarımız devam etmektedir. {{bagis_no}} numaralı bağışınız için lojistik süreci başlatılmıştır. Desteğiniz için teşekkür ederiz. Ahde Vefa Derneği.</textarea>
+</div>
+<div class="space-y-sm">
+<p class="text-[12px] font-bold text-muted-text uppercase">Kullanılabilir Değişkenler</p>
+<div class="flex flex-wrap gap-sm">
+<button class="px-md py-xs bg-soft-mint text-primary border border-primary-fixed rounded-full text-[12px] font-bold hover:bg-primary-fixed transition-colors" type="button">ad_soyad</button>
+<button class="px-md py-xs bg-soft-mint text-primary border border-primary-fixed rounded-full text-[12px] font-bold hover:bg-primary-fixed transition-colors" type="button">bagis_no</button>
+<button class="px-md py-xs bg-soft-mint text-primary border border-primary-fixed rounded-full text-[12px] font-bold hover:bg-primary-fixed transition-colors" type="button">kampanya_adi</button>
+<button class="px-md py-xs bg-soft-mint text-primary border border-primary-fixed rounded-full text-[12px] font-bold hover:bg-primary-fixed transition-colors" type="button">tutar</button>
+<button class="px-md py-xs bg-soft-mint text-primary border border-primary-fixed rounded-full text-[12px] font-bold hover:bg-primary-fixed transition-colors" type="button">tarih</button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-lg border-t border-light-border mt-xl">
+<button class="px-lg py-sm text-muted-text font-button hover:text-on-surface transition-all" type="button">Vazgeç</button>
+<div class="flex items-center gap-md">
+<button class="px-lg py-sm border border-light-border text-on-surface font-button rounded-xl hover:bg-surface transition-all" type="button">Taslak Kaydet</button>
+<button class="px-lg py-sm bg-primary text-white font-button rounded-xl hover:bg-primary-container shadow-md transition-all" type="button">Aktif Et</button>
+<button class="px-lg py-sm bg-secondary text-white font-button rounded-xl hover:bg-secondary/90 shadow-md transition-all flex items-center gap-xs" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+                                            Test Gönder
+                                        </button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<!-- Live Preview Panel -->
+<div class="space-y-lg">
+<div class="bg-white p-xl rounded-2xl border border-light-border shadow-md h-full flex flex-col">
+<h3 class="font-card-title text-card-title text-primary mb-xl flex items-center gap-sm">
+<span class="material-symbols-outlined">devices</span>
+                                Canlı Önizleme
+                            </h3>
+<!-- Preview Selector -->
+<div class="flex items-center p-xs bg-soft-mint rounded-xl mb-lg">
+<button class="flex-1 py-sm bg-white text-primary font-bold rounded-lg shadow-sm">SMS</button>
+<button class="flex-1 py-sm text-muted-text font-medium hover:text-primary transition-all">WhatsApp</button>
+<button class="flex-1 py-sm text-muted-text font-medium hover:text-primary transition-all">Email</button>
+</div>
+<!-- Phone Frame Mockup -->
+<div class="relative mx-auto w-full max-w-[280px] aspect-[9/18.5] bg-[#121d26] rounded-[40px] border-[6px] border-[#27313c] p-xs overflow-hidden shadow-2xl">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#121d26] rounded-b-2xl z-10"></div>
+<div class="h-full w-full bg-white rounded-[32px] overflow-hidden flex flex-col pt-8 px-md">
+<!-- SMS App Interface -->
+<div class="flex flex-col gap-lg h-full">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-[10px] font-bold">AV</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold">AHDE VEFA</span>
+<span class="text-[8px] text-muted-text">B312</span>
+</div>
+</div>
+<div class="space-y-md">
+<div class="bg-surface border border-light-border p-md rounded-2xl text-[12px] relative">
+                                                Merhaba [Ahmet Yılmaz], Pakistan'daki bağışlarınız için hazırlıklarımız devam etmektedir. [TR12345] numaralı bağışınız için lojistik süreci başlatılmıştır. Desteğiniz için teşekkür ederiz. Ahde Vefa Derneği.
+                                                <div class="absolute -bottom-4 right-0 text-[10px] text-muted-text">14:42</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Compliance Warning -->
+<div class="mt-xl p-lg bg-warm-cream rounded-xl border border-donation-gold/20">
+<div class="flex items-start gap-sm mb-md">
+<span class="material-symbols-outlined text-donation-gold">warning</span>
+<div>
+<h4 class="text-label font-bold text-on-surface">İletişim ve KVKK Uyarısı</h4>
+<p class="text-[12px] text-on-surface-variant">Bu şablon toplu gönderime alınmadan önce yasal uyumluluğu kontrol edilmelidir.</p>
+</div>
+</div>
+<ul class="space-y-sm text-[12px] text-muted-text">
+<li class="flex items-center gap-sm">
+<input checked="" class="rounded text-primary focus:ring-primary" type="checkbox"/>
+                                        İYS izinleri kontrol edildi.
+                                    </li>
+<li class="flex items-center gap-sm">
+<input checked="" class="rounded text-primary focus:ring-primary" type="checkbox"/>
+                                        KVKK metni linki eklendi.
+                                    </li>
+<li class="flex items-center gap-sm">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+                                        Vekalet onay metni doğrulandı.
+                                    </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Footer (Authority: JSON) -->
+<footer class="bg-soft-mint dark:bg-surface-dim border-t border-light-border dark:border-outline-variant flex justify-between items-center py-md px-lg w-full mt-3xl">
+<span class="font-label text-label font-bold text-primary">© 2024 AHDE VEFA Derneği - Tüm Hakları Saklıdır.</span>
+<div class="flex items-center gap-lg">
+<a class="text-label text-muted-text hover:text-primary transition-all font-medium" href="#">Sistem Durumu</a>
+<a class="text-label text-muted-text hover:text-primary transition-all font-medium" href="#">Gizlilik Politikası</a>
+<a class="text-label text-muted-text hover:text-primary transition-all font-medium" href="#">Kullanım Şartları</a>
+</div>
+</footer>
+</div>
+</main>
+</div>
+<!-- Floating Action Button (FAB) suppression on task-focused admin screen per guidelines -->
+<script>
+        // Micro-interactions and Tab Logic
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if(this.innerText.includes('Çıkış')) return;
+                // e.preventDefault(); 
+                // Visual feedback only for demo
+            });
+        });
+
+        // Search highlight effect
+        const searchInputs = document.querySelectorAll('input[type="text"]');
+        searchInputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('ring-2', 'ring-primary/10');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('ring-2', 'ring-primary/10');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ayarlar Yönetimi - AHDE VEFA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "muted-text": "#667085",
+                "surface-tint": "#2a6a48",
+                "tertiary": "#254f3c",
+                "on-error": "#ffffff",
+                "surface-container-highest": "#d9e3f1",
+                "primary-container": "#2a6a48",
+                "light-border": "#E5E7EB",
+                "outline-variant": "#bfc9c0",
+                "on-surface": "#121d26",
+                "on-tertiary-container": "#b6e3c9",
+                "on-primary": "#ffffff",
+                "on-primary-fixed": "#002111",
+                "primary-fixed-dim": "#93d5ab",
+                "on-tertiary-fixed-variant": "#254f3b",
+                "surface-dim": "#d1dbe8",
+                "secondary-fixed": "#9af0ff",
+                "error": "#ba1a1a",
+                "secondary": "#006874",
+                "surface": "#f7f9ff",
+                "soft-mint": "#EEF8F4",
+                "inverse-on-surface": "#e8f2ff",
+                "inverse-surface": "#27313c",
+                "surface-bright": "#f7f9ff",
+                "on-secondary": "#ffffff",
+                "primary": "#0a5132",
+                "on-secondary-fixed-variant": "#004f58",
+                "surface-container-high": "#dfe9f7",
+                "on-error-container": "#93000a",
+                "tertiary-fixed": "#bfedd3",
+                "on-primary-fixed-variant": "#0a5132",
+                "on-background": "#121d26",
+                "on-secondary-fixed": "#001f24",
+                "error-container": "#ffdad6",
+                "donation-gold": "#F4B740",
+                "on-tertiary-fixed": "#002114",
+                "on-tertiary": "#ffffff",
+                "on-primary-container": "#a5e7bd",
+                "background": "#f7f9ff",
+                "tertiary-container": "#3d6752",
+                "primary-fixed": "#aef1c6",
+                "secondary-container": "#61e9fe",
+                "outline": "#707971",
+                "surface-container-low": "#edf4ff",
+                "surface-container": "#e4effd",
+                "warm-cream": "#FFF8EF",
+                "tertiary-fixed-dim": "#a4d1b7",
+                "secondary-fixed-dim": "#4cd8ec",
+                "surface-variant": "#d9e3f1",
+                "inverse-primary": "#93d5ab",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary-container": "#006773",
+                "on-surface-variant": "#404942"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "label-mobile": ["Manrope"],
+                "body-mobile": ["Manrope"],
+                "page-heading-mobile": ["Manrope"],
+                "card-title-mobile": ["Manrope"]
+            },
+            "fontSize": {
+                "label-mobile": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                "body-mobile": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "page-heading-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                "card-title-mobile": ["18px", {"lineHeight": "1.4", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f7f9ff;
+            max-width: 390px;
+            margin: 0 auto;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .toggle-checkbox:checked {
+            right: 0;
+            background-color: #0a5132;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #aef1c6;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface pb-24">
+<!-- Top App Bar (Mobile View) -->
+<header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md flex justify-between items-center h-16 px-5 border-b border-light-border">
+<div class="flex items-center gap-3">
+<button class="p-2 -ml-2 text-primary" onclick="toggleMenu()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="text-card-title-mobile font-card-title-mobile text-primary font-bold">AHDE VEFA</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">notifications</span>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-white text-xs font-bold">A</div>
+</div>
+</header>
+<!-- Side Drawer Overlay -->
+<div class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity" id="drawer-overlay" onclick="toggleMenu()"></div>
+<!-- Collapsible Side Navigation -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-primary z-[70] -translate-x-full transition-transform duration-300 flex flex-col" id="side-nav">
+<div class="p-6 flex flex-col gap-1">
+<h1 class="text-page-heading-mobile font-page-heading-mobile font-black text-on-primary">AHDE VEFA</h1>
+<p class="text-on-primary/70 text-xs tracking-wider">YÖNETİM PANELİ</p>
+</div>
+<nav class="flex-1 overflow-y-auto py-4">
+<div class="flex items-center gap-3 px-4 py-3 text-on-primary/80 hover:text-on-primary mx-2">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-label font-label">Genel Bakış</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-on-primary/80 hover:text-on-primary mx-2">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-label font-label">Bağışlar</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-on-primary/80 hover:text-on-primary mx-2">
+<span class="material-symbols-outlined">campaign</span>
+<span class="text-label font-label">Kampanyalar</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg mx-2">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-label font-label">Ayarlar</span>
+</div>
+<!-- More items implied -->
+</nav>
+</aside>
+<main class="p-5">
+<!-- Page Title -->
+<h2 class="text-page-heading-mobile font-page-heading-mobile mb-4 text-on-surface">Ayarlar Yönetimi</h2>
+<!-- Horizontal Tabs -->
+<div class="flex overflow-x-auto gap-2 no-scrollbar mb-6 -mx-5 px-5">
+<button class="whitespace-nowrap px-4 py-2 bg-primary text-on-primary rounded-full text-label-mobile font-bold">Genel</button>
+<button class="whitespace-nowrap px-4 py-2 bg-white text-on-surface-variant border border-light-border rounded-full text-label-mobile">Bağış</button>
+<button class="whitespace-nowrap px-4 py-2 bg-white text-on-surface-variant border border-light-border rounded-full text-label-mobile">Ödeme</button>
+<button class="whitespace-nowrap px-4 py-2 bg-white text-on-surface-variant border border-light-border rounded-full text-label-mobile">Banka</button>
+<button class="whitespace-nowrap px-4 py-2 bg-white text-on-surface-variant border border-light-border rounded-full text-label-mobile">Resmi</button>
+<button class="whitespace-nowrap px-4 py-2 bg-white text-on-surface-variant border border-light-border rounded-full text-label-mobile">İletişim</button>
+<button class="whitespace-nowrap px-4 py-2 bg-white text-on-surface-variant border border-light-border rounded-full text-label-mobile">SEO</button>
+</div>
+<!-- Settings Cards Stack -->
+<div class="space-y-4">
+<!-- Site Identity Card -->
+<div class="bg-white p-5 rounded-xl shadow-sm border border-light-border">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-card-title-mobile font-card-title-mobile text-primary">Site Kimliği</h3>
+<div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-light-border appearance-none cursor-pointer outline-none" id="toggle-identity" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer" for="toggle-identity"></label>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-label-mobile text-muted-text mb-1">Kurum Adı</label>
+<input class="w-full border-light-border rounded-xl focus:ring-primary focus:border-primary" type="text" value="AHDE VEFA Uluslararası Yardım Derneği"/>
+</div>
+<div>
+<label class="block text-label-mobile text-muted-text mb-1">Slogan</label>
+<input class="w-full border-light-border rounded-xl focus:ring-primary focus:border-primary" type="text" value="Emanetiniz, Vefamızdır."/>
+</div>
+</div>
+</div>
+<!-- Official Warning Card -->
+<div class="bg-error-container p-4 rounded-xl flex gap-3 items-start border border-error/20">
+<span class="material-symbols-outlined text-error mt-0.5" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div>
+<h4 class="text-label-mobile font-bold text-on-error-container">Yasal Uyarı</h4>
+<p class="text-[12px] leading-tight text-on-error-container/80 mt-1">Resmi belgelerdeki placeholders (yer tutucular) dernek tüzüğü ile tam uyumlu olmalıdır. Lütfen değişiklik yapmadan önce hukuk birimine danışın.</p>
+</div>
+</div>
+<!-- Bank Accounts Card -->
+<div class="bg-white p-5 rounded-xl shadow-sm border border-light-border">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-card-title-mobile font-card-title-mobile text-primary">Banka Hesapları</h3>
+<button class="text-primary flex items-center gap-1 text-label-mobile font-bold">
+<span class="material-symbols-outlined text-sm">add_circle</span> Ekle
+                    </button>
+</div>
+<div class="space-y-3">
+<!-- Bank Account Item 1 -->
+<div class="p-3 bg-surface border border-light-border rounded-xl flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center border border-light-border">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+</div>
+<div>
+<p class="text-label-mobile font-bold text-on-surface leading-tight">Ziraat Katılım</p>
+<p class="text-[12px] text-muted-text">TR00 **** 0001</p>
+</div>
+</div>
+<button class="text-muted-text"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+<!-- Bank Account Item 2 -->
+<div class="p-3 bg-surface border border-light-border rounded-xl flex justify-between items-center opacity-60">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center border border-light-border">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+</div>
+<div>
+<p class="text-label-mobile font-bold text-on-surface leading-tight">Kuveyt Türk</p>
+<p class="text-[12px] text-muted-text">TR00 **** 9922</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] bg-outline-variant px-1.5 py-0.5 rounded text-white font-bold uppercase">Pasif</span>
+<button class="text-muted-text"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Donation System Card -->
+<div class="bg-white p-5 rounded-xl shadow-sm border border-light-border">
+<h3 class="text-card-title-mobile font-card-title-mobile text-primary mb-4">Bağış Akış Ayarları</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<div>
+<p class="text-label-mobile font-bold">SMS Bilgilendirme</p>
+<p class="text-[12px] text-muted-text">Her bağış sonrası bağışçıya SMS gönder.</p>
+</div>
+<div class="relative inline-block w-10 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-light-border appearance-none cursor-pointer outline-none" id="toggle-sms" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer" for="toggle-sms"></label>
+</div>
+</div>
+<div class="pt-4 border-t border-light-border">
+<label class="block text-label-mobile text-muted-text mb-1">Varsayılan Bağış Birimi</label>
+<select class="w-full border-light-border rounded-xl focus:ring-primary focus:border-primary text-label-mobile">
+<option>Türk Lirası (TRY)</option>
+<option>Amerikan Doları (USD)</option>
+<option>Euro (EUR)</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar (Sticky) -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[390px] bg-white p-4 border-t border-light-border shadow-[0_-4px_10px_rgba(0,0,0,0.05)] z-40">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">save</span>
+            Değişiklikleri Kaydet
+        </button>
+</div>
+<!-- Bottom Navigation (Shared Component Integration) -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[390px] h-16 z-50 flex justify-around items-center px-4 bg-surface border-t border-light-border md:hidden hidden" id="mobile-nav">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">Genel Bakış</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-medium">Bağışlar</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-medium">Bildirimler</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary font-bold">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Ayarlar</span>
+</div>
+</nav>
+<script>
+        function toggleMenu() {
+            const sideNav = document.getElementById('side-nav');
+            const overlay = document.getElementById('drawer-overlay');
+            const isVisible = sideNav.style.transform === 'translateX(0%)';
+            
+            if (isVisible) {
+                sideNav.style.transform = 'translateX(-100%)';
+                overlay.classList.add('hidden');
+            } else {
+                sideNav.style.transform = 'translateX(0%)';
+                overlay.classList.remove('hidden');
+            }
+        }
+
+        // Auto-show BottomNavBar logic normally, but here we prioritize the sticky action button for settings focus
+        // We'll hide the actual bottom nav when in "edit mode" which settings is implicitly.
+    </script>
+</body></html>

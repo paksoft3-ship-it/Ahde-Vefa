@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AHDE VEFA - Admin Bağış Detayı</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#2a6a48",
+                    "surface-dim": "#d1dbe8",
+                    "secondary": "#006874",
+                    "primary-fixed-dim": "#93d5ab",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#a4d1b7",
+                    "surface-container-high": "#dfe9f7",
+                    "on-background": "#121d26",
+                    "light-border": "#E5E7EB",
+                    "primary-fixed": "#aef1c6",
+                    "on-tertiary-fixed-variant": "#254f3b",
+                    "warm-cream": "#FFF8EF",
+                    "surface-variant": "#d9e3f1",
+                    "on-primary-container": "#a5e7bd",
+                    "on-primary-fixed": "#002111",
+                    "secondary-container": "#61e9fe",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "soft-mint": "#EEF8F4",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#254f3c",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#bfc9c0",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#002114",
+                    "background": "#f7f9ff",
+                    "outline": "#707971",
+                    "inverse-primary": "#93d5ab",
+                    "primary-container": "#2a6a48",
+                    "surface-container-low": "#edf4ff",
+                    "secondary-fixed-dim": "#4cd8ec",
+                    "muted-text": "#667085",
+                    "surface-container": "#e4effd",
+                    "secondary-fixed": "#9af0ff",
+                    "on-surface-variant": "#404942",
+                    "donation-gold": "#F4B740",
+                    "primary": "#0a5132",
+                    "tertiary-container": "#3d6752",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#006773",
+                    "on-tertiary-container": "#b6e3c9",
+                    "on-secondary-fixed": "#001f24",
+                    "on-primary-fixed-variant": "#0a5132",
+                    "surface-bright": "#f7f9ff",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "on-surface": "#121d26",
+                    "inverse-on-surface": "#e8f2ff",
+                    "inverse-surface": "#27313c",
+                    "surface": "#f7f9ff",
+                    "surface-container-highest": "#d9e3f1",
+                    "tertiary-fixed": "#bfedd3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "0.25rem",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "2xl": "4rem",
+                    "sm": "0.5rem",
+                    "3xl": "6rem",
+                    "md": "1rem",
+                    "container-max": "1280px",
+                    "xl": "2.5rem",
+                    "lg": "1.5rem"
+            },
+            "fontFamily": {
+                    "section-heading-mobile": ["Manrope"],
+                    "page-heading-mobile": ["Manrope"],
+                    "hero-heading-mobile": ["Manrope"],
+                    "section-heading": ["Manrope"],
+                    "page-heading": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "body": ["Manrope"],
+                    "hero-heading": ["Manrope"],
+                    "button": ["Manrope"],
+                    "label": ["Manrope"],
+                    "card-title": ["Manrope"]
+            },
+            "fontSize": {
+                    "section-heading-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "page-heading-mobile": ["34px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "hero-heading-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "section-heading": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "page-heading": ["48px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "hero-heading": ["64px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "label": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "card-title": ["22px", {"lineHeight": "1.4", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .drawer-overlay { backdrop-filter: blur(4px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-soft-mint min-h-screen pb-24">
+<!-- Top Header -->
+<header class="bg-surface sticky top-0 z-40 h-16 flex items-center px-4 border-b border-light-border">
+<button class="w-10 h-10 flex items-center justify-center text-primary active:scale-90 transition-transform" onclick="history.back()">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-section-heading-mobile text-section-heading-mobile text-on-surface ml-2 flex-1">Bağış Detayı</h1>
+<button class="w-10 h-10 flex items-center justify-center text-primary" onclick="toggleSidebar()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Side Navigation (Mobile Drawer Style) -->
+<nav class="fixed inset-0 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden" id="mobile-sidebar">
+<div class="drawer-overlay absolute inset-0 bg-black/50" onclick="toggleSidebar()"></div>
+<div class="bg-primary w-72 h-full relative z-10 flex flex-col py-6">
+<div class="px-6 mb-8">
+<span class="font-page-heading text-[24px] text-white">AHDE VEFA</span>
+<p class="text-secondary-fixed text-xs opacity-80 uppercase tracking-widest">İnsani Yardım Derneği</p>
+</div>
+<div class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 text-on-primary-fixed-variant hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span> Dashboard
+                </a>
+<a class="flex items-center px-6 py-3 bg-surface-tint text-white font-bold mx-2 rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">payments</span> Donations
+                </a>
+<a class="flex items-center px-6 py-3 text-on-primary-fixed-variant hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">campaign</span> Campaigns
+                </a>
+<a class="flex items-center px-6 py-3 text-on-primary-fixed-variant hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">featured_seasonal_and_gifts</span> Kurban
+                </a>
+<a class="flex items-center px-6 py-3 text-on-primary-fixed-variant hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined mr-3">volunteer_activism</span> Ramazan
+                </a>
+</div>
+<div class="px-6 mt-auto">
+<div class="flex items-center p-3 bg-primary-container/20 rounded-xl">
+<img class="w-10 h-10 rounded-full border-2 border-primary-fixed" data-alt="A professional headshot of a middle-aged Turkish male administrative officer in a modern clean office setting. He is wearing a smart casual outfit with a friendly and trustworthy expression, representing the brand values of transparency and loyalty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE6Nq-RqW7cP2bA-neQiZ2qdhi7GS2B024pjAClDcuKCURmfsa1FGykIb0msjC1KzT1Trk2qDa2IMjprlITpYpYd9lHjJKC3-F9weplVvZplN9dFKMfnl27zO7ZKKVVjoa99aN4TwAw_InzEFothaRmHwn9L_2QkRDcWMAIcKU-W5yOVdAZ1QF-rIXn5GEKeDtvij_aBIY51EAV-U3F3A2dYC-O2U_m9OaJmlJbjbeddPPOiTS7yWf2LR3SBBIh1Viq-uHayj7e0CP"/>
+<div class="ml-3">
+<p class="text-white text-sm font-bold">Admin Panel</p>
+<p class="text-primary-fixed text-xs">Bağış Yöneticisi</p>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-[480px] mx-auto px-4 py-6 space-y-4">
+<!-- Status Card -->
+<div class="bg-white rounded-[20px] p-6 shadow-sm border border-light-border text-center overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider">
+                    Onaylandı
+                </span>
+</div>
+<div class="mt-4">
+<p class="text-muted-text font-label text-label mb-1">Bağış Tutarı</p>
+<h2 class="text-page-heading-mobile font-page-heading-mobile text-primary">5.000,00 ₺</h2>
+<p class="text-sm font-mono text-on-surface-variant mt-2 bg-surface-container-low py-1 px-3 rounded-full inline-block">
+                    #AV-8842109
+                </p>
+</div>
+</div>
+<!-- Preparation Badge for Region -->
+<div class="bg-donation-gold/10 border border-donation-gold/30 rounded-xl p-4 flex items-center justify-between">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-donation-gold mr-3">location_on</span>
+<div>
+<p class="text-xs text-on-surface-variant uppercase font-bold">Pakistan Yardım Bölgesi</p>
+<p class="text-sm font-bold text-on-surface">Hazırlık Aşamasında</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-donation-gold">hourglass_bottom</span>
+</div>
+<!-- Bağış Bilgileri -->
+<section class="bg-white rounded-[20px] shadow-sm border border-light-border overflow-hidden">
+<div class="px-6 py-4 border-b border-light-border flex justify-between items-center">
+<h3 class="font-card-title text-card-title text-on-surface">Bağış Bilgileri</h3>
+<span class="material-symbols-outlined text-primary">volunteer_activism</span>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between">
+<span class="text-muted-text text-label">Kampanya:</span>
+<span class="text-on-surface font-bold">Pakistan Su Kuyusu</span>
+</div>
+<div class="flex justify-between">
+<span class="text-muted-text text-label">Bağış Türü:</span>
+<span class="text-on-surface font-bold">Genel Bağış</span>
+</div>
+<div class="flex justify-between">
+<span class="text-muted-text text-label">Tarih:</span>
+<span class="text-on-surface font-bold">14.05.2024 - 14:22</span>
+</div>
+<div class="flex justify-between">
+<span class="text-muted-text text-label">Ödeme Kanalı:</span>
+<span class="text-on-surface font-bold">Kredi Kartı</span>
+</div>
+</div>
+</section>
+<!-- Bağışçı Bilgileri -->
+<section class="bg-white rounded-[20px] shadow-sm border border-light-border overflow-hidden">
+<div class="px-6 py-4 border-b border-light-border flex justify-between items-center">
+<h3 class="font-card-title text-card-title text-on-surface">Bağışçı Bilgileri</h3>
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full bg-soft-mint flex items-center justify-center text-primary font-bold text-lg mr-4">
+                        AK
+                    </div>
+<div>
+<p class="text-on-surface font-bold text-lg">Ahmet Kara</p>
+<p class="text-muted-text text-sm">+90 532 000 00 00</p>
+</div>
+</div>
+<div class="pt-4 border-t border-light-border grid grid-cols-2 gap-4">
+<div>
+<p class="text-xs text-muted-text mb-1 uppercase font-bold">E-Posta</p>
+<p class="text-sm font-medium">ahmet@example.com</p>
+</div>
+<div>
+<p class="text-xs text-muted-text mb-1 uppercase font-bold">İl / İlçe</p>
+<p class="text-sm font-medium">İstanbul / Fatih</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Ödeme & Dekont -->
+<section class="bg-white rounded-[20px] shadow-sm border border-light-border p-6 flex items-center justify-between">
+<div class="flex items-center">
+<div class="w-12 h-12 bg-surface-container-low rounded-xl flex items-center justify-center mr-4">
+<span class="material-symbols-outlined text-secondary">description</span>
+</div>
+<div>
+<h3 class="font-label text-label font-bold text-on-surface">Ödeme Dekontu</h3>
+<p class="text-xs text-muted-text">PDF - 1.2 MB</p>
+</div>
+</div>
+<button class="bg-soft-mint text-primary px-4 py-2 rounded-xl text-sm font-bold border border-primary/10 active:scale-95 transition-transform">
+                Görüntüle
+            </button>
+</section>
+<!-- Timeline -->
+<section class="bg-white rounded-[20px] shadow-sm border border-light-border p-6">
+<h3 class="font-card-title text-card-title text-on-surface mb-6">İşlem Geçmişi</h3>
+<div class="space-y-6 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-light-border">
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-[24px] h-[24px] rounded-full bg-primary flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-white text-xs">check</span>
+</div>
+<p class="text-sm font-bold text-on-surface">Bağış Onaylandı</p>
+<p class="text-xs text-muted-text">Bugün, 14:30 - Admin S. Yılmaz</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-[24px] h-[24px] rounded-full bg-donation-gold flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-white text-xs">sync</span>
+</div>
+<p class="text-sm font-bold text-on-surface">Bölge Ataması Yapıldı</p>
+<p class="text-xs text-muted-text">Pakistan - Pencap Eyaleti</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-[24px] h-[24px] rounded-full bg-light-border flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-muted-text text-xs">pending</span>
+</div>
+<p class="text-sm font-medium text-muted-text">Sertifika Hazırlanıyor</p>
+</div>
+</div>
+</section>
+<!-- Internal Notes -->
+<section class="bg-white rounded-[20px] shadow-sm border border-light-border overflow-hidden">
+<button class="w-full px-6 py-4 flex justify-between items-center text-left focus:outline-none" onclick="toggleNotes()">
+<h3 class="font-card-title text-card-title text-on-surface">İç Notlar</h3>
+<span class="material-symbols-outlined transition-transform" id="note-chevron">expand_more</span>
+</button>
+<div class="hidden px-6 pb-6 space-y-4" id="notes-content">
+<div class="bg-warm-cream p-4 rounded-xl border border-donation-gold/20">
+<p class="text-sm text-on-surface">Bağışçı isminin tabelada 'Merhum Mustafa Kara' adına yazılmasını özellikle rica etti.</p>
+<p class="text-[10px] text-muted-text mt-2 uppercase font-bold">14.05.2024 - Notu Ekleyen: Mehmet A.</p>
+</div>
+<button class="w-full py-2 text-primary border border-dashed border-primary/30 rounded-lg text-sm font-bold">
+                    + Not Ekle
+                </button>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-white border-t border-light-border p-4 z-40 flex gap-3">
+<button class="flex-1 bg-soft-mint text-primary py-4 rounded-2xl font-bold flex items-center justify-center border border-primary/10 active:scale-95 transition-transform" onclick="openDrawer('msg-drawer')">
+<span class="material-symbols-outlined mr-2">send</span> Mesaj
+        </button>
+<button class="flex-[2] bg-primary text-white py-4 rounded-2xl font-bold flex items-center justify-center shadow-lg shadow-primary/20 active:scale-95 transition-transform" onclick="openDrawer('status-drawer')">
+<span class="material-symbols-outlined mr-2">edit_square</span> İşlem Yap
+        </button>
+</div>
+<!-- Status Change Drawer -->
+<div class="fixed inset-0 z-50 invisible opacity-0 transition-all duration-300 pointer-events-none" id="status-drawer">
+<div class="drawer-overlay absolute inset-0 bg-black/60" onclick="closeDrawer('status-drawer')"></div>
+<div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-[32px] p-6 transform translate-y-full transition-transform duration-300 ease-out" id="status-drawer-content">
+<div class="w-12 h-1.5 bg-light-border rounded-full mx-auto mb-6"></div>
+<h4 class="font-section-heading-mobile text-section-heading-mobile mb-6">Bağış Durumunu Güncelle</h4>
+<div class="space-y-3">
+<label class="flex items-center p-4 rounded-2xl border-2 border-primary bg-soft-mint cursor-pointer">
+<input checked="" class="hidden" name="status" type="radio"/>
+<span class="material-symbols-outlined text-primary mr-4" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="flex-1 font-bold text-primary">Onaylandı</span>
+</label>
+<label class="flex items-center p-4 rounded-2xl border-2 border-light-border cursor-pointer active:border-primary">
+<input class="hidden" name="status" type="radio"/>
+<span class="material-symbols-outlined text-muted-text mr-4">pending</span>
+<span class="flex-1 font-bold text-on-surface">Beklemede</span>
+</label>
+<label class="flex items-center p-4 rounded-2xl border-2 border-light-border cursor-pointer active:border-primary">
+<input class="hidden" name="status" type="radio"/>
+<span class="material-symbols-outlined text-muted-text mr-4">cancel</span>
+<span class="flex-1 font-bold text-on-surface">İptal Edildi</span>
+</label>
+</div>
+<div class="mt-8 space-y-3">
+<button class="w-full bg-primary text-white py-4 rounded-2xl font-bold" onclick="closeDrawer('status-drawer')">Değişiklikleri Kaydet</button>
+<button class="w-full py-4 text-muted-text font-bold" onclick="closeDrawer('status-drawer')">Vazgeç</button>
+</div>
+</div>
+</div>
+<!-- Message Drawer -->
+<div class="fixed inset-0 z-50 invisible opacity-0 transition-all duration-300 pointer-events-none" id="msg-drawer">
+<div class="drawer-overlay absolute inset-0 bg-black/60" onclick="closeDrawer('msg-drawer')"></div>
+<div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-[32px] p-6 transform translate-y-full transition-transform duration-300 ease-out" id="msg-drawer-content">
+<div class="w-12 h-1.5 bg-light-border rounded-full mx-auto mb-6"></div>
+<h4 class="font-section-heading-mobile text-section-heading-mobile mb-4">Bağışçıya Mesaj Gönder</h4>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-muted-text uppercase mb-2">Platform</label>
+<div class="flex gap-2">
+<button class="flex-1 py-3 bg-soft-mint text-primary border border-primary/20 rounded-xl font-bold flex items-center justify-center">
+                            WhatsApp
+                        </button>
+<button class="flex-1 py-3 bg-surface-container-low text-secondary border border-secondary/20 rounded-xl font-bold flex items-center justify-center">
+                            E-Posta
+                        </button>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold text-muted-text uppercase mb-2">Hazır Şablonlar</label>
+<select class="w-full border-light-border rounded-xl text-sm p-3 focus:ring-primary">
+<option>Bağış Teşekkür Mesajı</option>
+<option>Sertifika Hazır Bilgilendirmesi</option>
+<option>Genel Bilgilendirme</option>
+</select>
+</div>
+<textarea class="w-full border-light-border rounded-2xl p-4 text-sm focus:ring-primary" placeholder="Mesajınızı buraya yazın..." rows="4"></textarea>
+<button class="w-full bg-primary text-white py-4 rounded-2xl font-bold flex items-center justify-center">
+<span class="material-symbols-outlined mr-2">send</span> Gönder
+                </button>
+</div>
+</div>
+</div>
+<script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('mobile-sidebar');
+            const isOpen = sidebar.classList.contains('translate-x-0');
+            if (isOpen) {
+                sidebar.classList.remove('translate-x-0');
+                sidebar.classList.add('-translate-x-full');
+            } else {
+                sidebar.classList.remove('-translate-x-full');
+                sidebar.classList.add('translate-x-0');
+            }
+        }
+
+        function toggleNotes() {
+            const content = document.getElementById('notes-content');
+            const icon = document.getElementById('note-chevron');
+            content.classList.toggle('hidden');
+            icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+
+        function openDrawer(id) {
+            const drawer = document.getElementById(id);
+            const content = document.getElementById(id + '-content');
+            drawer.classList.remove('invisible', 'opacity-0', 'pointer-events-none');
+            drawer.classList.add('visible', 'opacity-100');
+            content.classList.remove('translate-y-full');
+            content.classList.add('translate-y-0');
+        }
+
+        function closeDrawer(id) {
+            const drawer = document.getElementById(id);
+            const content = document.getElementById(id + '-content');
+            content.classList.remove('translate-y-0');
+            content.classList.add('translate-y-full');
+            setTimeout(() => {
+                drawer.classList.add('invisible', 'opacity-0', 'pointer-events-none');
+                drawer.classList.remove('visible', 'opacity-100');
+            }, 300);
+        }
+    </script>
+</body></html>

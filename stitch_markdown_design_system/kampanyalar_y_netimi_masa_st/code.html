@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AHDE VEFA | Kampanyalar Yönetimi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f7f9ff",
+                        "on-tertiary-fixed-variant": "#254f3b",
+                        "surface": "#f7f9ff",
+                        "primary-fixed": "#aef1c6",
+                        "muted-text": "#667085",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#2a6a48",
+                        "on-primary-fixed": "#002111",
+                        "soft-mint": "#EEF8F4",
+                        "secondary": "#006874",
+                        "warm-cream": "#FFF8EF",
+                        "on-primary-container": "#a5e7bd",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#3d6752",
+                        "tertiary": "#254f3c",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#d1dbe8",
+                        "surface-container": "#e4effd",
+                        "on-primary-fixed-variant": "#0a5132",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f7f9ff",
+                        "inverse-on-surface": "#e8f2ff",
+                        "primary-container": "#2a6a48",
+                        "error": "#ba1a1a",
+                        "on-surface": "#121d26",
+                        "secondary-fixed": "#9af0ff",
+                        "secondary-container": "#61e9fe",
+                        "on-surface-variant": "#404942",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#edf4ff",
+                        "on-background": "#121d26",
+                        "outline-variant": "#bfc9c0",
+                        "outline": "#707971",
+                        "inverse-surface": "#27313c",
+                        "tertiary-fixed-dim": "#a4d1b7",
+                        "primary": "#0a5132",
+                        "surface-container-high": "#dfe9f7",
+                        "on-tertiary-fixed": "#002114",
+                        "tertiary-fixed": "#bfedd3",
+                        "on-secondary-fixed": "#001f24",
+                        "secondary-fixed-dim": "#4cd8ec",
+                        "donation-gold": "#F4B740",
+                        "inverse-primary": "#93d5ab",
+                        "surface-container-highest": "#d9e3f1",
+                        "on-secondary-container": "#006773",
+                        "on-tertiary-container": "#b6e3c9",
+                        "light-border": "#E5E7EB",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#d9e3f1",
+                        "primary-fixed-dim": "#93d5ab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "xs": "0.25rem",
+                        "md": "1rem",
+                        "margin-mobile": "20px",
+                        "xl": "2.5rem",
+                        "3xl": "6rem",
+                        "lg": "1.5rem",
+                        "sm": "0.5rem",
+                        "2xl": "4rem"
+                    },
+                    "fontFamily": {
+                        "page-heading": ["Manrope"],
+                        "label": ["Manrope"],
+                        "body": ["Manrope"],
+                        "button": ["Manrope"],
+                        "card-title": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sidebar-item-active {
+            background-color: #2a6a48; /* primary-container */
+            color: #a5e7bd; /* on-primary-container */
+        }
+        .slide-over-overlay {
+            background: rgba(18, 29, 38, 0.4);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="bg-soft-mint min-h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-primary dark:bg-on-tertiary-fixed shadow-lg flex flex-col p-md z-50">
+<div class="mb-xl px-4">
+<h1 class="font-page-heading text-[24px] font-extrabold text-white leading-tight">AHDE VEFA</h1>
+<p class="font-label text-[12px] text-primary-fixed/80">İnsani Yardım Derneği</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed hover:bg-primary-container/20 rounded-lg transition-colors cursor-pointer active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-label">Genel Bakış</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed hover:bg-primary-container/20 rounded-lg transition-colors cursor-pointer active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label text-label">Bağışlar</span>
+</a>
+<!-- Active State: Kampanyalar -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg cursor-pointer active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+<span class="font-label text-label">Kampanyalar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed hover:bg-primary-container/20 rounded-lg transition-colors cursor-pointer active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label text-label">Gönüllüler</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed hover:bg-primary-container/20 rounded-lg transition-colors cursor-pointer active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="font-label text-label">Projeler</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed hover:bg-primary-container/20 rounded-lg transition-colors cursor-pointer active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label text-label">Ayarlar</span>
+</a>
+</nav>
+<div class="mt-auto pt-md border-t border-primary-container/30">
+<button class="w-full bg-secondary-container text-on-secondary-container font-button py-3 rounded-xl flex items-center justify-center gap-2 mb-md hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Yeni Bağış Ekle
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed hover:bg-primary-container/20 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label text-label">Çıkış Yap</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-surface dark:bg-inverse-surface border-b border-light-border dark:border-outline-variant flex justify-between items-center px-lg py-sm h-16 ml-64">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-primary/20 rounded-lg">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border-none rounded-lg text-label focus:ring-0" placeholder="Kampanya ara..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-on-surface-variant hover:bg-surface-container transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="text-right">
+<p class="font-label text-label font-bold text-on-surface">Admin Panel</p>
+<p class="text-[12px] text-muted-text">Profilim</p>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container/20">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a Turkish NGO administrator in a clean modern office, soft natural lighting, high-end corporate photography style. The person is smiling warmly, conveying trust and transparency in line with the brand's core values." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKw2m95w1Vld4p3B-dp8ieUH48zASXgztxccoqATYeVUl85DfsnBArbDbJtYrgmEZAiwhn-63lr59o_vd9oHV5F7KBoA-QvfqNsnHjkgD7IKPyvf4YROIekCDkQfaRKVPPfEOtdUkLxgSHjJ7uKm0sAFFfLbKWuDR2tLezqNzdNTNcJfTZ_bjHwR3S4zJ9KVVf9MPfSZghfu5mF7DGbJWO46baJR1LwakSataazN_m5q7npJCi9QL2vCxbB79rFQ4BFhNXipkCviwv"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-24 px-lg pb-xl">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="font-page-heading text-[32px] text-primary">Kampanyalar Yönetimi</h2>
+<p class="text-muted-text">Tüm aktif, taslak ve planlanan yardım kampanyalarını buradan yönetebilirsiniz.</p>
+</div>
+<button class="bg-secondary text-white font-button px-6 py-3 rounded-xl flex items-center gap-2 hover:bg-secondary/90 shadow-md transition-all active:scale-95" onclick="toggleSlideOver()">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                Yeni Kampanya Oluştur
+            </button>
+</div>
+<!-- Summary Metric Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-xl">
+<div class="bg-white p-lg rounded-2xl shadow-sm border border-white flex items-start justify-between">
+<div>
+<p class="text-muted-text font-label">Toplam Kampanya</p>
+<h3 class="text-3xl font-extrabold text-on-surface mt-1">42</h3>
+<p class="text-[12px] text-primary font-bold mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span>
+                        +%12 bu ay
+                    </p>
+</div>
+<div class="p-3 bg-soft-mint rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="inventory_2">inventory_2</span>
+</div>
+</div>
+<div class="bg-white p-lg rounded-2xl shadow-sm border border-white flex items-start justify-between">
+<div>
+<p class="text-muted-text font-label">Aktif Kampanyalar</p>
+<h3 class="text-3xl font-extrabold text-on-surface mt-1">18</h3>
+<p class="text-[12px] text-secondary font-bold mt-2">Yayında olanlar</p>
+</div>
+<div class="p-3 bg-secondary/10 rounded-xl">
+<span class="material-symbols-outlined text-secondary" data-icon="rocket_launch">rocket_launch</span>
+</div>
+</div>
+<div class="bg-white p-lg rounded-2xl shadow-sm border border-white flex items-start justify-between">
+<div>
+<p class="text-muted-text font-label">Taslak Kampanyalar</p>
+<h3 class="text-3xl font-extrabold text-on-surface mt-1">12</h3>
+<p class="text-[12px] text-donation-gold font-bold mt-2">Onay bekleyen</p>
+</div>
+<div class="p-3 bg-warm-cream rounded-xl">
+<span class="material-symbols-outlined text-donation-gold" data-icon="edit_note">edit_note</span>
+</div>
+</div>
+<div class="bg-white p-lg rounded-2xl shadow-sm border border-white flex items-start justify-between">
+<div>
+<p class="text-muted-text font-label">Yayına Hazır Değil</p>
+<h3 class="text-3xl font-extrabold text-on-surface mt-1">4</h3>
+<p class="text-[12px] text-error font-bold mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="warning">warning</span>
+                        Eksik bilgi içeriyor
+                    </p>
+</div>
+<div class="p-3 bg-error-container rounded-xl">
+<span class="material-symbols-outlined text-error" data-icon="block">block</span>
+</div>
+</div>
+</div>
+<!-- Filter Section -->
+<div class="bg-white p-md rounded-2xl shadow-sm mb-lg flex flex-wrap gap-4 items-center border border-white/50">
+<div class="flex-1 min-w-[240px]">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]" data-icon="filter_list">filter_list</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low border-none rounded-xl text-label focus:ring-1 focus:ring-primary/20" placeholder="İçerik filtrele..." type="text"/>
+</div>
+</div>
+<select class="bg-surface-container-low border-none rounded-xl py-2.5 px-4 font-label text-on-surface-variant focus:ring-1 focus:ring-primary/20 min-w-[140px]">
+<option value="">Tüm Durumlar</option>
+<option value="aktif">Aktif</option>
+<option value="taslak">Taslak</option>
+<option value="yakinda">Yakında</option>
+</select>
+<select class="bg-surface-container-low border-none rounded-xl py-2.5 px-4 font-label text-on-surface-variant focus:ring-1 focus:ring-primary/20 min-w-[140px]">
+<option value="">Tüm Kategoriler</option>
+<option value="kurban">Kurban</option>
+<option value="ramazan">Ramazan</option>
+<option value="su_kuyusu">Su Kuyusu</option>
+</select>
+<select class="bg-surface-container-low border-none rounded-xl py-2.5 px-4 font-label text-on-surface-variant focus:ring-1 focus:ring-primary/20 min-w-[140px]">
+<option value="">Tüm Bölgeler</option>
+<option value="afrika">Afrika</option>
+<option value="asya">Asya</option>
+<option value="turkiye">Türkiye</option>
+</select>
+<button class="flex items-center gap-2 px-4 py-2.5 font-label text-muted-text hover:bg-surface-container-low rounded-xl transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="restart_alt">restart_alt</span>
+                Sıfırla
+            </button>
+</div>
+<!-- Campaign Table -->
+<div class="bg-white rounded-2xl shadow-sm border border-white overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50 border-b border-light-border">
+<th class="px-lg py-4 font-label text-on-surface-variant font-bold">Kampanya</th>
+<th class="px-md py-4 font-label text-on-surface-variant font-bold">Kategori</th>
+<th class="px-md py-4 font-label text-on-surface-variant font-bold">Bölge</th>
+<th class="px-md py-4 font-label text-on-surface-variant font-bold">Durum</th>
+<th class="px-md py-4 font-label text-on-surface-variant font-bold text-right">Toplanan Bağış</th>
+<th class="px-md py-4 font-label text-on-surface-variant font-bold text-center">Bağış Sayısı</th>
+<th class="px-md py-4 font-label text-on-surface-variant font-bold">Tarih Aralığı</th>
+<th class="px-lg py-4 font-label text-on-surface-variant font-bold text-right">İşlem</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-light-border">
+<!-- Kurban Row -->
+<tr class="hover:bg-soft-mint/30 transition-colors">
+<td class="px-lg py-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close-up photograph of a sacrificial animal for Kurban, set against a warm sunlit field. The lighting is soft and natural, emphasizing the dignity of the animal and the Islamic tradition of sacrifice. Corporate humanitarian photography style, bright and clean light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsVg0svdhiPhIRa4qtDxFERcaBM4V29ozesBepaEhq7hUpLOu9KFtBBgGyVb14CkAtSLYqUDAamfiSpKm72n5Xt4vYvh1o5R8buYZSrIkbapDIkCX5BcdV9qH9LMZ4y7rmblGUnhtzzhyptKc82ZpjOyWwwAgAKaeKwRP0LW82AbNL65tfRbxSNtwc8AB97hgn17G644nn1wS_61gY3Tr_pxPAAkPX58fnA0DfFCD627771yd_gRrFU_8fc9cN5Fz6bnTcPFckZ6ql"/>
+</div>
+<div>
+<p class="font-card-title text-[15px] text-on-surface">Vacip Kurban 2024</p>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded bg-error-container text-on-error-container text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="warning">warning</span>
+                                            Hisse bedeli eksik
+                                        </span>
+</div>
+</div>
+</div>
+</td>
+<td class="px-md py-4"><span class="px-3 py-1 bg-surface-container rounded-full text-[13px] text-primary font-medium">Kurban</span></td>
+<td class="px-md py-4 text-muted-text text-[14px]">Çoklu Bölge</td>
+<td class="px-md py-4">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-[12px] font-bold">Aktif</span>
+</td>
+<td class="px-md py-4 text-right font-bold text-on-surface">₺1.240.500</td>
+<td class="px-md py-4 text-center text-muted-text">452</td>
+<td class="px-md py-4">
+<p class="text-[13px] text-on-surface">01 Haz 2024</p>
+<p class="text-[11px] text-muted-text">18 Haz 2024</p>
+</td>
+<td class="px-lg py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-surface-container rounded-lg text-secondary transition-colors" title="Düzenle"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant transition-colors" title="Görüntüle"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-outline transition-colors" title="Arşivle"><span class="material-symbols-outlined" data-icon="archive">archive</span></button>
+</div>
+</td>
+</tr>
+<!-- Ramazan Row -->
+<tr class="hover:bg-soft-mint/30 transition-colors">
+<td class="px-lg py-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A beautifully set iftar table with traditional elements like dates and water, with a soft bokeh background of a Turkish mosque at dusk. Warm golden lighting from lanterns, serene and spiritual atmosphere, high-quality NGO campaign style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy5j2kQ9alfdudoNIDDbD_eStvPge7cgouva0WLn-qrucP09ptjj-_xGE21ZOay3V9lH0tkkgeXPLPtWQ6iehT6qzO-Vm1lOvrs3rWsZsFEoa1v2nkbFYbrpoYtiVlcooJdiGdHwOlsfJVUwRPpISuOS1pYtBpNzl-0VsPFz_lHJTrp01ggTZNiJeLTieHvLwgEqQLBLMR0Ftvg_hDD2EdPlNn49Z21bTO7hVwMP5vqznu6lv58RDrXzD3v98KkAPBdmq6N5isZ7kc"/>
+</div>
+<div>
+<p class="font-card-title text-[15px] text-on-surface">Ramazan Kumanyası</p>
+<p class="text-[12px] text-muted-text">Gıda paketleri dağıtımı</p>
+</div>
+</div>
+</td>
+<td class="px-md py-4"><span class="px-3 py-1 bg-surface-container rounded-full text-[13px] text-primary font-medium">Ramazan</span></td>
+<td class="px-md py-4 text-muted-text text-[14px]">Gazze, Yemen</td>
+<td class="px-md py-4">
+<span class="px-3 py-1 bg-muted-text/10 text-muted-text rounded-full text-[12px] font-bold">Tamamlandı</span>
+</td>
+<td class="px-md py-4 text-right font-bold text-on-surface">₺3.500.000</td>
+<td class="px-md py-4 text-center text-muted-text">1,240</td>
+<td class="px-md py-4">
+<p class="text-[13px] text-on-surface">01 Mar 2024</p>
+<p class="text-[11px] text-muted-text">10 Nis 2024</p>
+</td>
+<td class="px-lg py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-surface-container rounded-lg text-secondary transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant transition-colors"><span class="material-symbols-outlined" data-icon="analytics">analytics</span></button>
+</div>
+</td>
+</tr>
+<!-- Africa Row -->
+<tr class="hover:bg-soft-mint/30 transition-colors">
+<td class="px-lg py-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Joyful children in a rural African village gathered around a newly built water well with clean flowing water. Bright, vibrant colors, clear blue sky, capturing the real-world impact and dignity of aid recipients. Authentic humanitarian style photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7IJM7zTJpXr23j6zzdwPrLLYL61-hNMTfLnupfZziOf2pP2b49NG7-GrPH4istmP7f4LVkxNat_EH_ndNyAv2NREz0yGDyhRigroL7WGKNGkq-e5SfxJah5AMY9jjRIRzhQbbQAqhDKvqggNInIZJyrfx8Yakgee8UvqooF0l5_OC-x7HhyVSCFbAiQ96DH2-5khr4ZGujB_ljV733iSW1mB5zkaD17Dg-blE7AJEFj58hfS9JYfA8sjhCr7RkfRq771pIKB5CT1n"/>
+</div>
+<div>
+<p class="font-card-title text-[15px] text-on-surface">Çad Su Kuyusu Projesi</p>
+<p class="text-[12px] text-muted-text">Bölgesel kalkınma desteği</p>
+</div>
+</div>
+</td>
+<td class="px-md py-4"><span class="px-3 py-1 bg-surface-container rounded-full text-[13px] text-primary font-medium">Su Kuyusu</span></td>
+<td class="px-md py-4 text-muted-text text-[14px]">Afrika / Çad</td>
+<td class="px-md py-4">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-[12px] font-bold">Aktif</span>
+</td>
+<td class="px-md py-4 text-right font-bold text-on-surface">₺45.000</td>
+<td class="px-md py-4 text-center text-muted-text">85</td>
+<td class="px-md py-4">
+<p class="text-[13px] text-on-surface">15 May 2024</p>
+<p class="text-[11px] text-muted-text">Süresiz</p>
+</td>
+<td class="px-lg py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-surface-container rounded-lg text-secondary transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant transition-colors"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+</div>
+</td>
+</tr>
+<!-- Pakistan Row (Specially marked) -->
+<tr class="hover:bg-soft-mint/30 transition-colors bg-warm-cream/20">
+<td class="px-lg py-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-surface-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-outline" data-icon="image">image</span>
+</div>
+<div>
+<p class="font-card-title text-[15px] text-on-surface">Pakistan Sel Yardımı</p>
+<p class="text-[12px] text-donation-gold font-bold">Hazırlık Aşamasında</p>
+</div>
+</div>
+</td>
+<td class="px-md py-4"><span class="px-3 py-1 bg-surface-container rounded-full text-[13px] text-primary font-medium">Acil Yardım</span></td>
+<td class="px-md py-4 text-muted-text text-[14px]">Asya / Pakistan</td>
+<td class="px-md py-4">
+<span class="px-3 py-1 bg-warm-cream text-donation-gold border border-donation-gold/30 rounded-full text-[12px] font-bold">Yakında</span>
+</td>
+<td class="px-md py-4 text-right font-bold text-outline">₺0</td>
+<td class="px-md py-4 text-center text-muted-text">0</td>
+<td class="px-md py-4">
+<p class="text-[13px] text-muted-text italic">Planlanıyor</p>
+</td>
+<td class="px-lg py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 hover:bg-surface-container rounded-lg text-secondary transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+<button class="px-3 py-1 text-[12px] font-bold text-on-primary bg-primary rounded-lg hover:opacity-90">Yayınla</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="px-lg py-4 bg-surface-container-low/30 border-t border-light-border flex justify-between items-center">
+<p class="text-[13px] text-muted-text">42 kayıttan 1-4 arası gösteriliyor</p>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg border border-light-border hover:bg-white disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary text-[13px] font-bold">1</button>
+<button class="px-4 py-2 rounded-lg hover:bg-white text-[13px] font-bold">2</button>
+<button class="px-4 py-2 rounded-lg hover:bg-white text-[13px] font-bold">3</button>
+<button class="p-2 rounded-lg border border-light-border hover:bg-white">
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Slide-over Panel (New Campaign) -->
+<div class="fixed inset-0 z-[60] hidden" id="slideOver">
+<div class="slide-over-overlay absolute inset-0" onclick="toggleSlideOver()"></div>
+<div class="absolute right-0 top-0 h-full w-full max-w-xl bg-white shadow-2xl transition-transform duration-300 translate-x-full" id="slideOverContent">
+<div class="h-full flex flex-col">
+<div class="px-lg py-6 border-b border-light-border flex justify-between items-center bg-primary text-white">
+<div>
+<h2 class="text-xl font-bold">Yeni Kampanya Oluştur</h2>
+<p class="text-[13px] text-primary-fixed/80">Lütfen kampanya detaylarını eksiksiz giriniz.</p>
+</div>
+<button class="p-2 hover:bg-white/10 rounded-full transition-colors" onclick="toggleSlideOver()">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-lg space-y-6">
+<!-- Form Fields -->
+<div>
+<label class="block font-label text-on-surface-variant mb-2">Kampanya Başlığı</label>
+<input class="w-full border border-light-border rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" placeholder="Örn: 2024 Kurban Bağışı" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-label text-on-surface-variant mb-2">Kategori</label>
+<select class="w-full border border-light-border rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none">
+<option>Seçiniz</option>
+<option>Kurban</option>
+<option>Ramazan</option>
+<option>Su Kuyusu</option>
+</select>
+</div>
+<div>
+<label class="block font-label text-on-surface-variant mb-2">Bölge</label>
+<select class="w-full border border-light-border rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none">
+<option>Seçiniz</option>
+<option>Afrika</option>
+<option>Asya</option>
+<option>Orta Doğu</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label text-on-surface-variant mb-2">Kampanya Görseli</label>
+<div class="border-2 border-dashed border-light-border rounded-2xl p-8 text-center hover:bg-soft-mint transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-[48px] text-outline group-hover:text-primary transition-colors" data-icon="cloud_upload">cloud_upload</span>
+<p class="mt-2 text-[14px] text-muted-text">Görseli buraya sürükleyin veya <span class="text-primary font-bold">dosya seçin</span></p>
+<p class="text-[11px] text-outline mt-1">Önerilen: 1200x600px, Maks: 5MB</p>
+</div>
+</div>
+<div>
+<label class="block font-label text-on-surface-variant mb-2">Detaylı Açıklama</label>
+<textarea class="w-full border border-light-border rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" placeholder="Kampanya hakkında detaylı bilgi giriniz..." rows="4"></textarea>
+</div>
+<div class="p-4 bg-warm-cream rounded-xl border border-donation-gold/20 flex gap-3">
+<span class="material-symbols-outlined text-donation-gold" data-icon="info">info</span>
+<p class="text-[13px] text-on-surface-variant">Kurban kategorisi için hisse bedeli girilmesi zorunludur. Taslak olarak kaydedebilirsiniz.</p>
+</div>
+</div>
+<div class="px-lg py-6 border-t border-light-border bg-surface-container-low flex gap-4">
+<button class="flex-1 px-6 py-3 border border-outline text-on-surface-variant font-button rounded-xl hover:bg-white transition-all">Taslak Olarak Kaydet</button>
+<button class="flex-1 px-6 py-3 bg-secondary text-white font-button rounded-xl hover:bg-secondary/90 shadow-lg transition-all active:scale-95">Yayınla</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="flex justify-between items-center px-lg py-md mt-auto bg-surface-container-low border-t border-light-border ml-64">
+<p class="text-muted-text font-label text-[13px]">© 2024 AHDE VEFA Derneği. Tüm Hakları Saklıdır.</p>
+<div class="flex gap-6">
+<a class="text-muted-text font-label text-[13px] hover:text-primary transition-colors" href="#">Kullanım Koşulları</a>
+<a class="text-muted-text font-label text-[13px] hover:text-primary transition-colors" href="#">Gizlilik Politikası</a>
+<a class="text-muted-text font-label text-[13px] hover:text-primary transition-colors" href="#">Yardım</a>
+</div>
+</footer>
+<script>
+        function toggleSlideOver() {
+            const panel = document.getElementById('slideOver');
+            const content = document.getElementById('slideOverContent');
+            
+            if (panel.classList.contains('hidden')) {
+                panel.classList.remove('hidden');
+                setTimeout(() => {
+                    content.classList.remove('translate-x-full');
+                }, 10);
+            } else {
+                content.classList.add('translate-x-full');
+                setTimeout(() => {
+                    panel.classList.add('hidden');
+                }, 300);
+            }
+        }
+    </script>
+</body></html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dekont Bildir | Emanet &amp; Vefa Derneği</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#93d5ab",
+                        "on-surface": "#121d26",
+                        "on-tertiary-fixed-variant": "#254f3b",
+                        "surface-container-low": "#edf4ff",
+                        "on-surface-variant": "#404942",
+                        "muted-text": "#667085",
+                        "warm-cream": "#FFF8EF",
+                        "on-primary-container": "#a5e7bd",
+                        "tertiary-fixed-dim": "#a4d1b7",
+                        "surface-container-high": "#dfe9f7",
+                        "primary-container": "#2a6a48",
+                        "background": "#f7f9ff",
+                        "primary-fixed": "#aef1c6",
+                        "surface-variant": "#d9e3f1",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d1dbe8",
+                        "inverse-on-surface": "#e8f2ff",
+                        "on-secondary-fixed": "#001f24",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#4cd8ec",
+                        "on-secondary-container": "#006773",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#9af0ff",
+                        "primary": "#0a5132",
+                        "outline": "#707971",
+                        "on-primary-fixed": "#002111",
+                        "primary-fixed-dim": "#93d5ab",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#61e9fe",
+                        "soft-mint": "#EEF8F4",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#d9e3f1",
+                        "secondary": "#006874",
+                        "on-tertiary-container": "#b6e3c9",
+                        "surface-tint": "#2a6a48",
+                        "tertiary-container": "#3d6752",
+                        "surface": "#f7f9ff",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#e4effd",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f7f9ff",
+                        "on-primary-fixed-variant": "#0a5132",
+                        "on-tertiary-fixed": "#002114",
+                        "donation-gold": "#F4B740",
+                        "light-border": "#E5E7EB",
+                        "outline-variant": "#bfc9c0",
+                        "tertiary": "#254f3c",
+                        "inverse-surface": "#27313c",
+                        "tertiary-fixed": "#bfedd3",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-background": "#121d26"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "0.5rem",
+                        "md": "1rem",
+                        "container-max": "1280px",
+                        "2xl": "4rem",
+                        "lg": "1.5rem",
+                        "gutter": "24px",
+                        "xs": "0.25rem",
+                        "xl": "2.5rem",
+                        "margin-mobile": "20px",
+                        "3xl": "6rem"
+                    },
+                    "fontFamily": {
+                        "label": ["Manrope"],
+                        "button": ["Manrope"],
+                        "section-heading": ["Manrope"],
+                        "page-heading": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "card-title": ["Manrope"],
+                        "hero-heading": ["Manrope"],
+                        "body": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "section-heading": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "page-heading": ["48px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "card-title": ["22px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "hero-heading": ["64px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Manrope', sans-serif; background-color: #f7f9ff; }
+        .form-input-focus:focus { outline: none; border-color: #0a5132; ring: 2px; ring-color: #0a5132; }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface-container-lowest dark:bg-inverse-surface border-b border-light-border dark:border-outline-variant shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-lg max-w-container-max mx-auto">
+<div class="font-page-heading text-[24px] text-primary dark:text-inverse-primary tracking-tight font-extrabold">Emanet &amp; Vefa</div>
+<div class="hidden md:flex gap-lg items-center">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary font-button text-button transition-colors duration-200" href="#">Kurumsal</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary font-button text-button transition-colors duration-200" href="#">Projelerimiz</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary font-button text-button transition-colors duration-200" href="#">Faaliyetler</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary font-button text-button transition-colors duration-200" href="#">Şeffaflık</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary font-button text-button transition-colors duration-200 underline decoration-2 underline-offset-8 decoration-primary" href="#">İletişim</a>
+</div>
+<button class="bg-primary text-on-primary px-lg py-md rounded-full font-button text-button active:scale-95 transition-transform">Bağış Yap</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="bg-soft-mint py-3xl">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-lg">
+<div class="max-w-3xl">
+<span class="inline-block bg-primary-container text-on-primary-container px-md py-xs rounded-full font-label text-label mb-md uppercase tracking-wider">Dekont Bildirimi</span>
+<h1 class="font-page-heading text-page-heading text-primary mb-lg">Banka havalesi bağışınızı bize bildirin</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant opacity-80 max-w-2xl">Yapmış olduğunuz banka transferlerini sistemimize kaydederek, emanetlerinizin doğru projelere hızla ulaşmasını ve size geri bildirim yapılmasını sağlayabilirsiniz.</p>
+</div>
+</div>
+</section>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-lg -mt-xl relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-xl pb-3xl">
+<!-- Left Column: Form -->
+<div class="lg:col-span-8 space-y-xl">
+<!-- Receipt Submission Form -->
+<form class="bg-white rounded-xl p-xl shadow-sm border border-light-border" id="receiptForm">
+<h2 class="font-card-title text-card-title text-primary mb-xl flex items-center gap-sm">
+<span class="material-symbols-outlined text-3xl">assignment</span>
+                        Dekont Bildirim Formu
+                    </h2>
+<!-- Section A: Donor Info -->
+<div class="mb-2xl">
+<h3 class="font-label text-primary border-b border-light-border pb-sm mb-lg flex items-center gap-xs">
+<span class="material-symbols-outlined">person</span>
+                            A. Bağışçı Bilgileri
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="flex flex-col gap-xs">
+<label class="font-label text-on-surface-variant">Ad Soyad</label>
+<input class="border border-light-border rounded-xl p-md form-input-focus" placeholder="Mehmet Yılmaz" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label text-on-surface-variant">Telefon Numarası</label>
+<input class="border border-light-border rounded-xl p-md form-input-focus" placeholder="+90 5xx xxx xx xx" type="tel"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label text-on-surface-variant">E-posta Adresi</label>
+<input class="border border-light-border rounded-xl p-md form-input-focus" placeholder="ornek@mail.com" type="email"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label text-on-surface-variant">Şehir / Ülke</label>
+<input class="border border-light-border rounded-xl p-md form-input-focus" placeholder="İstanbul / Türkiye" type="text"/>
+</div>
+</div>
+</div>
+<!-- Section B: Donation Info -->
+<div class="mb-2xl">
+<h3 class="font-label text-primary border-b border-light-border pb-sm mb-lg flex items-center gap-xs">
+<span class="material-symbols-outlined">payments</span>
+                            B. Bağış Bilgileri
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="flex flex-col gap-xs">
+<label class="font-label text-on-surface-variant">Bağış Kampanyası</label>
+<select class="border border-light-border rounded-xl p-md form-input-focus appearance-none bg-no-repeat bg-[right_1rem_center]" id="campaignSelect">
+<option value="genel">Genel Bağış</option>
+<option value="kurban">Kurban Bağışı</option>
+<option value="ramazan">Ramazan Yardımları</option>
+<option value="afrika">Afrika Su Kuyusu</option>
+<option value="pakistan">Pakistan Sel Yardımı</option>
+</select>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label text-on-surface-variant">Bağış Türü</label>
+<select class="border border-light-border rounded-xl p-md form-input-focus">
+<option>Zekat</option>
+<option>Sadaka</option>
+<option>Fitre / Fidye</option>
+<option>Adak / Akika</option>
+</select>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label text-on-surface-variant">Bölge Seçimi</label>
+<input class="border border-light-border rounded-xl p-md form-input-focus" placeholder="Gazze, Afrika, Yemen vb." type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label text-on-surface-variant">Miktar (₺)</label>
+<input class="border border-light-border rounded-xl p-md form-input-focus" placeholder="0.00" type="number"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label text-on-surface-variant">Bağış Tarihi</label>
+<input class="border border-light-border rounded-xl p-md form-input-focus" type="date"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label text-on-surface-variant">Banka Açıklaması</label>
+<input class="border border-light-border rounded-xl p-md form-input-focus" placeholder="Havale yaparken yazılan not" type="text"/>
+</div>
+</div>
+<!-- Conditional: Kurban -->
+<div class="hidden mt-lg p-lg bg-warm-cream rounded-xl border border-donation-gold/30" id="kurbanFields">
+<h4 class="font-label text-donation-gold mb-md flex items-center gap-xs">
+<span class="material-symbols-outlined">pets</span> Kurban Detayları
+                            </h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="flex flex-col gap-xs">
+<label class="font-label text-on-surface-variant">Hissedar Adı</label>
+<input class="border border-light-border rounded-xl p-md form-input-focus" placeholder="Kurban kesilecek kişinin adı" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label text-on-surface-variant">Hisse Sayısı</label>
+<input class="border border-light-border rounded-xl p-md form-input-focus" min="1" type="number" value="1"/>
+</div>
+<div class="md:col-span-2 flex items-center gap-md p-md bg-white/50 rounded-lg">
+<input class="w-5 h-5 rounded text-primary focus:ring-primary" id="vekalet" type="checkbox"/>
+<label class="font-label text-on-surface text-sm" for="vekalet">Derneğe kurban kesim vekaletimi veriyorum.</label>
+</div>
+</div>
+</div>
+<!-- Conditional: Ramazan -->
+<div class="hidden mt-lg p-lg bg-soft-mint rounded-xl border border-secondary/20" id="ramazanFields">
+<h4 class="font-label text-secondary mb-md flex items-center gap-xs">
+<span class="material-symbols-outlined">restaurant</span> Ramazan Yardımı Detayları
+                            </h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="flex flex-col gap-xs">
+<label class="font-label text-on-surface-variant">Yardım Türü</label>
+<select class="border border-light-border rounded-xl p-md form-input-focus">
+<option>İftar Sofrası</option>
+<option>Kumanya Paketi</option>
+<option>Bayramlık Kıyafet</option>
+</select>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label text-on-surface-variant">Paket/Adet Sayısı</label>
+<input class="border border-light-border rounded-xl p-md form-input-focus" min="1" type="number" value="1"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Section C: File Upload -->
+<div class="mb-2xl">
+<h3 class="font-label text-primary border-b border-light-border pb-sm mb-lg flex items-center gap-xs">
+<span class="material-symbols-outlined">upload_file</span>
+                            C. Dekont Dosyası
+                        </h3>
+<div class="border-2 border-dashed border-light-border rounded-xl p-2xl text-center hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-primary mb-md">cloud_upload</span>
+<p class="font-label text-on-surface mb-xs">Dekontunuzu buraya sürükleyin veya tıklayın</p>
+<p class="text-xs text-muted-text">PDF, JPG, PNG (Maksimum 5MB)</p>
+<input class="hidden" type="file"/>
+</div>
+</div>
+<!-- Section D: Additional Notes -->
+<div class="mb-2xl">
+<h3 class="font-label text-primary border-b border-light-border pb-sm mb-lg flex items-center gap-xs">
+<span class="material-symbols-outlined">edit_note</span>
+                            D. Ek Not
+                        </h3>
+<textarea class="w-full border border-light-border rounded-xl p-md form-input-focus" placeholder="Eklemek istediğiniz özel bir not varsa buraya yazabilirsiniz..." rows="3"></textarea>
+</div>
+<!-- Notification Preferences -->
+<div class="mb-2xl p-lg bg-surface-container rounded-xl">
+<p class="font-label text-on-surface mb-md">Bağışınız onaylandığında nasıl bilgilendirilmek istersiniz?</p>
+<div class="flex flex-wrap gap-xl">
+<label class="flex items-center gap-sm cursor-pointer">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-label">WhatsApp</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-label">SMS</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer">
+<input class="w-5 h-5 rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-label">E-posta</span>
+</label>
+</div>
+</div>
+<!-- Legal Consents -->
+<div class="space-y-md mb-xl">
+<label class="flex items-start gap-md cursor-pointer">
+<input class="mt-1 w-5 h-5 rounded text-primary focus:ring-primary" required="" type="checkbox"/>
+<span class="font-label text-sm text-on-surface-variant">
+<a class="text-primary underline" href="#">KVKK Aydınlatma Metni</a>'ni okudum ve verilerimin işlenmesini kabul ediyorum.
+                            </span>
+</label>
+<div class="flex flex-wrap gap-lg pt-md text-[11px] text-muted-text border-t border-light-border mt-lg">
+<span>Dernek Kütük No: 34-2XX-XXX</span>
+<span>Yardım Toplama İzin No: 2024-XXXX</span>
+</div>
+</div>
+<!-- CTA Buttons -->
+<div class="flex flex-col md:flex-row gap-lg">
+<button class="flex-1 bg-primary text-on-primary py-lg rounded-full font-button text-button shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-sm" type="submit">
+<span class="material-symbols-outlined">send</span> Dekontu Gönder
+                        </button>
+<button class="flex-1 bg-soft-mint text-primary border border-primary/30 py-lg rounded-full font-button text-button hover:bg-primary-fixed-dim/20 transition-all flex items-center justify-center gap-sm" type="button">
+<span class="material-symbols-outlined">message</span> WhatsApp ile Bildir
+                        </button>
+</div>
+</form>
+<!-- Pakistan Preparation Info Card -->
+<div class="bg-surface-container-high rounded-xl p-xl flex flex-col md:flex-row gap-xl items-center relative overflow-hidden">
+<div class="absolute top-4 right-4 bg-primary text-white text-[10px] px-md py-1 rounded-full font-bold uppercase tracking-tighter">Hazırlık Aşamasında</div>
+<div class="w-full md:w-48 h-32 rounded-lg bg-cover bg-center shrink-0" data-alt="A professional documentary photograph of humanitarian relief efforts in a rural Pakistan setting. The image shows aid workers organizing supplies near a temporary structure, with a soft golden hour lighting that creates a hopeful atmosphere. The color palette features earthy tones, soft greens, and warm sunlight, emphasizing a sincere and professional NGO aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDItm86qqhl68pSHCNfcw5siLMxnNEqLxzFCqWt0ZiIjxW_olGdkzH8urf87sU2h5ntuGXPa3TDZPXiaapjfKxsrHGKYr7q5nvQH4mBJW_A02Eb6MiRjsNlFk43zpl2SJhmXczvdsmZ6Aw8HWxb3fR5O_XdJ46i66jjxxsXKIlrec9nei2RFIQt_NjiUaF3Vd3UDxxEfJXFvRPPp25ig4KoDilkj6g7wwyxXqutuNyIy9zXz1S4MDMKJNdJAaFHB-Kao9U7bbZtTGOj')"></div>
+<div>
+<h4 class="font-card-title text-primary mb-sm">Pakistan Hazırlık Çalışmaları</h4>
+<p class="font-body text-sm text-on-surface-variant mb-md">Pakistan'daki sel felaketinden etkilenen kardeşlerimiz için yeni bir yardım koridoru hazırlıyoruz. Bölgedeki ekiplerimiz ihtiyaç analizi çalışmalarını sürdürmektedir. Çok yakında bağışlarınızı bu bölgeye yönlendirebilirsiniz.</p>
+<a class="text-primary font-button text-sm flex items-center gap-xs" href="#">Detayları İncele <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<!-- Right Column: Info Sidebar -->
+<div class="lg:col-span-4 space-y-xl">
+<!-- Important Notice -->
+<div class="bg-primary text-on-primary rounded-xl p-xl shadow-xl">
+<span class="material-symbols-outlined text-4xl mb-md">info</span>
+<h3 class="font-card-title mb-md">Neden Bildirmeliyim?</h3>
+<p class="font-body text-sm opacity-90 leading-relaxed">
+                        Banka üzerinden yapılan transferlerde bazen açıklamalar eksik kalabilmektedir. Dekontunuzu bize ileterek:
+                    </p>
+<ul class="mt-md space-y-sm text-sm opacity-90">
+<li class="flex gap-sm items-start"><span class="material-symbols-outlined text-xs mt-1">check_circle</span> Emanetinizin tam olarak hangi projeye (Kurban, Su Kuyusu vb.) aktarılacağını netleştirirsiniz.</li>
+<li class="flex gap-sm items-start"><span class="material-symbols-outlined text-xs mt-1">check_circle</span> Bağış kaydınızın anlık olarak yapılmasına olanak sağlarsınız.</li>
+<li class="flex gap-sm items-start"><span class="material-symbols-outlined text-xs mt-1">check_circle</span> Bağışınız ulaştığında SMS veya WhatsApp ile bilgilendirme alırsınız.</li>
+</ul>
+</div>
+<!-- Bank Info Card -->
+<div class="bg-white rounded-xl p-xl border border-light-border shadow-sm">
+<h3 class="font-card-title text-primary mb-xl flex items-center gap-sm">
+<span class="material-symbols-outlined">account_balance</span>
+                        Banka Bilgileri
+                    </h3>
+<div class="space-y-xl">
+<div class="p-md bg-background rounded-lg border border-light-border group relative">
+<p class="font-label text-xs text-muted-text mb-1 uppercase tracking-widest">Alıcı Adı</p>
+<p class="font-button text-on-surface">Emanet ve Vefa Derneği</p>
+<span class="material-symbols-outlined absolute top-4 right-4 text-primary opacity-20 group-hover:opacity-100 transition-opacity cursor-pointer">content_copy</span>
+</div>
+<div class="p-md bg-background rounded-lg border border-light-border group relative">
+<p class="font-label text-xs text-muted-text mb-1 uppercase tracking-widest">Kuveyt Türk</p>
+<p class="font-button text-on-surface break-all">TR 00 0000 0000 0000 0000 0000 00</p>
+<span class="material-symbols-outlined absolute top-4 right-4 text-primary opacity-20 group-hover:opacity-100 transition-opacity cursor-pointer">content_copy</span>
+</div>
+<div class="p-md bg-background rounded-lg border border-light-border group relative">
+<p class="font-label text-xs text-muted-text mb-1 uppercase tracking-widest">Ziraat Katılım</p>
+<p class="font-button text-on-surface break-all">TR 00 0000 0000 0000 0000 0000 00</p>
+<span class="material-symbols-outlined absolute top-4 right-4 text-primary opacity-20 group-hover:opacity-100 transition-opacity cursor-pointer">content_copy</span>
+</div>
+</div>
+</div>
+<!-- Help & Support -->
+<div class="bg-soft-mint rounded-xl p-xl border border-primary/10">
+<h3 class="font-card-title text-primary mb-md">Desteğe mi ihtiyacınız var?</h3>
+<p class="font-body text-sm text-on-surface-variant mb-xl opacity-80">Formu doldururken veya bağış sürecinde takıldığınız her an yanınızdayız.</p>
+<div class="space-y-md">
+<a class="flex items-center gap-md p-md bg-white rounded-lg hover:shadow-md transition-shadow" href="tel:+902120000000">
+<span class="material-symbols-outlined text-primary">call</span>
+<div>
+<p class="font-label text-xs text-muted-text">Bizi Arayın</p>
+<p class="font-button text-primary">0212 XXX XX XX</p>
+</div>
+</a>
+<a class="flex items-center gap-md p-md bg-white rounded-lg hover:shadow-md transition-shadow" href="#">
+<span class="material-symbols-outlined text-[#25D366]">chat</span>
+<div>
+<p class="font-label text-xs text-muted-text">WhatsApp Hattı</p>
+<p class="font-button text-[#25D366]">05XX XXX XX XX</p>
+</div>
+</a>
+</div>
+</div>
+<!-- FAQ Snippet -->
+<div class="bg-white rounded-xl p-xl border border-light-border">
+<h3 class="font-card-title text-primary mb-lg">Sıkça Sorulanlar</h3>
+<div class="space-y-md">
+<details class="group border-b border-light-border pb-md">
+<summary class="list-none cursor-pointer font-label text-sm flex justify-between items-center text-on-surface hover:text-primary">
+                                Dekont yüklemek zorunlu mu?
+                                <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-md text-xs text-on-surface-variant leading-relaxed">Bağışınızın hızlıca onaylanması ve doğru projeye aktarılması için dekont yüklemeniz süreci %90 hızlandırır.</p>
+</details>
+<details class="group border-b border-light-border pb-md">
+<summary class="list-none cursor-pointer font-label text-sm flex justify-between items-center text-on-surface hover:text-primary">
+                                Onay SMS'i ne zaman gelir?
+                                <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="mt-md text-xs text-on-surface-variant leading-relaxed">Mesai saatleri içerisinde gönderilen bildirimler genellikle 1 saat içinde, hafta sonu gönderilenler ise ilk iş günü onaylanır.</p>
+</details>
+</div>
+</div>
+</div>
+</div>
+<!-- How It Works Section -->
+<section class="bg-soft-mint py-3xl">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-lg">
+<div class="text-center mb-2xl">
+<h2 class="font-section-heading text-primary mb-md">Süreç Nasıl İşliyor?</h2>
+<p class="font-body-lg text-muted-text max-w-2xl mx-auto">Emanetinizin teslimat yolculuğunu 4 basit adımda takip edebilirsiniz.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl">
+<!-- Step 1 -->
+<div class="bg-white rounded-xl p-xl shadow-sm border border-light-border relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-extrabold text-xl">1</div>
+<div class="text-center mt-md">
+<span class="material-symbols-outlined text-4xl text-secondary mb-md">account_balance</span>
+<h4 class="font-card-title text-on-surface mb-sm">Havale/EFT</h4>
+<p class="font-body text-sm text-on-surface-variant opacity-80">Dernek hesaplarımıza bağış miktarını transfer edin.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-white rounded-xl p-xl shadow-sm border border-light-border relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-extrabold text-xl">2</div>
+<div class="text-center mt-md">
+<span class="material-symbols-outlined text-4xl text-secondary mb-md">upload_file</span>
+<h4 class="font-card-title text-on-surface mb-sm">Bildirim Yap</h4>
+<p class="font-body text-sm text-on-surface-variant opacity-80">Bu sayfadaki formu doldurarak dekontunuzu yükleyin.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-white rounded-xl p-xl shadow-sm border border-light-border relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-extrabold text-xl">3</div>
+<div class="text-center mt-md">
+<span class="material-symbols-outlined text-4xl text-secondary mb-md">fact_check</span>
+<h4 class="font-card-title text-on-surface mb-sm">Kontrol &amp; Onay</h4>
+<p class="font-body text-sm text-on-surface-variant opacity-80">Ekiplerimiz banka dökümü ile bildirimini eşleştirsin.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-white rounded-xl p-xl shadow-sm border border-light-border relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-extrabold text-xl">4</div>
+<div class="text-center mt-md">
+<span class="material-symbols-outlined text-4xl text-secondary mb-md">verified</span>
+<h4 class="font-card-title text-on-surface mb-sm">Bilgilendirme</h4>
+<p class="font-body text-sm text-on-surface-variant opacity-80">Bağışınız onaylandığında tarafınıza bilgi mesajı gelsin.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-3xl pb-xl bg-surface-container dark:bg-inverse-surface border-t border-light-border">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-lg grid grid-cols-1 md:grid-cols-4 gap-xl">
+<div class="col-span-1 md:col-span-1">
+<div class="font-section-heading text-section-heading text-primary dark:text-inverse-primary mb-md">Emanet &amp; Vefa</div>
+<p class="font-body text-body text-muted-text mb-lg">Şeffaf, güvenilir ve sürdürülebilir bir iyilik hareketi için emanetlerinizi ehline ulaştırıyoruz.</p>
+<div class="flex gap-md">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">public</span></div>
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all"><span class="material-symbols-outlined">alternate_email</span></div>
+</div>
+</div>
+<div>
+<h4 class="font-button text-on-surface mb-lg">Kurumsal</h4>
+<ul class="space-y-sm">
+<li><a class="font-body text-muted-text hover:text-primary transition-all" href="#">Hakkımızda</a></li>
+<li><a class="font-body text-muted-text hover:text-primary transition-all" href="#">Vizyon &amp; Misyon</a></li>
+<li><a class="font-body text-muted-text hover:text-primary transition-all" href="#">Dernek Tüzüğü</a></li>
+<li><a class="font-body text-muted-text hover:text-primary transition-all" href="#">Faaliyet Raporları</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-button text-on-surface mb-lg">Yasal</h4>
+<ul class="space-y-sm">
+<li><a class="font-body text-muted-text hover:text-primary transition-all" href="#">KVKK Aydınlatma Metni</a></li>
+<li><a class="font-body text-muted-text hover:text-primary transition-all" href="#">Kullanım Koşulları</a></li>
+<li><a class="font-body text-muted-text hover:text-primary transition-all" href="#">Bağışçı Hakları Beyannamesi</a></li>
+<li><a class="font-body text-muted-text hover:text-primary transition-all" href="#">Mesafeli Sözleşme</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-button text-on-surface mb-lg">İletişim</h4>
+<ul class="space-y-sm">
+<li class="flex items-center gap-sm text-muted-text"><span class="material-symbols-outlined text-sm">location_on</span> İstanbul, Türkiye</li>
+<li class="flex items-center gap-sm text-muted-text"><span class="material-symbols-outlined text-sm">phone</span> +90 (212) XXX XX XX</li>
+<li class="flex items-center gap-sm text-muted-text"><span class="material-symbols-outlined text-sm">mail</span> bilgi@emanetvevefa.org.tr</li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-lg mt-3xl pt-lg border-t border-light-border flex flex-col md:flex-row justify-between items-center text-muted-text text-sm">
+<p>© 2024 Emanet &amp; Vefa Derneği. Tüm Hakları Saklıdır.</p>
+<div class="flex gap-lg mt-md md:mt-0">
+<a class="hover:text-primary" href="#">Bize Ulaşın</a>
+<a class="hover:text-primary" href="#">Gönüllü Ol</a>
+</div>
+</div>
+</footer>
+<script>
+        const campaignSelect = document.getElementById('campaignSelect');
+        const kurbanFields = document.getElementById('kurbanFields');
+        const ramazanFields = document.getElementById('ramazanFields');
+
+        campaignSelect.addEventListener('change', (e) => {
+            const val = e.target.value;
+            kurbanFields.classList.add('hidden');
+            ramazanFields.classList.add('hidden');
+
+            if (val === 'kurban') {
+                kurbanFields.classList.remove('hidden');
+            } else if (val === 'ramazan') {
+                ramazanFields.classList.remove('hidden');
+            }
+        });
+
+        // Simple form submission micro-interaction
+        document.getElementById('receiptForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Dekont bildiriminiz başarıyla alındı. Teşekkür ederiz.');
+        });
+    </script>
+</body></html>

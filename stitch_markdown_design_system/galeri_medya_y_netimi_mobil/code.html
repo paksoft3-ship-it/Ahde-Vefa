@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AHDE VEFA | Medya Yönetimi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#bfedd3",
+                        "soft-mint": "#EEF8F4",
+                        "primary-fixed-dim": "#93d5ab",
+                        "inverse-on-surface": "#e8f2ff",
+                        "tertiary": "#254f3c",
+                        "on-secondary-fixed": "#001f24",
+                        "on-primary-fixed-variant": "#0a5132",
+                        "surface-dim": "#d1dbe8",
+                        "on-tertiary-fixed-variant": "#254f3b",
+                        "on-surface-variant": "#404942",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#27313c",
+                        "background": "#f7f9ff",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "donation-gold": "#F4B740",
+                        "secondary": "#006874",
+                        "on-tertiary-fixed": "#002114",
+                        "primary": "#0a5132",
+                        "surface-container-low": "#edf4ff",
+                        "on-primary": "#ffffff",
+                        "muted-text": "#667085",
+                        "primary-fixed": "#aef1c6",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-background": "#121d26",
+                        "on-primary-fixed": "#002111",
+                        "secondary-fixed": "#9af0ff",
+                        "warm-cream": "#FFF8EF",
+                        "on-surface": "#121d26",
+                        "secondary-container": "#61e9fe",
+                        "surface": "#f7f9ff",
+                        "on-tertiary-container": "#b6e3c9",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#dfe9f7",
+                        "surface-tint": "#2a6a48",
+                        "inverse-primary": "#93d5ab",
+                        "tertiary-container": "#3d6752",
+                        "surface-container": "#e4effd",
+                        "outline-variant": "#bfc9c0",
+                        "primary-container": "#2a6a48",
+                        "tertiary-fixed-dim": "#a4d1b7",
+                        "surface-bright": "#f7f9ff",
+                        "surface-variant": "#d9e3f1",
+                        "on-secondary-container": "#006773",
+                        "surface-container-highest": "#d9e3f1",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#a5e7bd",
+                        "secondary-fixed-dim": "#4cd8ec",
+                        "outline": "#707971",
+                        "surface-container-lowest": "#ffffff",
+                        "light-border": "#E5E7EB"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "1rem",
+                        "lg": "1.5rem",
+                        "sm": "0.5rem",
+                        "xs": "0.25rem",
+                        "2xl": "4rem",
+                        "3xl": "6rem",
+                        "xl": "2.5rem",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "hero-heading-mobile": ["Manrope"],
+                        "section-heading": ["Manrope"],
+                        "page-heading-mobile": ["Manrope"],
+                        "page-heading": ["Manrope"],
+                        "body": ["Manrope"],
+                        "section-heading-mobile": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "button": ["Manrope"],
+                        "hero-heading": ["Manrope"],
+                        "card-title": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "hero-heading-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "section-heading": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "page-heading-mobile": ["34px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "page-heading": ["48px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "section-heading-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "hero-heading": ["64px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "card-title": ["22px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "label": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        .animate-slide-up { animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface pb-32">
+<!-- Top AppBar -->
+<header class="fixed top-0 left-0 w-full h-16 px-4 bg-surface/80 backdrop-blur-md z-40 flex justify-between items-center border-b border-light-border">
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-full hover:bg-surface-variant transition-colors" onclick="toggleSidebar()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-card-title font-card-title font-bold text-primary">Galeri</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 bg-primary text-on-primary px-4 py-2 rounded-full font-button text-sm">
+<span class="material-symbols-outlined text-sm">add</span>
+                Yükle
+            </button>
+<button class="p-2 text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Side Navigation (Mobile Drawer Overlay) -->
+<aside class="fixed inset-0 bg-black/50 z-50 transition-opacity opacity-0 pointer-events-none" id="sidebar">
+<div class="bg-primary w-72 h-full transform -translate-x-full transition-transform duration-300 shadow-2xl flex flex-col" id="sidebar-content">
+<div class="p-6 flex items-center justify-between">
+<div>
+<h2 class="text-on-primary font-black text-2xl tracking-tight">AHDE VEFA</h2>
+<p class="text-on-primary/60 text-xs font-label uppercase tracking-widest">Yönetim Paneli</p>
+</div>
+<button class="text-on-primary p-1" onclick="toggleSidebar()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex-1 overflow-y-auto pt-4 pb-8 space-y-1">
+<a class="flex items-center gap-4 px-6 py-3 text-on-primary/70 hover:bg-on-primary/10" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label">Genel Bakış</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-primary/70 hover:bg-on-primary/10" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label">Bağışlar</span>
+</a>
+<div class="px-6 py-3 flex items-center gap-4 bg-primary-container text-on-primary-container rounded-r-full mr-4">
+<span class="material-symbols-outlined">photo_library</span>
+<span class="font-label font-bold">Galeri</span>
+</div>
+<a class="flex items-center gap-4 px-6 py-3 text-on-primary/70 hover:bg-on-primary/10" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label">Kampanyalar</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-primary/70 hover:bg-on-primary/10" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label">Gönüllüler</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-primary/70 hover:bg-on-primary/10" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-label">Raporlar</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-primary/70 hover:bg-on-primary/10" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label">Ayarlar</span>
+</a>
+</nav>
+</div>
+</aside>
+<main class="mt-20 px-4">
+<!-- Summary Cards -->
+<section class="mb-8">
+<div class="flex overflow-x-auto gap-4 hide-scrollbar py-2 -mx-4 px-4">
+<div class="flex-shrink-0 w-40 p-4 bg-soft-mint rounded-xl shadow-sm border border-primary/10">
+<div class="text-primary-container mb-1"><span class="material-symbols-outlined">perm_media</span></div>
+<div class="text-2xl font-bold text-primary">1,284</div>
+<div class="text-[10px] text-primary/70 font-label uppercase">Toplam Medya</div>
+</div>
+<div class="flex-shrink-0 w-40 p-4 bg-warm-cream rounded-xl shadow-sm border border-donation-gold/20">
+<div class="text-donation-gold mb-1"><span class="material-symbols-outlined">verified</span></div>
+<div class="text-2xl font-bold text-on-surface">452</div>
+<div class="text-[10px] text-on-surface-variant font-label uppercase">Yayınlanmış</div>
+</div>
+<div class="flex-shrink-0 w-40 p-4 bg-surface-container-high rounded-xl shadow-sm border border-light-border">
+<div class="text-secondary mb-1"><span class="material-symbols-outlined">pending</span></div>
+<div class="text-2xl font-bold text-on-surface">18</div>
+<div class="text-[10px] text-on-surface-variant font-label uppercase">Onay Bekleyen</div>
+</div>
+</div>
+</section>
+<!-- Search & Filter Controls -->
+<div class="flex items-center justify-between gap-3 mb-6">
+<div class="flex-1 bg-surface-container-low rounded-full px-4 h-12 flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1" placeholder="Medya ara..." type="text"/>
+</div>
+<button class="h-12 w-12 flex items-center justify-center bg-surface-container-high rounded-full text-primary" onclick="toggleFilterSheet()">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+<!-- Media Grid -->
+<section class="grid grid-cols-2 gap-4">
+<!-- Item 1: Image -->
+<div class="group relative bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-light-border transition-transform active:scale-95" onclick="openDetailModal()">
+<div class="relative aspect-square">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A heart-warming photograph of a group of children smiling and laughing in a rural village in Africa, captured during a humanitarian aid mission. The lighting is golden and warm, emphasizing hope and dignity. The AHDE VEFA NGO professional photography style is evident with high clarity and respectful framing." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCeveeagI7pfCSwkr_fMEVLC5c7TTljwXZDf-HUHqWthZSrZJAhC_kYYU8kMiPA0c28eLOCChi7MKQFUjkMdfLutt6NtS2WVV-khTvjONv1U9kh5a30uUw-wahotj1DSvZAcnauNxP4YGzdSoQ0UsRsffhYeqdQV0auU19Xysrhy7ErcEDSivimj4PUV9dwH1lps1Je31sqeNImyNr3nuJos54AHPFHZk999irFJmPwVFDMLASTRR1LEc3EK5JSUcUlqfhLTUXA8vRY')"></div>
+<div class="absolute top-2 left-2 flex gap-1">
+<span class="bg-primary/90 text-on-primary text-[10px] font-bold px-2 py-0.5 rounded-full">YAYINDA</span>
+</div>
+<div class="absolute bottom-2 right-2 h-8 w-8 bg-black/30 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">image</span>
+</div>
+</div>
+<div class="p-3">
+<p class="text-xs font-bold truncate">Afrika Su Kuyusu Açılışı</p>
+<p class="text-[10px] text-on-surface-variant mt-1">12 May 2024 • Sudan</p>
+</div>
+</div>
+<!-- Item 2: Video with Warning -->
+<div class="group relative bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-light-border transition-transform active:scale-95">
+<div class="relative aspect-square">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A scenic cinematic shot of a temporary relief camp in Pakistan, showing white tents and volunteers distributing essential supplies. The sky is overcast but the colors are rich and professional. Minimalist NGO aesthetic, focused on the scale of humanitarian impact in a high-contrast modern UI context." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQuP1rO80wEv88IuLXDHgqyNauCLVcOsHqlResQIsIUa_vuL_mvAMajP3oV8n83WqFBd3qfdV5WBQytduOfMMw04dwXEEcyMCGsFvkxuItms8aRIzfEHlPr1ID6QeCw-RHAbV9hGvagPC0x5XjvCkkU18FHXHfxvfSL6BYmgTMwgKHsAOlf_nA8p-B8rWZULLrXTsZH4qN2E5OdeRhg05nglExkf4EUUEQz-GK4eIIYQrwBdvoayH9v7YOyozJ2MDyhsRjIhiVfj-X')"></div>
+<div class="absolute top-2 left-2 flex flex-col gap-1">
+<span class="bg-error/90 text-on-error text-[10px] font-bold px-2 py-0.5 rounded-full">HAZIRLIK AŞAMASI</span>
+<span class="bg-white/90 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm">PAKİSTAN</span>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="h-10 w-10 bg-primary/80 backdrop-blur-sm rounded-full flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-3">
+<p class="text-xs font-bold truncate">Sel Bölgesi Yardımları</p>
+<p class="text-[10px] text-on-surface-variant mt-1">05 Ara 2023 • Pakistan</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group relative bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-light-border transition-transform active:scale-95">
+<div class="relative aspect-square">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Close-up professional photography of an elderly person receiving a food package from a volunteer in Turkey. The image conveys sincere humanitarian responsibility and transparency. Soft natural lighting, corporate modern aesthetic, emphasis on the interaction between people." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHyRbYH7kBhNrS-apWOzSzsB_urepkyZcLtzPKN7neIIFmnzfbtW6nABregFQY0HuaK2QRZ8GuJMlp4iD0tw2BmU95dw3ups3hokV1i3x205u-XSxNxsMJo3-2Xh-OKzJQrNasq4kqj015ztiJJGXC9VMvmKCHsbvWHQ8xP60OFVgEP0qyCdjlJ907hjG-kKPWQglHkC-KgTloqH3hYo-wYUvBh1p33ukfG90LoOaKEt1bReDzOqHyIBHdO8c8_bKnWe8tFg_3oiEs')"></div>
+<div class="absolute top-2 left-2">
+<span class="bg-on-surface-variant/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">GİZLİ</span>
+</div>
+<div class="absolute bottom-2 right-2 h-8 w-8 bg-black/30 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">photo_library</span>
+</div>
+</div>
+<div class="p-3">
+<p class="text-xs font-bold truncate">Ramazan Kumanyası</p>
+<p class="text-[10px] text-on-surface-variant mt-1">15 Nis 2024 • İstanbul</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="group relative bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-light-border transition-transform active:scale-95">
+<div class="relative aspect-square">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A wide landscape shot of a newly constructed orphanage building by the NGO in Asia. The architecture is clean, and the surrounding environment is lush. Professional architectural photography style with wide-angle perspective and bright, clear daylight." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBloQGNII-zfhUpjsnHEmSWBGhmoa9TN9tK--VEuWYR1UQpbDW-52JT16BwUmruQGeKSnGQ0IfHDP5Sp5qikhtZL_9Vq6eOOVpMvWY7s-tBYPME_aMk-jhSOEooDiwaWlI5VsQC3sMtqekgGORupvT7FYam2WUO-_AbMDRaeFFHGKujooX4HAlp575yNnorO96s-xj1EYTAvanXTlI1PuoJ4JQZNLfsFC5j4dy22QT4XB-N8Zn7zDHXwMEXuZ3Kf56KF161sg8TZ7GX')"></div>
+<div class="absolute top-2 left-2">
+<span class="bg-primary/90 text-on-primary text-[10px] font-bold px-2 py-0.5 rounded-full">YAYINDA</span>
+</div>
+<div class="absolute bottom-2 right-2 h-8 w-8 bg-black/30 backdrop-blur-md rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">image</span>
+</div>
+</div>
+<div class="p-3">
+<p class="text-xs font-bold truncate">Yetimhane İnşaatı Bitti</p>
+<p class="text-[10px] text-on-surface-variant mt-1">20 Mar 2024 • Bangladeş</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bulk Action Bar -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 w-[92%] glass-panel rounded-2xl p-4 shadow-xl border border-primary/20 flex items-center justify-between z-30 transition-transform translate-y-32" id="bulk-bar">
+<div class="flex items-center gap-2">
+<span class="h-6 w-6 bg-primary text-on-primary rounded-full flex items-center justify-center text-xs font-bold">3</span>
+<span class="text-sm font-bold text-on-surface">Seçildi</span>
+</div>
+<div class="flex gap-2">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-xs font-bold">Yayına Al</button>
+<button class="bg-surface-container-high text-on-surface px-4 py-2 rounded-lg text-xs font-bold">Gizle</button>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full h-16 z-50 flex justify-around items-center px-4 bg-surface border-t border-light-border">
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-label-mobile">Genel Bakış</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-label-mobile">Bağışlar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">photo_library</span>
+<span class="text-[10px] font-label-mobile">Galeri</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-mobile">Profil</span>
+</a>
+</nav>
+<!-- Filter Bottom Sheet -->
+<div class="fixed inset-0 bg-black/60 z-[60] opacity-0 pointer-events-none transition-opacity" id="filter-sheet-overlay" onclick="toggleFilterSheet()">
+<div class="absolute bottom-0 left-0 w-full bg-surface rounded-t-3xl p-6 animate-slide-up h-[663px] overflow-y-auto" onclick="event.stopPropagation()">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full mx-auto mb-8"></div>
+<h2 class="text-2xl font-bold mb-6">Medya Filtreleri</h2>
+<div class="space-y-8">
+<div>
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider mb-3 block">Medya Türü</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-primary bg-soft-mint text-primary text-sm font-bold">Tümü</button>
+<button class="px-4 py-2 rounded-full border border-light-border text-on-surface-variant text-sm font-medium">Fotoğraf</button>
+<button class="px-4 py-2 rounded-full border border-light-border text-on-surface-variant text-sm font-medium">Video</button>
+<button class="px-4 py-2 rounded-full border border-light-border text-on-surface-variant text-sm font-medium">Belge</button>
+</div>
+</div>
+<div>
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider mb-3 block">Kampanya</label>
+<select class="w-full h-14 bg-surface-container-low border-none rounded-xl focus:ring-primary">
+<option>Tüm Kampanyalar</option>
+<option>Su Kuyusu Projeleri</option>
+<option>Ramazan Yardımları</option>
+<option>Yetim Destek</option>
+<option>Acil İnsani Yardım</option>
+</select>
+</div>
+<div>
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider mb-3 block">Bölge / Ülke</label>
+<div class="grid grid-cols-2 gap-3">
+<label class="flex items-center gap-3 p-4 rounded-xl border border-light-border">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium">Afrika</span>
+</label>
+<label class="flex items-center gap-3 p-4 rounded-xl border border-light-border">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium">Asya</span>
+</label>
+<label class="flex items-center gap-3 p-4 rounded-xl border border-light-border">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium">Türkiye</span>
+</label>
+<label class="flex items-center gap-3 p-4 rounded-xl border border-light-border">
+<input checked="" class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-medium">Pakistan</span>
+</label>
+</div>
+</div>
+<div class="pt-6 pb-12">
+<button class="w-full h-14 bg-primary text-on-primary rounded-xl font-button text-lg shadow-lg shadow-primary/20" onclick="toggleFilterSheet()">Filtreleri Uygula</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Detail Full-screen Modal -->
+<div class="fixed inset-0 bg-surface z-[70] translate-y-full transition-transform duration-500 overflow-y-auto" id="detail-modal">
+<header class="sticky top-0 w-full h-16 px-4 bg-surface/90 backdrop-blur-md flex justify-between items-center z-10 border-b border-light-border">
+<button class="p-2" onclick="closeDetailModal()">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h3 class="font-bold">Medya Detayı</h3>
+<button class="p-2 text-primary">
+<span class="material-symbols-outlined">save</span>
+</button>
+</header>
+<div class="px-6 py-8">
+<div class="aspect-video w-full rounded-2xl bg-black overflow-hidden mb-8 shadow-2xl relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="High-resolution professional photo of a new water well being inaugurated in a village in Sudan. Children are drinking water excitedly. The sunlight is vivid, showing the turquoise AHDE VEFA logo on the well's signage. Professional corporate humanitarian photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5FEVafTcRRFgLIe7VQWhjQ3ofTMxDNkZcsvdAey5nalmj5b9QBsCAaHIIOlJ7_zYpsr8r9Cqkf9q0jqnRMKoH1SlwFhMkPjs7JhQ7M_QpymAqfylN3EQ3lByGF7lDWwialdw9B2_OgR3AlUtNf7h9SiW23emdQXME9RFBKEiL_unl6QXlFozXK_oSlzKwIRejad1wHnZ8XumBlkzjFHbR45QNTTjdB6muYkueTlc00KlsaSdaEs-7FLkoRv1aE7YI90poy2Op2A-x')"></div>
+</div>
+<div class="space-y-8">
+<div>
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider mb-2 block">Dosya Başlığı</label>
+<input class="w-full h-14 bg-surface-container-low border-none rounded-xl focus:ring-primary font-bold" type="text" value="Afrika Su Kuyusu Açılışı - Sudan"/>
+</div>
+<div>
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider mb-4 block">Mahremiyet Kontrolü (KVKK & Etik)</label>
+<div class="bg-soft-mint rounded-2xl p-5 border border-primary/10 space-y-4">
+<label class="flex items-start gap-4">
+<input checked="" class="mt-1 rounded text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-sm font-medium leading-tight">Görüntülenen kişilerin yazılı onayı (muvafakatname) mevcut.</span>
+</label>
+<label class="flex items-start gap-4">
+<input checked="" class="mt-1 rounded text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-sm font-medium leading-tight">Yüz hatları veya özel durumlar yardım haysiyetini zedelemiyor.</span>
+</label>
+<label class="flex items-start gap-4">
+<input class="mt-1 rounded text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-sm font-medium leading-tight">Konum verileri ve hassas coğrafi işaretler temizlendi.</span>
+</label>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider mb-2 block">Bölge</label>
+<div class="h-14 bg-surface-container-low flex items-center px-4 rounded-xl text-sm font-bold">Sudan</div>
+</div>
+<div>
+<label class="text-xs font-bold uppercase text-on-surface-variant tracking-wider mb-2 block">Kampanya</label>
+<div class="h-14 bg-surface-container-low flex items-center px-4 rounded-xl text-sm font-bold">Su Kuyusu</div>
+</div>
+</div>
+<div class="pt-10 flex gap-3">
+<button class="flex-1 h-14 bg-error-container text-on-error-container rounded-xl font-button flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">delete</span>
+                        Medyayı Sil
+                    </button>
+<button class="flex-1 h-14 bg-primary text-on-primary rounded-xl font-button shadow-lg shadow-primary/20">Güncelle</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const content = document.getElementById('sidebar-content');
+            if (sidebar.classList.contains('opacity-0')) {
+                sidebar.classList.remove('opacity-0', 'pointer-events-none');
+                sidebar.classList.add('opacity-100');
+                content.classList.remove('-translate-x-full');
+            } else {
+                sidebar.classList.add('opacity-0', 'pointer-events-none');
+                sidebar.classList.remove('opacity-100');
+                content.classList.add('-translate-x-full');
+            }
+        }
+
+        function toggleFilterSheet() {
+            const sheet = document.getElementById('filter-sheet-overlay');
+            if (sheet.classList.contains('opacity-0')) {
+                sheet.classList.remove('opacity-0', 'pointer-events-none');
+                sheet.classList.add('opacity-100');
+            } else {
+                sheet.classList.add('opacity-0', 'pointer-events-none');
+                sheet.classList.remove('opacity-100');
+            }
+        }
+
+        function openDetailModal() {
+            document.getElementById('detail-modal').classList.remove('translate-y-full');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDetailModal() {
+            document.getElementById('detail-modal').classList.add('translate-y-full');
+            document.body.style.overflow = '';
+        }
+
+        // Show bulk bar after small delay to simulate selection
+        setTimeout(() => {
+            document.getElementById('bulk-bar').classList.remove('translate-y-32');
+        }, 1500);
+    </script>
+</body></html>

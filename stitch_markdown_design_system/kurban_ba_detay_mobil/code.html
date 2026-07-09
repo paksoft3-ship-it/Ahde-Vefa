@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kurban Bağışı - Vefa Aid</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-container-low": "#edf4ff",
+                "secondary-fixed": "#9af0ff",
+                "tertiary-fixed": "#bfedd3",
+                "surface-container-high": "#dfe9f7",
+                "secondary-fixed-dim": "#4cd8ec",
+                "error": "#ba1a1a",
+                "surface-tint": "#2a6a48",
+                "inverse-on-surface": "#e8f2ff",
+                "on-surface": "#121d26",
+                "on-primary-container": "#a5e7bd",
+                "primary-fixed": "#aef1c6",
+                "on-tertiary": "#ffffff",
+                "tertiary-container": "#3d6752",
+                "outline-variant": "#bfc9c0",
+                "on-secondary-container": "#006773",
+                "on-secondary-fixed-variant": "#004f58",
+                "muted-text": "#667085",
+                "primary-container": "#2a6a48",
+                "surface-bright": "#f7f9ff",
+                "on-tertiary-container": "#b6e3c9",
+                "inverse-surface": "#27313c",
+                "donation-gold": "#F4B740",
+                "secondary": "#006874",
+                "tertiary-fixed-dim": "#a4d1b7",
+                "on-secondary": "#ffffff",
+                "light-border": "#E5E7EB",
+                "on-primary-fixed": "#002111",
+                "on-primary": "#ffffff",
+                "on-error": "#ffffff",
+                "on-tertiary-fixed-variant": "#254f3b",
+                "inverse-primary": "#93d5ab",
+                "surface": "#f7f9ff",
+                "on-tertiary-fixed": "#002114",
+                "surface-dim": "#d1dbe8",
+                "secondary-container": "#61e9fe",
+                "on-primary-fixed-variant": "#0a5132",
+                "on-error-container": "#93000a",
+                "warm-cream": "#FFF8EF",
+                "on-background": "#121d26",
+                "background": "#f7f9ff",
+                "error-container": "#ffdad6",
+                "surface-container-highest": "#d9e3f1",
+                "primary": "#0a5132",
+                "tertiary": "#254f3c",
+                "soft-mint": "#EEF8F4",
+                "on-surface-variant": "#404942",
+                "on-secondary-fixed": "#001f24",
+                "primary-fixed-dim": "#93d5ab",
+                "surface-variant": "#d9e3f1",
+                "surface-container": "#e4effd",
+                "outline": "#707971",
+                "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "gutter": "24px",
+                "margin-mobile": "20px",
+                "sm": "0.5rem",
+                "md": "1rem",
+                "container-max": "1280px",
+                "3xl": "6rem",
+                "xl": "2.5rem",
+                "xs": "0.25rem",
+                "lg": "1.5rem",
+                "2xl": "4rem"
+            },
+            "fontFamily": {
+                "section-heading-mobile": ["Manrope"],
+                "page-heading": ["Manrope"],
+                "label": ["Manrope"],
+                "body-lg": ["Manrope"],
+                "section-heading": ["Manrope"],
+                "button": ["Manrope"],
+                "page-heading-mobile": ["Manrope"],
+                "card-title": ["Manrope"],
+                "hero-heading": ["Manrope"],
+                "hero-heading-mobile": ["Manrope"],
+                "body": ["Manrope"]
+            },
+            "fontSize": {
+                "section-heading-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "page-heading": ["48px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                "label": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                "section-heading": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                "page-heading-mobile": ["34px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                "card-title": ["22px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                "hero-heading": ["64px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                "hero-heading-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-20 bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="menu">menu</span>
+<span class="font-page-heading text-page-heading-mobile font-extrabold text-primary">Vefa Aid</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="language">language</span>
+<button class="bg-primary-container text-on-primary-container font-button text-button px-4 py-2 rounded-full scale-95 active:opacity-80 transition-all">Bağış Yap</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="px-margin-mobile py-lg">
+<div class="rounded-xl overflow-hidden relative h-64 mb-6">
+<img class="w-full h-full object-cover" data-alt="A high-quality, respectful photograph of a humanitarian aid worker smiling warmly while handing over aid supplies to a family in a rural international setting. The lighting is soft and golden, suggesting a sunset in Africa or Asia. The composition is close and intimate, focusing on the human connection and the dignity of the recipients. The overall mood is hopeful and sincere, aligned with a modern professional NGO aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9_5Hg_5v_bGPbxFAGSaO6A8YiNX1AbOYQC9jswoq26Zi0XARPCm1h1CnEY99kjhu9AiDD6YjciubclgmJzCreuZK4n2jF5jro5EYYqQbTBhKYNcZgN1irh4fFWxMqvyIobY6AAyt8h__TQ8CTjABpEWh7SsKLD1GQTMxTSQvcfxT2_24VNdSq-ZemxI4LdUf-0N92P6oX22EbT6-giugPBc-I3eAtkjoOmJA47Bg2PLodmvJKCuB7GnGugDuc_Zr0yF5gB9OFv-5u"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+<h1 class="font-hero-heading-mobile text-hero-heading-mobile text-primary mb-4">Kurban emanetlerinizi güvenle ihtiyaç sahiplerine ulaştırıyoruz</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Vefa Aid olarak, kurban ibadetinizi en hassas dini kurallar çerçevesinde yerine getiriyor, emanetlerinizi gerçek ihtiyaç sahiplerine ulaştırıyoruz.</p>
+</section>
+<!-- Donation Card -->
+<section class="px-margin-mobile -mt-4 mb-xl">
+<div class="bg-white rounded-xl shadow-lg p-md border border-light-border">
+<h2 class="font-card-title text-card-title text-primary mb-md">Kurban Bağışı Yap</h2>
+<div class="space-y-md">
+<div>
+<label class="font-label text-label text-on-surface-variant mb-xs block">Bağış Türü</label>
+<select class="w-full rounded-xl border-light-border bg-surface-bright p-3 text-body">
+<option>Vacip Kurbanı</option>
+<option>Adak / Akika / Şükür</option>
+</select>
+</div>
+<div>
+<label class="font-label text-label text-on-surface-variant mb-xs block">Bölge Seçimi</label>
+<select class="w-full rounded-xl border-light-border bg-surface-bright p-3 text-body">
+<option>Afrika (En Uygun)</option>
+<option>Asya</option>
+<option>Ortadoğu</option>
+<option>Türkiye</option>
+</select>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-xl">
+<span class="font-label text-label">Hisse Sayısı</span>
+<div class="flex items-center gap-4">
+<button class="w-8 h-8 rounded-full bg-white border border-light-border flex items-center justify-center">-</button>
+<span class="font-bold">1</span>
+<button class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-md">
+<input class="w-full rounded-xl border-light-border bg-surface-bright p-3 text-body" placeholder="Ad Soyad" type="text"/>
+<input class="w-full rounded-xl border-light-border bg-surface-bright p-3 text-body" placeholder="Vekalet Sahibi Adı" type="text"/>
+<input class="w-full rounded-xl border-light-border bg-surface-bright p-3 text-body" placeholder="Telefon Numarası" type="tel"/>
+</div>
+<div class="pt-md border-t border-light-border flex justify-between items-center">
+<span class="font-label text-label text-on-surface-variant">Toplam Tutar:</span>
+<span class="font-section-heading-mobile text-section-heading-mobile text-primary">[Eklenecek] TL</span>
+</div>
+<button class="w-full bg-primary text-white font-button text-button py-4 rounded-full shadow-md active:scale-95 transition-all">Bağışı Tamamla</button>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="px-margin-mobile py-xl bg-surface-container-low">
+<h2 class="font-section-heading-mobile text-section-heading-mobile text-primary mb-lg text-center">Kurban Süreci Nasıl İşler?</h2>
+<div class="space-y-lg relative">
+<div class="absolute left-6 top-8 bottom-8 w-0.5 bg-primary/20"></div>
+<div class="flex gap-md relative">
+<div class="z-10 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<div>
+<h3 class="font-card-title text-body font-bold text-primary">Bağışın Alınması</h3>
+<p class="text-on-surface-variant text-sm">Vekaletiniz alınır ve bağış kaydınız sisteme girilir.</p>
+</div>
+</div>
+<div class="flex gap-md relative">
+<div class="z-10 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined" data-icon="fact_check">fact_check</span>
+</div>
+<div>
+<h3 class="font-card-title text-body font-bold text-primary">Bölge ve Hayvan Seçimi</h3>
+<p class="text-on-surface-variant text-sm">Veteriner kontrolünde kurbanlık vasfı taşıyan hayvanlar seçilir.</p>
+</div>
+</div>
+<div class="flex gap-md relative">
+<div class="z-10 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined" data-icon="content_cut">content_cut</span>
+</div>
+<div>
+<h3 class="font-card-title text-body font-bold text-primary">İslami Usullere Göre Kesim</h3>
+<p class="text-on-surface-variant text-sm">İsimleriniz tek tek okunarak vekalet yoluyla kesim gerçekleştirilir.</p>
+</div>
+</div>
+<div class="flex gap-md relative">
+<div class="z-10 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+</div>
+<div>
+<h3 class="font-card-title text-body font-bold text-primary">Dağıtım ve Teslimat</h3>
+<p class="text-on-surface-variant text-sm">Kurban etleri paylara ayrılarak bölgedeki muhtaçlara ulaştırılır.</p>
+</div>
+</div>
+<div class="flex gap-md relative">
+<div class="z-10 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined" data-icon="video_library">video_library</span>
+</div>
+<div>
+<h3 class="font-card-title text-body font-bold text-primary">Bilgilendirme Videoları</h3>
+<p class="text-on-surface-variant text-sm">Kesim anı videoları bağışçılarımızın telefonuna SMS ile iletilir.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Vekalet Box -->
+<section class="px-margin-mobile py-xl">
+<div class="bg-soft-mint rounded-xl p-lg border border-primary/10 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-md" data-icon="record_voice_over">record_voice_over</span>
+<h3 class="font-card-title text-card-title text-primary mb-sm">Vekalet nasıl verilir?</h3>
+<p class="text-on-surface-variant mb-lg">Bağış esnasında formdaki onay kutucuğunu işaretleyerek vekaletinizi dijital olarak verebilirsiniz. Sorularınız için bize ulaşın.</p>
+<button class="flex items-center gap-2 bg-white text-primary border border-primary font-button text-button px-6 py-3 rounded-full hover:bg-soft-mint transition-colors">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                    WhatsApp Destek Hattı
+                </button>
+</div>
+</section>
+<!-- Regions -->
+<section class="px-margin-mobile py-xl overflow-hidden">
+<h2 class="font-section-heading-mobile text-section-heading-mobile text-primary mb-lg">Hizmet Bölgelerimiz</h2>
+<div class="flex overflow-x-auto gap-md hide-scrollbar pb-4 -mx-margin-mobile px-margin-mobile">
+<div class="min-w-[280px] bg-white rounded-xl shadow-sm border border-light-border overflow-hidden">
+<div class="h-40 bg-cover bg-center" data-alt="A scenic landscape of a rural African village with traditional huts under a vast blue sky. The photo is clean and high-resolution, emphasizing a peaceful atmosphere. A slight warm filter is applied to match the corporate humanitarian style of the NGO." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzgyTaNSqyQpcPgan_Vo0FXGIGs56tQ5dvVkmhOdJWk8-Oqcc67NeA6trb2_L4S0PF3NIp4d8IpFSbW2XunzzKS_xm7r1wCq7PiDWsqKufqalfEXYX8bwxC-lnlU4-eLaqHjsrN3A6SNTL4akE1IMb3INoTzWmnSIvVgQYbqRz5iwXkmrn6gEUnb5YOIcRWCi1TdDJ18LznBUmcH_bf4RY0qYxLLmO5vliUOJh2VOnRkLHcMFg0zB16d_8iPIdGlff7T4sH3iS1DOW')"></div>
+<div class="p-md">
+<h4 class="font-bold text-primary mb-xs">Afrika Bölgesi</h4>
+<p class="text-sm text-on-surface-variant">Çad, Nijer, Mali ve Somali başta olmak üzere en muhtaç bölgeler.</p>
+</div>
+</div>
+<div class="min-w-[280px] bg-white rounded-xl shadow-sm border border-light-border overflow-hidden">
+<div class="h-40 bg-cover bg-center" data-alt="A lush green rural landscape in South Asia, showing community members gathering near a newly built water well. The scene is bright and optimistic, with a focus on sustainable development and local engagement. The lighting is natural and inviting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbK29bfw7zLn8F_jkPr9yjkJfNNSMyNYcSR_mT7Qe2uU5HFre41BeQGaBmKNY7dmEj71PqieeTFRhEDE-6jFwS7YCA9lgltpnwOKOOUw-2U6iBAYoz5MDOSFK_i0ft6iu5cFQkqyCzj2aBXrdGqtCb00fNNcHP-DxZK6UkQ7ZLGfWzH8NTYHQrDFbwRD9c0b-RPKsOcEG8CBHu0bvaHQiJmsllxuyA80FubpXCgTTafFQm6WV2ggiqUaJDJg1BcK2mUR58C54UFVdl')"></div>
+<div class="p-md">
+<h4 class="font-bold text-primary mb-xs">Asya Bölgesi</h4>
+<p class="text-sm text-on-surface-variant">Bangladeş (Arakan Kampları), Afganistan ve Pakistan'daki yetim aileleri.</p>
+</div>
+</div>
+<div class="min-w-[280px] bg-white rounded-xl shadow-sm border border-light-border overflow-hidden">
+<div class="h-40 bg-cover bg-center" data-alt="An urban setting in a Middle Eastern city that has seen conflict but is rebuilding. The photo shows a clean street with modern reconstruction efforts, conveying a message of resilience and progress. Professional architectural lighting is used to enhance the clarity of the image." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-9bhXLejc4hY4lpXozBm8sg3MTU9ZVn3xhgHS6C04TQ4tHj68d9tysToj33Z0R-J-bNFGYupFzM_q2z6BzWVhW960b4f7qz5RQiLf7ZSqHyQhTWwoeF7MlkYkKEzVOIgk13wjY96Zb9FLrkz2SmYIgCmGEgtDktenw8UMg9cWmZv7uumJ42XVBznTwMiKlB-urAlH1peKq80LNxdqyPAgYbuWvEOGFgbDpw-uzVe8tcEQoYFV0qM1eqvx2mA27Cqn_CsR-FaogVwp')"></div>
+<div class="p-md">
+<h4 class="font-bold text-primary mb-xs">Ortadoğu Bölgesi</h4>
+<p class="text-sm text-on-surface-variant">Suriye, Filistin ve Yemen'deki mülteci kampları ve kuşatma altındaki bölgeler.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Transparency & Related -->
+<section class="px-margin-mobile py-xl bg-surface-container-low">
+<h2 class="font-section-heading-mobile text-section-heading-mobile text-primary mb-lg">Şeffaflık ve Güven</h2>
+<div class="grid grid-cols-1 gap-md">
+<div class="bg-white p-md rounded-xl flex items-center gap-md border border-light-border">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="description">description</span>
+<div>
+<h4 class="font-bold text-on-surface">2023 Kurban Raporu</h4>
+<p class="text-xs text-on-surface-variant underline">Raporu PDF olarak indir</p>
+</div>
+</div>
+<div class="bg-white p-md rounded-xl flex items-center gap-md border border-light-border">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="videocam">videocam</span>
+<div>
+<h4 class="font-bold text-on-surface">Kesim Videoları</h4>
+<p class="text-xs text-on-surface-variant underline">Geçen yılın dağıtım videolarını izle</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="px-margin-mobile py-xl">
+<h2 class="font-section-heading-mobile text-section-heading-mobile text-primary mb-lg">Sıkça Sorulan Sorular</h2>
+<div class="space-y-md">
+<details class="group bg-white rounded-xl border border-light-border p-md">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-primary">
+                        Kurban kesim videoları ne zaman gönderilir?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-md text-on-surface-variant text-sm leading-relaxed">Bayramın 3. günü akşamına kadar tüm kesim videoları bağışçıların kayıtlı telefon numaralarına SMS yoluyla iletilmektedir.</p>
+</details>
+<details class="group bg-white rounded-xl border border-light-border p-md">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-primary">
+                        Hisse bedelleri neden farklılık gösteriyor?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-md text-on-surface-variant text-sm leading-relaxed">Bölgelerdeki canlı hayvan piyasası, lojistik maliyetler ve operasyonel şartlar nedeniyle fiyatlar bölgelere göre değişebilmektedir.</p>
+</details>
+<details class="group bg-white rounded-xl border border-light-border p-md">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-primary">
+                        Vekalet vermek şart mı?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-md text-on-surface-variant text-sm leading-relaxed">Evet, kurbanın sizin adınıza kesilebilmesi için vekalet vermeniz dini bir gerekliliktir. Dijital bağış formundaki onayınız bu vekaleti karşılamaktadır.</p>
+</details>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="px-margin-mobile py-2xl bg-warm-cream">
+<div class="text-center max-w-sm mx-auto">
+<h2 class="font-section-heading-mobile text-section-heading-mobile text-primary mb-md">Vefanız Kurban Olsun</h2>
+<p class="text-on-surface-variant mb-lg">Binlerce kilometre ötedeki bir sofrada kardeşlik köprüsü kurmaya hazır mısınız?</p>
+<button class="bg-primary text-white font-button text-button w-full py-4 rounded-full shadow-lg active:scale-95 transition-all">Kurban Bağışı Yap</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest w-full py-xl px-margin-mobile flex flex-col items-center gap-md">
+<span class="font-section-heading text-section-heading-mobile text-primary">Vefa Aid</span>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">KVKK</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Bağış Politikası</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Banka Hesapları</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">İletişim</a>
+</div>
+<p class="text-on-surface-variant text-xs text-center">© 2024 Vefa İnsani Yardım Derneği. Tüm Hakları Saklıdır.</p>
+</footer>
+<!-- Bottom Navigation for Mobile Context -->
+<div class="md:hidden fixed bottom-0 left-0 w-full bg-white h-16 flex justify-around items-center border-t border-light-border z-50">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="volunteer_activism" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<span class="text-[10px] font-bold">Projeler</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="text-[10px]">Ara</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="corporate_fare">corporate_fare</span>
+<span class="text-[10px]">Kurumsal</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px]">Profil</span>
+</div>
+</div>
+<script>
+        // Simple micro-interaction for the share counter
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.flex.items-center.gap-4 button');
+            const display = document.querySelector('.flex.items-center.gap-4 span');
+            let count = 1;
+
+            buttons[0].onclick = () => {
+                if (count > 1) {
+                    count--;
+                    display.innerText = count;
+                }
+            };
+            buttons[1].onclick = () => {
+                count++;
+                display.innerText = count;
+            };
+        });
+    </script>
+</body></html>

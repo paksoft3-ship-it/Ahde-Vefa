@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EMANET - Galeri Albüm Detayı</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#dfe9f7",
+                    "surface-tint": "#2a6a48",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#bfc9c0",
+                    "on-surface": "#121d26",
+                    "inverse-primary": "#93d5ab",
+                    "primary": "#0a5132",
+                    "inverse-surface": "#27313c",
+                    "secondary-fixed-dim": "#4cd8ec",
+                    "muted-text": "#667085",
+                    "secondary-fixed": "#9af0ff",
+                    "outline": "#707971",
+                    "surface-dim": "#d1dbe8",
+                    "soft-mint": "#EEF8F4",
+                    "on-primary-fixed": "#002111",
+                    "on-secondary-fixed": "#001f24",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#d9e3f1",
+                    "primary-container": "#2a6a48",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#a4d1b7",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#93d5ab",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#121d26",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#006773",
+                    "donation-gold": "#F4B740",
+                    "on-tertiary-fixed": "#002114",
+                    "on-primary-fixed-variant": "#0a5132",
+                    "background": "#f7f9ff",
+                    "tertiary-container": "#3d6752",
+                    "primary-fixed": "#aef1c6",
+                    "light-border": "#E5E7EB",
+                    "inverse-on-surface": "#e8f2ff",
+                    "on-primary-container": "#a5e7bd",
+                    "on-tertiary-fixed-variant": "#254f3b",
+                    "warm-cream": "#FFF8EF",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#b6e3c9",
+                    "tertiary": "#254f3c",
+                    "on-surface-variant": "#404942",
+                    "surface-variant": "#d9e3f1",
+                    "surface": "#f7f9ff",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "tertiary-fixed": "#bfedd3",
+                    "secondary-container": "#61e9fe",
+                    "surface-container": "#e4effd",
+                    "surface-bright": "#f7f9ff",
+                    "surface-container-low": "#edf4ff",
+                    "secondary": "#006874"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "0.25rem",
+                    "xl": "2.5rem",
+                    "container-max": "1280px",
+                    "3xl": "6rem",
+                    "sm": "0.5rem",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "md": "1rem",
+                    "lg": "1.5rem",
+                    "2xl": "4rem"
+            },
+            "fontFamily": {
+                    "hero-heading": ["Manrope"],
+                    "hero-heading-mobile": ["Manrope"],
+                    "section-heading": ["Manrope"],
+                    "button": ["Manrope"],
+                    "section-heading-mobile": ["Manrope"],
+                    "page-heading": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "label": ["Manrope"],
+                    "body": ["Manrope"],
+                    "card-title": ["Manrope"],
+                    "page-heading-mobile": ["Manrope"]
+            },
+            "fontSize": {
+                    "hero-heading": ["64px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "hero-heading-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "section-heading": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "section-heading-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "page-heading": ["48px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "label": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "card-title": ["22px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "page-heading-mobile": ["34px", {"lineHeight": "1.2", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .chip-active { @apply bg-primary text-on-primary shadow-md; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/20 selection:text-primary">
+<!-- TopNavBar (Shared Component Logic) -->
+<nav class="bg-surface-container-lowest dark:bg-surface-dim shadow-sm sticky top-0 z-50 h-20 flex justify-between items-center w-full px-margin-mobile md:px-lg max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button aria-label="Menu" class="md:hidden p-2 text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="text-page-heading font-page-heading font-extrabold text-primary dark:text-primary-fixed text-2xl">EMANET</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full font-button text-sm shadow-md transition-transform duration-150 active:scale-95">
+                Bağış Yap
+            </button>
+</div>
+</nav>
+<main class="min-h-screen">
+<!-- Breadcrumb -->
+<nav class="px-margin-mobile py-4 overflow-x-auto hide-scrollbar">
+<ol class="flex items-center gap-2 whitespace-nowrap text-label font-label text-on-surface-variant">
+<li>Anasayfa</li>
+<li><span class="material-symbols-outlined text-[14px]">chevron_right</span></li>
+<li>Galeri</li>
+<li><span class="material-symbols-outlined text-[14px]">chevron_right</span></li>
+<li class="text-primary font-bold">Ramazan Yardımları</li>
+</ol>
+</nav>
+<!-- Hero Section -->
+<section class="bg-soft-mint px-margin-mobile pt-6 pb-12 rounded-b-[40px]">
+<div class="flex flex-col gap-4">
+<span class="inline-flex bg-primary/10 text-primary px-3 py-1 rounded-full font-label text-xs w-fit font-bold uppercase tracking-wider">
+                    Galeri Albümü
+                </span>
+<h1 class="font-page-heading-mobile text-page-heading-mobile text-on-surface">
+                    Ramazan Yardımları Hazırlık Albümü
+                </h1>
+<div class="flex flex-col gap-2 mt-2">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">category</span>
+<span class="font-label text-sm">Kategori: Ramazan 2024</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-label text-sm">Bölge: Gazze, Suriye, Afrika</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">photo_library</span>
+<span class="font-label text-sm">Görsel Sayısı: 48 Fotoğraf</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 mt-6">
+<button class="bg-primary text-on-primary h-14 rounded-full font-button flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined">favorite</span>
+                        Bağış Yap
+                    </button>
+<button class="border-2 border-primary text-primary h-14 rounded-full font-button flex items-center justify-center gap-2 active:scale-95 transition-transform bg-white">
+<span class="material-symbols-outlined">description</span>
+                        Raporu Gör
+                    </button>
+</div>
+<div class="mt-8 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border-4 border-white">
+<div class="w-full h-full bg-cover bg-center" data-alt="A high-quality humanitarian photography shot showing a group of dedicated aid workers in green vests organizing large food parcels in a clean warehouse. Soft morning sunlight streams through windows, creating a warm and hopeful light-mode atmosphere. The overall aesthetic is professional and compassionate, emphasizing transparency and scale of operation." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB75lSCPIGW0s-HTevUQy4Q5hi8llBsvPJ35wUWfx1W25XVFeMYt_NvpZ-ZTGkUrzNsLz_ekG3c3OY55Owbf39338xIqeLwB4IBNtse6xncC6cGhbYx0WInEa9d33H22KTue2Ze10iggrpMtZFZORzKxwSfSKq1_VnQu80CyePJ3MkQUHVaYoZMncN1YFLMWqNouhVvZBPux3WPEg6j1s-0ofx41hs7JGstlVFk3zqnDLM9f7bYQY9T0O-Z99QvlWhBn0p3uyHxdqtk')"></div>
+</div>
+</div>
+</section>
+<!-- Privacy Notice -->
+<section class="px-margin-mobile -mt-6 relative z-10">
+<div class="bg-warm-cream p-5 rounded-2xl shadow-sm border border-donation-gold/20 flex gap-4 items-start">
+<span class="material-symbols-outlined text-donation-gold text-3xl shrink-0">shield_person</span>
+<div>
+<h3 class="font-bold text-on-surface text-sm mb-1">Onur ve Gizlilik Politikası</h3>
+<p class="text-label text-on-surface-variant text-xs leading-relaxed">
+                        EMANET Derneği olarak, yardım alan kardeşlerimizin insan onurunu korumak adına yüzlerini göstermemeye ve mahremiyetlerine saygı duymaya azami gayret gösteriyoruz.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Album Summary Card -->
+<section class="px-margin-mobile mt-10">
+<div class="bg-white p-6 rounded-3xl shadow-sm border border-light-border">
+<h2 class="font-section-heading-mobile text-section-heading-mobile mb-4 text-primary">Albüm Detayları</h2>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-3 border-b border-light-border">
+<span class="text-on-surface-variant text-sm">Operasyon Tarihi</span>
+<span class="font-bold text-sm">12 Mart - 05 Nisan 2024</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-light-border">
+<span class="text-on-surface-variant text-sm">Lojistik Merkezi</span>
+<span class="font-bold text-sm">İstanbul Ana Depo</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-light-border">
+<span class="text-on-surface-variant text-sm">Bağışçı Sayısı</span>
+<span class="font-bold text-sm">1.450+ Kişi</span>
+</div>
+<div class="flex justify-between items-center py-3">
+<span class="text-on-surface-variant text-sm">Durum</span>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold">Tamamlandı</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Photo Filters -->
+<section class="mt-10">
+<div class="flex overflow-x-auto gap-3 px-margin-mobile hide-scrollbar">
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-label text-sm whitespace-nowrap shadow-md">Tümü</button>
+<button class="bg-surface-container text-on-surface-variant px-6 py-3 rounded-full font-label text-sm whitespace-nowrap border border-light-border">Saha Hazırlığı</button>
+<button class="bg-surface-container text-on-surface-variant px-6 py-3 rounded-full font-label text-sm whitespace-nowrap border border-light-border">Lojistik</button>
+<button class="bg-surface-container text-on-surface-variant px-6 py-3 rounded-full font-label text-sm whitespace-nowrap border border-light-border">Dağıtım Anı</button>
+</div>
+</section>
+<!-- Photo Grid -->
+<section class="px-margin-mobile mt-6 grid grid-cols-1 gap-6">
+<!-- Photo Item 1 -->
+<div class="bg-white rounded-3xl overflow-hidden shadow-sm group">
+<div class="relative aspect-square">
+<div class="w-full h-full bg-cover bg-center" data-alt="A close-up shot of heavy-duty cardboard aid boxes featuring the EMANET logo in green and white. The boxes are stacked neatly in a sun-drenched warehouse environment. The lighting is clean and bright, reflecting a modern light-mode NGO aesthetic. Professional architectural photography style with a focus on geometric order." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBR0hie8UOJc8zHKDwa0Y1Xf1d4MCCHcTY3l1mmJZiqqyJZ5g8v0h9w4HyPzRk-G05W9m3zVNAEb9XdGil677WTrm0iCvcKdJTN-JPXdZ9j10vCYfL7PnzE6Bq-ffFQcY2somspQwsuHjfKkrOWL_UGz90y5rdtiJ14DoCwxqsAGg3TNOw_juaIdUJJ1VQvWJNLAIeE7mo6QBhEB7joOgWz_URvtb5wdsxNd85K-PKvkaB43o2SlDwNiLsdoxhSGSY21vxRDtp_e9KP')"></div>
+<span class="absolute top-4 left-4 bg-primary/90 backdrop-blur-md text-on-primary px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-tighter">Lojistik</span>
+</div>
+<div class="p-4">
+<p class="font-label text-sm text-on-surface-variant italic">"İstanbul merkezimizde kolileme işlemleri devam ediyor."</p>
+</div>
+</div>
+<!-- Photo Item 2 -->
+<div class="bg-white rounded-3xl overflow-hidden shadow-sm">
+<div class="relative aspect-square">
+<div class="w-full h-full bg-cover bg-center" data-alt="An expansive wide-angle view of several large delivery trucks lined up against a bright blue sky, being loaded with white aid packages. The scene is high-contrast and vibrant, emphasizing movement and action. The style is clear, documentary-style humanitarian photography with a corporate minimal polish." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDR17w8gOj2F7chpx851Hwp6rfYsx4YTN-BAz4KirS4SChVEdQoN9EcjDD7xEXeoLTYhT0lIAZE6FOCvyoJNHX3d7l6tg0pHpVcpHb7DevRbP53CA32v59pB_cghdh6WE_uOzHDtnd_CNE1DtNli7w-lJhgLrf0WEb1oNbp6qp9AvCRMnHMrdCBjl-jm8hd4B0slcxtf8qhEP_k2ElNFVRbyWWlqOrfpaISjhhsq3LREp3gwY5e-0E1xwrm-5gPBcjQBtG5bj7mohjq')"></div>
+<span class="absolute top-4 left-4 bg-primary/90 backdrop-blur-md text-on-primary px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-tighter">Sevkiyat</span>
+</div>
+<div class="p-4">
+<p class="font-label text-sm text-on-surface-variant italic">"Tırlarımız Gazze sınırına doğru yola çıkmak üzere hazır."</p>
+</div>
+</div>
+<!-- Photo Item 3 -->
+<div class="bg-white rounded-3xl overflow-hidden shadow-sm">
+<div class="relative aspect-square">
+<div class="w-full h-full bg-cover bg-center" data-alt="A detailed shot focusing on the hands of two people—one an aid worker, one a recipient—sharing a warm greeting while a green aid parcel sits between them. The background is softly blurred, focusing on the human connection and trust. Warm lighting, respectful composition, high-end humanitarian aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6R0x8GhhoHoj6LBciN8CT5CUmBTjAP3XQmqLGssUF0TmLGdW4gFkS1npUc2dWTGO1eLSrnlgWDBmlC3hGHtcvfmoWmxMQ_s9G7RuzdqZ0XPbH2uoCyI68qSca5LplYvw2NBm7pxDMBeUjhi9mEks8S3syVOcMSdV1wQ3gtr-7JDE2vSSmMhzBoHx616DEsDbdBsIpEbPF7mj-uPw5VrWGTXoLfDla6G06WCRaP_hQ0srCJypnXmGP88PvcR6LwtRO4AgDz1lBAg7E')"></div>
+<span class="absolute top-4 left-4 bg-primary/90 backdrop-blur-md text-on-primary px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-tighter">Dağıtım</span>
+</div>
+<div class="p-4">
+<p class="font-label text-sm text-on-surface-variant italic">"Emanetleriniz ihtiyaç sahiplerine tek tek ulaştırılıyor."</p>
+</div>
+</div>
+</section>
+<!-- More Photo Loading Action -->
+<div class="flex justify-center mt-8 px-margin-mobile">
+<button class="w-full h-14 bg-surface-container-high text-primary rounded-2xl font-button flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">expand_more</span>
+                Daha Fazla Yükle (35+)
+            </button>
+</div>
+<!-- Related Campaign & Report -->
+<section class="px-margin-mobile mt-16 space-y-6">
+<h2 class="font-section-heading-mobile text-section-heading-mobile text-on-surface">Bağlantılı İçerikler</h2>
+<!-- Campaign Card -->
+<div class="bg-white rounded-[32px] overflow-hidden shadow-lg border border-light-border">
+<div class="h-48 bg-cover bg-center" data-alt="A bright and optimistic illustration of a family gathering around a table for a traditional Iftar meal, rendered in a modern minimalist flat style. The color palette uses soft greens, warm creams, and donation gold. Professional vector art aesthetic with high-key lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdKJzDfLW7x53e4X9u05DSrnSfbBRfO27dvEaZKv_BC9hSCK6YD3YITwPBs2SjNadNsAFV4IqnFP0HzfcSQW1hjBX8OXZqA9u6_K1nZJx9_L_S5vhTO2caRPHh9EhgtaXsODdoicXn0KWFD_NnjOusDdatw76qhvKbCTiJEJ4y36u3-jDyocvAc-d7P-Inb2JDHYh6rfRhBs9mFivqBf4XQQwuJhq--O6gIgbMQ5yruhsYX9FI-XzFpL1eDeP3h3zaetwJBRiFMgwE')"></div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-bold text-primary uppercase">Aktif Kampanya</span>
+<span class="text-xs text-on-surface-variant">Kalan: 12 Gün</span>
+</div>
+<h3 class="font-card-title text-card-title mb-4">Ramazan Kumanyası Bağışı</h3>
+<div class="w-full bg-surface-container rounded-full h-2 mb-2">
+<div class="bg-donation-gold h-full rounded-full" style="width: 78%"></div>
+</div>
+<div class="flex justify-between text-[12px] font-bold mb-6">
+<span class="text-on-surface-variant">Hedef: 1.000.000 ₺</span>
+<span class="text-primary">%78 Tamamlandı</span>
+</div>
+<button class="w-full h-14 bg-primary text-on-primary rounded-full font-button shadow-md active:scale-95 transition-transform">
+                        Şimdi Destek Ol
+                    </button>
+</div>
+</div>
+<!-- Report Card -->
+<div class="bg-tertiary text-on-tertiary p-6 rounded-[32px] shadow-lg flex items-center gap-4">
+<div class="bg-on-tertiary/20 w-16 h-16 rounded-2xl flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-4xl">picture_as_pdf</span>
+</div>
+<div class="grow">
+<h3 class="font-bold text-sm mb-1">Ramazan 2024 Şeffaflık Raporu</h3>
+<p class="text-xs opacity-80 mb-3">Tüm bağış ve harcama detaylarını inceleyin.</p>
+<button class="text-donation-gold font-bold text-xs flex items-center gap-1 hover:underline">
+                        PDF Olarak İndir <span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+</div>
+</section>
+<!-- More Albums -->
+<section class="mt-16 bg-surface-container-low py-12">
+<div class="px-margin-mobile flex justify-between items-end mb-6">
+<div>
+<h2 class="font-section-heading-mobile text-section-heading-mobile text-on-surface">Diğer Albümler</h2>
+<p class="text-on-surface-variant text-sm">Son faaliyetlerimizden kareler</p>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-4 px-margin-mobile hide-scrollbar pb-4">
+<!-- Album 1 -->
+<div class="min-w-[260px] bg-white rounded-3xl overflow-hidden shadow-sm">
+<div class="h-40 bg-cover bg-center" data-alt="A clean and professional photo of a modern water well installation in a rural African setting, featuring a metal hand pump and EMANET branding. The surrounding area is bright and tidy. Clear daylight, professional humanitarian photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzftRAHEQJ0EWsnfA3l3vNu-qRUGJd0UNW50pFgGKozSfVZZRfVKZF_sAILUNkZIyBqAlvSNjUpB8R4H9AQwp-JFHh-pz6IonqHXpWs9UuncMwCi5iBCRa35IjH4dyQW5OT3aw1cAv6HU3RR_6Z3mVEZbLq4CHjm31upNjYwahVgzzSn3_MgVymv-Shx_AKO3L22NT1qCK3OIFFq5VdrFr2EGwkC7G1uP_fiLMoFx747-vAdTdoUUnrFsD28e_Dih9omBLlZeYTLkX')"></div>
+<div class="p-4">
+<h4 class="font-bold text-sm mb-1">Su Kuyusu Açılışı</h4>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Çad, 2024</p>
+<button class="text-primary text-xs font-bold">Albümü İncele →</button>
+</div>
+</div>
+<!-- Album 2 - Preparation -->
+<div class="min-w-[260px] bg-white/50 border-2 border-dashed border-outline-variant rounded-3xl overflow-hidden relative grayscale opacity-70">
+<div class="h-40 bg-cover bg-center" data-alt="A blurred background of a construction site with silhouettes of workers. Overlaid with a clean text label saying 'Preparation'." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAd3_9z97yT4PIwwqFYmAkbmUpZ_gig_f9iY7wiVjar8Y8hDwmpAfj_dkl9oUDy15bQPBR2nFWStzL3MCw4mCwMTgZjMts4SN6H2YbampLaRxle-JQmPkw1umuLfWlfhfjZzSIvpknwcoMl0YEc2okQpWeJAUihCtA9K9QELAQDdl-oCJeWgOF2Iv6_ska0dvLa50tdoAYI67_5wINxB9sSQeAQrm6HDGtFM_zzqNNXG_68cyzFMRNSl1Tlha6qT4frsLeHMGwIwXEM')"></div>
+<div class="p-4">
+<h4 class="font-bold text-sm mb-1 text-on-surface-variant">Pakistan Sel Yardımı</h4>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">Pakistan</p>
+<span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-full text-[10px] font-bold">Hazırlık Aşamasında</span>
+</div>
+</div>
+<!-- Album 3 -->
+<div class="min-w-[260px] bg-white rounded-3xl overflow-hidden shadow-sm">
+<div class="h-40 bg-cover bg-center" data-alt="A classroom setting with neatly arranged school supplies and happy children engaged in a learning activity. The style is bright and inspiring with soft-mint accents. High-end NGO photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEPeXvQXdwNqRCiXpx4X04nl6sLLW7MBATlTJXmV9hGoKZNxxgEkvt4zRuCwEvk34Dg4ggIa5eJ250DGjM6ZnOAowSY34Oqzi6lDV8v3_VWJAJloyvKig78F43F5Cn9fjk0-ob_Db7ohFNfVHJPL47eTpxOGHRbt1A5aEG-pVxquzH7LEDhoXO97O1mkQSmI3uTFYx6WcgPjNfAq1jiUGNsDe83E8O0Q4JVMDz1Yc4UlZzlumohEZn9RrYP8fwhRlQqNw6tUbn8-W3')"></div>
+<div class="p-4">
+<h4 class="font-bold text-sm mb-1">Eğitim Destek Paketi</h4>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-3">İdlib, 2024</p>
+<button class="text-primary text-xs font-bold">Albümü İncele →</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Transparency & FAQ -->
+<section class="px-margin-mobile py-16 space-y-12">
+<div>
+<h2 class="font-section-heading-mobile text-section-heading-mobile text-on-surface mb-6">Sıkça Sorulan Sorular</h2>
+<div class="space-y-4">
+<details class="group bg-white border border-light-border rounded-2xl">
+<summary class="list-none p-5 flex justify-between items-center cursor-pointer font-bold text-sm text-on-surface">
+                            Fotoğraflar ne zaman çekiliyor?
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 text-sm text-on-surface-variant leading-relaxed">
+                            Fotoğraflar, yardım faaliyetlerinin başladığı andan teslimat aşamasına kadar saha ekiplerimiz tarafından gerçek zamanlı olarak çekilmektedir.
+                        </div>
+</details>
+<details class="group bg-white border border-light-border rounded-2xl">
+<summary class="list-none p-5 flex justify-between items-center cursor-pointer font-bold text-sm text-on-surface">
+                            Kendi bağışımın fotoğrafını görebilir miyim?
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-5 pb-5 text-sm text-on-surface-variant leading-relaxed">
+                            Bireysel kurban veya su kuyusu bağışlarınızda, isminizin yazılı olduğu özel tabela/kart ile çekilen video ve fotoğraflar WhatsApp hattınız üzerinden size iletilmektedir.
+                        </div>
+</details>
+</div>
+</div>
+<div class="bg-primary/5 rounded-[40px] p-8 text-center">
+<div class="bg-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-on-primary">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h3 class="font-section-heading-mobile text-section-heading-mobile text-primary mb-3">Tam Şeffaflık</h3>
+<p class="text-on-surface-variant text-sm mb-6">
+                    EMANET olarak her kuruşun hesabını veriyor, tüm süreçlerimizi bağımsız denetçiler ve siz değerli bağışçılarımızla paylaşıyoruz.
+                </p>
+<div class="flex flex-wrap justify-center gap-4">
+<img alt="Visa" class="h-6 opacity-60 grayscale hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-FU0uYWB-Zmhgs-z3UczHe5bJsntf6Qx5nkV2efp89954MFVQ_Ap39d3yIxs3rITpVi03gBPufBrstJA9M7DHbKukf__UVIqb64s_vXTKosYSSuW_bAOR1eOJQ7vdVju3oO8PaJ89QpS9I2-foTOEqwZs1lLvwArxvNlGQlkZnGhjopoj7quPhxJS6dEj1eldoHBGfqqaRhy1K8vkJc6Ljr4y6vmqQvsB8vTFt9cMLoCseRoBwdKfaHtk_ggwttbnv-gdqyJR97Sw"/>
+<img alt="Mastercard" class="h-6 opacity-60 grayscale hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRIPpUrO19HzxAh8auLTkvKyx_4MFn9hcZtSGrbdMO607drtWpNSXfMwlCFHhtOq1aqreVwrC_tX3BLTPa5u9KO41OXpr5VtFdfJdAI_tqpKVyQ0AwtLiujCPghyfSzvdkjywE47xAYha1srRAs0s6wqQvNzykfQNhlKFfer5baMF7Y09ummdxuzHvjKuTahLs4GReRRGauJAE-qTG3i1HQYzs72YX6MwmGCbjKHIrnEukKxJkWh2lp8Fwdp3gUySZgJEvg4_qeMDa"/>
+<img alt="SSL Secure" class="h-6 opacity-60 grayscale hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLpY9LRnXYbglBbMRCDi5JqI26iAsgHe3HQ6s1Aop7Nwb315TiY45NIALMQG4NLiIKtV2Rwu7xVm59SQx1ki2NS_h283HykdFM_o-ufUT6VDXWdSispB1iW2QQJpQU6-P7Mq4rRLEWriM9bKcdkOF8hbqMcVFYFipU9HL68v7EQ1zeZIPrymiHy3fl0G-NrpZ464surFaFjkUTv6Wxl026SuWLpQrDW9qHcNPcHaOtmw3btqF9ukgYl_1PKLwoEDndQOfPytceCL0R"/>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="px-margin-mobile pb-16">
+<div class="bg-donation-gold p-8 rounded-[40px] text-center shadow-xl">
+<h2 class="font-section-heading-mobile text-section-heading-mobile text-on-tertiary-fixed mb-4">Hala Birilerinin Umudu Olabilirsiniz</h2>
+<p class="text-on-tertiary-fixed/80 text-sm mb-8">Ramazan yardımlarımıza katılarak bir sofranın daha kurulmasına vesile olun.</p>
+<div class="flex flex-col gap-4">
+<button class="bg-primary text-on-primary h-14 rounded-full font-button shadow-lg text-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">volunteer_activism</span>
+                        Şimdi Bağış Yap
+                    </button>
+<button class="bg-soft-mint text-primary h-14 rounded-full font-button border border-primary/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">chat</span>
+                        WhatsApp'tan Bilgi Al
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component Logic) -->
+<footer class="bg-tertiary dark:bg-surface-container-highest w-full py-xl px-margin-mobile md:px-lg max-w-container-max mx-auto flex flex-col md:flex-row justify-between">
+<div class="mb-10">
+<span class="text-section-heading font-section-heading text-on-tertiary dark:text-on-surface block mb-4">EMANET</span>
+<p class="text-on-tertiary/70 text-sm max-w-xs leading-relaxed mb-6">
+                İnsani yardım çalışmalarımızla dünyayı daha yaşanabilir kılmak için emanetlerinizi ehline teslim ediyoruz.
+            </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-tertiary text-2xl">face_nod</span>
+<span class="material-symbols-outlined text-on-tertiary text-2xl">photo_camera</span>
+<span class="material-symbols-outlined text-on-tertiary text-2xl">video_library</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8 mb-10">
+<div class="flex flex-col gap-3">
+<h4 class="text-donation-gold font-bold text-sm uppercase">Kurumsal</h4>
+<a class="text-on-tertiary/80 text-sm hover:text-on-tertiary transition-all" href="#">Hakkımızda</a>
+<a class="text-on-tertiary/80 text-sm hover:text-on-tertiary transition-all" href="#">Banka Hesapları</a>
+<a class="text-on-tertiary/80 text-sm hover:text-on-tertiary transition-all" href="#">Gizlilik Politikası</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-donation-gold font-bold text-sm uppercase">Yardım</h4>
+<a class="text-on-tertiary/80 text-sm hover:text-on-tertiary transition-all" href="#">Bağış Yap</a>
+<a class="text-on-tertiary/80 text-sm hover:text-on-tertiary transition-all" href="#">Raporlar</a>
+<a class="text-on-tertiary/80 text-sm hover:text-on-tertiary transition-all" href="#">İletişim</a>
+</div>
+</div>
+<div class="pt-8 border-t border-on-tertiary/10 text-center md:text-left">
+<p class="text-on-tertiary/60 text-xs font-body mb-2">© 2024 Emanet İnsani Yardım Derneği. Tüm Hakları Saklıdır.</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2">
+<a class="text-on-tertiary/60 text-[10px] hover:underline" href="#">KVKK Aydınlatma Metni</a>
+<a class="text-on-tertiary/60 text-[10px] hover:underline" href="#">Bağışçı Hakları</a>
+</div>
+</div>
+</footer>
+<!-- Mobile Bottom Navigation (Optional for App-like feel) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-light-border grid grid-cols-4 h-16 items-center z-50">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold">Anasayfa</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">photo_library</span>
+<span class="text-[10px] font-bold">Galeri</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-bold">Bağış Yap</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profil</span>
+</button>
+</div>
+<script>
+        // Simple filter interaction logic
+        const filterChips = document.querySelectorAll('section:nth-of-type(4) button');
+        filterChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                filterChips.forEach(c => {
+                    c.classList.remove('bg-primary', 'text-on-primary', 'shadow-md');
+                    c.classList.add('bg-surface-container', 'text-on-surface-variant');
+                });
+                chip.classList.remove('bg-surface-container', 'text-on-surface-variant');
+                chip.classList.add('bg-primary', 'text-on-primary', 'shadow-md');
+            });
+        });
+    </script>
+</body></html>

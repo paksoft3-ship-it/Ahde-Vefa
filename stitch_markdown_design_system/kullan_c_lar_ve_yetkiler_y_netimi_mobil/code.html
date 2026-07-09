@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AHDE VEFA | Kullanıcılar ve Yetkiler</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "muted-text": "#667085",
+                        "outline": "#707971",
+                        "tertiary-container": "#3d6752",
+                        "secondary-container": "#61e9fe",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#a4d1b7",
+                        "surface-container": "#e4effd",
+                        "primary-container": "#2a6a48",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#edf4ff",
+                        "surface-dim": "#d1dbe8",
+                        "tertiary-fixed": "#bfedd3",
+                        "secondary-fixed-dim": "#4cd8ec",
+                        "inverse-primary": "#93d5ab",
+                        "surface-tint": "#2a6a48",
+                        "on-primary-container": "#a5e7bd",
+                        "surface-bright": "#f7f9ff",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#404942",
+                        "light-border": "#E5E7EB",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#002111",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#27313c",
+                        "background": "#f7f9ff",
+                        "secondary-fixed": "#9af0ff",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "warm-cream": "#FFF8EF",
+                        "on-secondary-fixed": "#001f24",
+                        "on-tertiary-container": "#b6e3c9",
+                        "surface-container-high": "#dfe9f7",
+                        "primary-fixed": "#aef1c6",
+                        "on-primary-fixed-variant": "#0a5132",
+                        "on-surface": "#121d26",
+                        "donation-gold": "#F4B740",
+                        "surface": "#f7f9ff",
+                        "surface-variant": "#d9e3f1",
+                        "primary": "#0a5132",
+                        "on-tertiary-fixed-variant": "#254f3b",
+                        "surface-container-highest": "#d9e3f1",
+                        "on-tertiary-fixed": "#002114",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#254f3c",
+                        "secondary": "#006874",
+                        "soft-mint": "#EEF8F4",
+                        "primary-fixed-dim": "#93d5ab",
+                        "on-secondary-container": "#006773",
+                        "on-background": "#121d26",
+                        "inverse-on-surface": "#e8f2ff",
+                        "outline-variant": "#bfc9c0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "0.25rem",
+                        "md": "1rem",
+                        "3xl": "6rem",
+                        "sm": "0.5rem",
+                        "lg": "1.5rem",
+                        "xl": "2.5rem",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "2xl": "4rem",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "section-heading-mobile": ["Manrope"],
+                        "body": ["Manrope"],
+                        "page-heading-mobile": ["Manrope"],
+                        "card-title": ["Manrope"],
+                        "button": ["Manrope"],
+                        "hero-heading-mobile": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "section-heading": ["Manrope"],
+                        "hero-heading": ["Manrope"],
+                        "page-heading": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "section-heading-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "page-heading-mobile": ["34px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "card-title": ["22px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "hero-heading-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "section-heading": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "hero-heading": ["64px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "page-heading": ["48px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "label": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            user-select: none;
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #0a513233; border-radius: 10px; }
+        .permission-modal { transform: translateY(100%); transition: transform 0.3s ease-out; }
+        .permission-modal.active { transform: translateY(0); }
+        .sidebar-overlay { transition: opacity 0.3s ease; }
+        .sidebar-drawer { transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .sidebar-drawer.active { transform: translateX(0); }
+        .active-nav-bg { background-color: rgba(165, 231, 189, 0.2); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface overflow-x-hidden">
+<!-- Mobile Top App Bar -->
+<header class="flex justify-between items-center h-16 px-6 fixed top-0 left-0 w-full z-40 bg-surface/80 backdrop-blur-md border-b border-light-border">
+<div class="flex items-center gap-4">
+<button class="text-primary p-1 focus:bg-soft-mint rounded-full transition-colors" onclick="toggleSidebar()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-card-title font-card-title font-bold text-primary">AHDE VEFA</h1>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">notifications</span>
+<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden border border-primary">
+<img class="w-full h-full object-cover" data-alt="Professional studio portrait of a corporate administrator for an NGO, clean lighting, professional attire, soft green background, high-end commercial photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmixCAxdH60VbfOK6OmBrVX7Yt--mrTjkVFQQMPWg3Q081GoUNLdbbo1o28Q3Rihml8x_psc8M6LfY4ByKRLh7TjKXcDNqvEsDKg4jyLa95b01gX2XUn-kS6ggQ6pGG2-Hq_Aa5ZDsZDmDQ_MmGAh1p5g9XjK3blAvw9A0wRSIopkTou3zH6joUW7p-w4FO8i0Puy_lJmazwpCN9HizpWPJNUMFgtE18CbDu4Uf-nSlK9XNmpct9l6GffDbyIaYbYk9leXeG4xngRa"/>
+</div>
+</div>
+</header>
+<!-- Sidebar / Drawer -->
+<div class="fixed inset-0 bg-black/50 z-50 opacity-0 pointer-events-none sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
+<aside class="fixed left-0 top-0 h-full w-72 bg-primary z-50 flex flex-col sidebar-drawer overflow-y-auto shadow-2xl" id="sidebar">
+<div class="p-6 border-b border-on-primary/10 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary font-bold">handshake</span>
+</div>
+<div>
+<h2 class="text-on-primary font-black text-[20px] leading-tight">AHDE VEFA</h2>
+<p class="text-on-primary/70 text-xs font-label uppercase tracking-widest">Yönetim Paneli</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1 px-3">
+<!-- Navigation items from JSON -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/80 hover:text-on-primary mx-2 rounded-lg hover:bg-on-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-label font-label">Genel Bakış</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg mx-2" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-label font-label">Ayarlar</span>
+</a>
+<div class="pt-4 pb-2 px-6">
+<p class="text-[10px] text-on-primary/40 font-bold uppercase tracking-widest">Kullanıcı Yönetimi</p>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 bg-white/10 text-on-primary rounded-lg mx-2 font-bold shadow-inner" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-label font-label">Kullanıcılar</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/80 hover:text-on-primary mx-2 rounded-lg hover:bg-on-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+<span class="text-label font-label">Roller &amp; Yetkiler</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary/80 hover:text-on-primary mx-2 rounded-lg hover:bg-on-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">security</span>
+<span class="text-label font-label">Güvenlik Günlüğü</span>
+</a>
+</nav>
+<div class="mt-auto p-6 bg-black/10">
+<button class="flex items-center gap-3 text-on-primary/70 hover:text-white transition-colors">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-label font-label">Oturumu Kapat</span>
+</button>
+</div>
+</aside>
+<main class="pt-20 pb-24 px-4 min-h-screen">
+<!-- Summary Cards -->
+<section class="mb-8 overflow-x-auto">
+<div class="flex gap-4 w-max pr-4">
+<div class="bg-surface-container-highest p-4 rounded-xl border border-light-border w-44 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">groups</span>
+<span class="text-xs font-bold text-primary">+2</span>
+</div>
+<p class="text-xs text-muted-text font-medium">Toplam Kullanıcı</p>
+<h3 class="text-2xl font-bold text-on-surface">14</h3>
+</div>
+<div class="bg-surface-container-highest p-4 rounded-xl border border-light-border w-44 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-secondary bg-secondary/10 p-2 rounded-lg">shield_person</span>
+</div>
+<p class="text-xs text-muted-text font-medium">Admin Rolü</p>
+<h3 class="text-2xl font-bold text-on-surface">3</h3>
+</div>
+<div class="bg-surface-container-highest p-4 rounded-xl border border-light-border w-44 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-error bg-error/10 p-2 rounded-lg">lock</span>
+</div>
+<p class="text-xs text-muted-text font-medium">Aktif 2FA</p>
+<h3 class="text-2xl font-bold text-on-surface">12/14</h3>
+</div>
+</div>
+</section>
+<!-- Search & Filter -->
+<div class="mb-6 flex gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl border-light-border bg-white text-sm focus:ring-primary focus:border-primary" placeholder="Kullanıcı ara..." type="text"/>
+</div>
+<button class="bg-white border border-light-border p-3 rounded-xl text-primary">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+<!-- User Cards Stack -->
+<div class="space-y-4">
+<div class="flex items-center justify-between px-2">
+<h2 class="text-lg font-bold text-on-surface">Kullanıcı Listesi</h2>
+<span class="text-xs text-muted-text">Son güncelleme: Az önce</span>
+</div>
+<!-- User Card 1 -->
+<div class="bg-white rounded-2xl p-4 border border-light-border shadow-sm flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1 h-full bg-primary"></div>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-soft-mint flex items-center justify-center border border-primary/20">
+<span class="text-primary font-bold">AK</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<h4 class="font-bold text-on-surface">Ahmet Kaya</h4>
+<span class="bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold uppercase">Süper Admin</span>
+</div>
+<p class="text-xs text-muted-text">ahmet.kaya@ahdevefa.org.tr</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-light-border/50">
+<div class="flex gap-2">
+<div class="flex items-center gap-1 bg-soft-mint px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold text-primary">AKTİF</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[14px] text-secondary">phonelink_lock</span>
+<span class="text-[10px] font-bold text-secondary">2FA</span>
+</div>
+</div>
+<button class="text-primary font-bold text-xs flex items-center gap-1" onclick="openPermissionModal('Ahmet Kaya', 'Süper Admin')">
+                        Detay <span class="material-symbols-outlined text-xs">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- User Card 2 -->
+<div class="bg-white rounded-2xl p-4 border border-light-border shadow-sm flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1 h-full bg-secondary"></div>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center border border-secondary/20">
+<span class="text-secondary font-bold">MY</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<h4 class="font-bold text-on-surface">Mehmet Yılmaz</h4>
+<span class="bg-secondary/10 text-secondary text-[10px] px-2 py-0.5 rounded-full font-bold uppercase">Muhasebe</span>
+</div>
+<p class="text-xs text-muted-text">m.yilmaz@ahdevefa.org.tr</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-light-border/50">
+<div class="flex gap-2">
+<div class="flex items-center gap-1 bg-soft-mint px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold text-primary">AKTİF</span>
+</div>
+<div class="flex items-center gap-1 bg-error-container/50 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[14px] text-error">lock_open</span>
+<span class="text-[10px] font-bold text-error">2FA YOK</span>
+</div>
+</div>
+<button class="text-primary font-bold text-xs flex items-center gap-1" onclick="openPermissionModal('Mehmet Yılmaz', 'Muhasebe')">
+                        Detay <span class="material-symbols-outlined text-xs">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- User Card 3 -->
+<div class="bg-white rounded-2xl p-4 border border-light-border shadow-sm flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1 h-full bg-outline"></div>
+<div class="flex items-center gap-3 opacity-60">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center border border-outline/20">
+<span class="text-outline font-bold">ZT</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<h4 class="font-bold text-on-surface">Zeynep Tekin</h4>
+<span class="bg-surface-variant text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full font-bold uppercase">Editör</span>
+</div>
+<p class="text-xs text-muted-text">z.tekin@ahdevefa.org.tr</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-light-border/50">
+<div class="flex gap-2">
+<div class="flex items-center gap-1 bg-surface-variant px-2 py-1 rounded-lg opacity-60">
+<span class="material-symbols-outlined text-[14px] text-outline">pause_circle</span>
+<span class="text-[10px] font-bold text-outline">PASİF</span>
+</div>
+</div>
+<button class="text-primary font-bold text-xs flex items-center gap-1" onclick="openPermissionModal('Zeynep Tekin', 'Editör')">
+                        Detay <span class="material-symbols-outlined text-xs">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Role Cards Section -->
+<div class="mt-10 mb-6">
+<h2 class="text-lg font-bold text-on-surface px-2 mb-4">Rol Şablonları</h2>
+<div class="space-y-3">
+<div class="bg-primary p-4 rounded-2xl shadow-md text-on-primary">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-bold">Süper Admin</h4>
+<span class="material-symbols-outlined text-on-primary/60">shield</span>
+</div>
+<p class="text-xs text-on-primary/70">Tüm sistem fonksiyonlarına tam erişim yetkisi.</p>
+</div>
+<div class="bg-white p-4 rounded-2xl border border-light-border shadow-sm">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-bold text-on-surface">Muhasebe Sorumlusu</h4>
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<p class="text-xs text-muted-text">Bağışlar, dekontlar ve raporlama yetkileri.</p>
+</div>
+<div class="bg-white p-4 rounded-2xl border border-light-border shadow-sm">
+<div class="flex justify-between items-center mb-1">
+<h4 class="font-bold text-on-surface">Saha Gönüllüsü</h4>
+<span class="material-symbols-outlined text-primary">volunteer_activism</span>
+</div>
+<p class="text-xs text-muted-text">Sadece kampanya takibi ve galeri yükleme yetkisi.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Permission Editor Modal -->
+<div class="fixed inset-0 bg-black/60 z-[60] opacity-0 pointer-events-none transition-opacity duration-300" id="modal-overlay" onclick="closePermissionModal()"></div>
+<div class="fixed bottom-0 left-0 w-full h-[795px] bg-surface z-[70] rounded-t-[32px] overflow-hidden permission-modal shadow-[0_-10px_40px_rgba(0,0,0,0.2)]" id="permission-modal">
+<div class="h-1.5 w-12 bg-outline/20 rounded-full mx-auto mt-3 mb-6"></div>
+<div class="px-6 flex justify-between items-start mb-6">
+<div>
+<h3 class="text-2xl font-black text-primary" id="modal-user-name">Ahmet Kaya</h3>
+<p class="text-sm font-medium text-muted-text" id="modal-user-role">Süper Admin Yetkileri</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-soft-mint flex items-center justify-center text-primary" onclick="closePermissionModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="px-6 h-[calc(90vh-140px)] overflow-y-auto pb-24">
+<!-- Accordion Group 1 -->
+<div class="mb-4">
+<button class="w-full flex justify-between items-center p-4 bg-white border border-light-border rounded-xl" onclick="toggleAccordion('acc-donations')">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">payments</span>
+<span class="font-bold text-on-surface">Bağış Yönetimi</span>
+</div>
+<span class="material-symbols-outlined transition-transform duration-200" id="acc-donations-icon">expand_more</span>
+</button>
+<div class="hidden flex-col gap-3 p-4 bg-soft-mint/30 rounded-b-xl -mt-2 border-x border-b border-light-border" id="acc-donations">
+<div class="flex justify-between items-center">
+<span class="text-sm">Bağışları Görüntüle</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm">Manuel Bağış Girişi</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm">İade İşlemleri</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Accordion Group 2 -->
+<div class="mb-4">
+<button class="w-full flex justify-between items-center p-4 bg-white border border-light-border rounded-xl" onclick="toggleAccordion('acc-campaigns')">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">campaign</span>
+<span class="font-bold text-on-surface">Kampanyalar</span>
+</div>
+<span class="material-symbols-outlined transition-transform duration-200" id="acc-campaigns-icon">expand_more</span>
+</button>
+<div class="hidden flex-col gap-3 p-4 bg-soft-mint/30 rounded-b-xl -mt-2 border-x border-b border-light-border" id="acc-campaigns">
+<div class="flex justify-between items-center">
+<span class="text-sm">Yeni Kampanya Oluştur</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm">Kampanya Durumu Güncelle</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Accordion Group 3 -->
+<div class="mb-4">
+<button class="w-full flex justify-between items-center p-4 bg-white border border-light-border rounded-xl" onclick="toggleAccordion('acc-system')">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">settings_applications</span>
+<span class="font-bold text-on-surface">Sistem Ayarları</span>
+</div>
+<span class="material-symbols-outlined transition-transform duration-200" id="acc-system-icon">expand_more</span>
+</button>
+<div class="hidden flex-col gap-3 p-4 bg-soft-mint/30 rounded-b-xl -mt-2 border-x border-b border-light-border" id="acc-system">
+<div class="flex justify-between items-center">
+<span class="text-sm">Kullanıcı Ekle/Sil</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm">Yetki Şablonlarını Değiştir</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-outline/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Danger Zone -->
+<div class="mt-8 p-4 rounded-xl border border-error/20 bg-error-container/20">
+<h4 class="text-error font-bold mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">warning</span> Tehlikeli Bölge
+                </h4>
+<div class="flex flex-col gap-3">
+<button class="w-full py-3 rounded-lg border border-error text-error text-xs font-bold bg-white active:scale-95 transition-transform">
+                        Kullanıcı Şifresini Sıfırla
+                    </button>
+<button class="w-full py-3 rounded-lg bg-error text-white text-xs font-bold active:scale-95 transition-transform">
+                        Kullanıcıyı Askıya Al
+                    </button>
+</div>
+</div>
+</div>
+<!-- Sticky Modal Footer -->
+<div class="absolute bottom-0 left-0 w-full p-6 bg-white border-t border-light-border flex gap-3">
+<button class="flex-1 py-4 text-on-surface-variant font-bold text-sm bg-surface-variant rounded-xl active:opacity-80" onclick="closePermissionModal()">Vazgeç</button>
+<button class="flex-[2] py-4 bg-primary text-white font-bold text-sm rounded-xl active:opacity-80 shadow-lg shadow-primary/20" onclick="closePermissionModal()">Yetkileri Güncelle</button>
+</div>
+</div>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-xl z-30 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 32px;">add</span>
+</button>
+<!-- Bottom Navigation Bar (Mobile only) -->
+<nav class="fixed bottom-0 left-0 w-full h-20 z-50 flex justify-around items-center px-4 bg-white border-t border-light-border shadow-2xl">
+<a class="flex flex-col items-center justify-center text-primary font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] mt-1 font-label uppercase">Genel</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] mt-1 font-label uppercase">Bağışlar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant relative" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] mt-1 font-label uppercase">Bildirim</span>
+<div class="absolute top-0 right-1 w-2 h-2 bg-error rounded-full border-2 border-white"></div>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] mt-1 font-label uppercase">Profil</span>
+</a>
+</nav>
+<script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('opacity-0');
+            overlay.classList.toggle('pointer-events-none');
+        }
+
+        function openPermissionModal(name, role) {
+            document.getElementById('modal-user-name').innerText = name;
+            document.getElementById('modal-user-role').innerText = role + " Yetkileri";
+            
+            const modal = document.getElementById('permission-modal');
+            const overlay = document.getElementById('modal-overlay');
+            modal.classList.add('active');
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePermissionModal() {
+            const modal = document.getElementById('permission-modal');
+            const overlay = document.getElementById('modal-overlay');
+            modal.classList.remove('active');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'auto';
+        }
+
+        function toggleAccordion(id) {
+            const acc = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+            const isHidden = acc.classList.contains('hidden');
+            
+            // Close all others
+            document.querySelectorAll('[id^="acc-"]').forEach(el => {
+                if(el.id !== id && !el.id.includes('-icon')) {
+                    el.classList.add('hidden');
+                    el.classList.remove('flex');
+                    const otherIcon = document.getElementById(el.id + '-icon');
+                    if(otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+                }
+            });
+
+            if (isHidden) {
+                acc.classList.remove('hidden');
+                acc.classList.add('flex');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                acc.classList.add('hidden');
+                acc.classList.remove('flex');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body></html>

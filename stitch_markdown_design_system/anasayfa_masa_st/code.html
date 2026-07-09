@@ -1,0 +1,670 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="tr"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AHDE VEFA | İnsani Yardım Derneği</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "donation-gold": "#F4B740",
+                    "on-surface": "#121d26",
+                    "on-tertiary-fixed-variant": "#254f3b",
+                    "surface": "#f7f9ff",
+                    "surface-variant": "#d9e3f1",
+                    "primary": "#0a5132",
+                    "on-tertiary-container": "#b6e3c9",
+                    "surface-container-high": "#dfe9f7",
+                    "primary-fixed": "#aef1c6",
+                    "on-primary-fixed-variant": "#0a5132",
+                    "on-secondary-container": "#006773",
+                    "on-background": "#121d26",
+                    "inverse-on-surface": "#e8f2ff",
+                    "soft-mint": "#EEF8F4",
+                    "primary-fixed-dim": "#93d5ab",
+                    "outline-variant": "#bfc9c0",
+                    "surface-container-highest": "#d9e3f1",
+                    "tertiary": "#254f3c",
+                    "secondary": "#006874",
+                    "on-tertiary-fixed": "#002114",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#27313c",
+                    "secondary-fixed": "#9af0ff",
+                    "on-error": "#ffffff",
+                    "background": "#f7f9ff",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#001f24",
+                    "warm-cream": "#FFF8EF",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#404942",
+                    "light-border": "#E5E7EB",
+                    "surface-bright": "#f7f9ff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#002111",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#e4effd",
+                    "primary-container": "#2a6a48",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#a4d1b7",
+                    "surface-dim": "#d1dbe8",
+                    "surface-container-low": "#edf4ff",
+                    "outline": "#707971",
+                    "muted-text": "#667085",
+                    "secondary-container": "#61e9fe",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#3d6752",
+                    "surface-tint": "#2a6a48",
+                    "on-primary-container": "#a5e7bd",
+                    "tertiary-fixed": "#bfedd3",
+                    "secondary-fixed-dim": "#4cd8ec",
+                    "inverse-primary": "#93d5ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "1rem",
+                    "xs": "0.25rem",
+                    "sm": "0.5rem",
+                    "lg": "1.5rem",
+                    "3xl": "6rem",
+                    "margin-mobile": "20px",
+                    "2xl": "4rem",
+                    "xl": "2.5rem",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "hero-heading": ["Manrope"],
+                    "section-heading": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "label": ["Manrope"],
+                    "page-heading": ["Manrope"],
+                    "body": ["Manrope"],
+                    "button": ["Manrope"],
+                    "card-title": ["Manrope"]
+            },
+            "fontSize": {
+                    "hero-heading": ["64px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "section-heading": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "label": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "page-heading": ["48px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "card-title": ["22px", {"lineHeight": "1.4", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .nav-item-active {
+            color: #006874; /* secondary */
+            font-weight: 700;
+            border-bottom: 2px solid #006874;
+            padding-bottom: 4px;
+        }
+        .campaign-progress {
+            transition: width 1s ease-in-out;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- Header Section (Shared Component: TopNavBar) -->
+<header class="bg-surface-container-lowest sticky top-0 z-50 border-b border-light-border">
+<div class="flex justify-between items-center w-full px-margin-mobile lg:px-gutter max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-8">
+<a class="text-card-title font-hero-heading font-extrabold text-primary" href="/">AHDE VEFA</a>
+<nav class="hidden lg:flex items-center gap-6">
+<a class="nav-item-active text-label font-label transition-colors" href="#">Anasayfa</a>
+<a class="text-on-surface-variant text-label font-label hover:text-secondary transition-colors" href="#">Bağış Yap</a>
+<a class="text-on-surface-variant text-label font-label hover:text-secondary transition-colors" href="#">Kurban</a>
+<a class="text-on-surface-variant text-label font-label hover:text-secondary transition-colors" href="#">Ramazan</a>
+<a class="text-on-surface-variant text-label font-label hover:text-secondary transition-colors" href="#">Faaliyetler</a>
+<a class="text-on-surface-variant text-label font-label hover:text-secondary transition-colors" href="#">Raporlar</a>
+<a class="text-on-surface-variant text-label font-label hover:text-secondary transition-colors" href="#">Hakkımızda</a>
+<a class="text-on-surface-variant text-label font-label hover:text-secondary transition-colors" href="#">İletişim</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden md:flex items-center gap-2 px-4 py-2 bg-soft-mint text-primary rounded-full font-button text-button transition-transform hover:scale-105" href="#">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                    Bilgi Al
+                </a>
+<a class="px-6 py-3 bg-secondary text-white rounded-full font-button text-button transition-all hover:bg-on-secondary-container shadow-md active:scale-95" href="#">
+                    Bağış Yap
+                </a>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-xl pb-3xl overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-gutter grid lg:grid-cols-12 gap-xl items-center">
+<div class="lg:col-span-6 space-y-lg">
+<h1 class="text-hero-heading-mobile lg:text-hero-heading font-hero-heading text-primary leading-tight">
+                        Emanetlerinizi ihtiyaç sahiplerine ulaştırıyoruz
+                    </h1>
+<p class="text-body-lg text-on-surface-variant max-w-xl">
+                        Afrika'nın kurak topraklarından Pakistan'ın sellerle mücadelesine kadar, Ahde Vefa olarak nerede bir mazlum varsa oradayız. Sizin emanetlerinizle kardeşlik köprüleri kuruyoruz.
+                    </p>
+<div class="flex flex-wrap gap-md">
+<button class="px-8 py-4 bg-primary text-white rounded-full font-button text-button shadow-lg hover:opacity-90 transition-all">Hemen Bağış Yap</button>
+<button class="px-8 py-4 border-2 border-primary text-primary rounded-full font-button text-button hover:bg-primary hover:text-white transition-all">Faaliyetleri İncele</button>
+</div>
+<div class="flex flex-wrap gap-6 pt-md border-t border-light-border">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-weight="fill">verified_user</span>
+<span class="text-label font-label text-on-surface-variant">Şeffaf Bağış Süreci</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-weight="fill">description</span>
+<span class="text-label font-label text-on-surface-variant">Saha Raporları</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-weight="fill">gavel</span>
+<span class="text-label font-label text-on-surface-variant">Resmi Dernek Bilgileri</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-6 relative">
+<div class="rounded-[40px] overflow-hidden shadow-2xl relative z-10">
+<img class="w-full h-[600px] object-cover" data-alt="A powerful and emotional professional photograph of a humanitarian worker smiling warmly while handing a package of essential food supplies to an elderly person in a rural African village. The golden hour sunlight creates a hopeful and warm atmosphere, highlighting the sincere human connection and dignity of the recipient. The surrounding environment is dusty yet vibrant, showcasing the grounded, field-oriented nature of the organization's work." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiVrwnpJivqLvtOobBidBf1MLxcmN2XpfD-SX5uBL6iwptfS4xvKVkvMm-3gGgEh3bzbpFi1xOLeCP0lB7o1naRYmPcpvm-_8E6dZ8FyjYWkvgIxs8y3ffdA5y8hXS0rA_zJIDDEXO6HPMH7R6VoWV68PYyhJ9yHteg5v3SeGSnJetoM540o82NmfIFohe_YDHrYY1ERed-vOCzyA1YEAdDk8Cc8_vZnzGysdgkhsIjCGYUg0lI69Bv2YHNMqLxcx2iWu9170BNjq2">
+</div>
+<div class="absolute -bottom-6 -left-6 lg:-left-12 glass-card p-6 rounded-2xl shadow-xl z-20 max-w-xs animate-bounce-slow">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-donation-gold rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<div>
+<p class="text-label font-bold text-primary">Son Bağış</p>
+<p class="text-body font-bold text-on-surface">₺1,000 - Su Kuyusu</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Donation Box -->
+<section class="max-w-container-max mx-auto px-margin-mobile lg:px-gutter -mt-16 lg:-mt-24 relative z-30">
+<div class="bg-white rounded-[24px] shadow-2xl p-md lg:p-xl border border-light-border">
+<div class="grid lg:grid-cols-3 gap-lg items-center">
+<div>
+<label class="block text-label font-bold text-on-surface mb-2">Bağış Türü</label>
+<select class="w-full h-14 rounded-xl border-light-border focus:border-primary focus:ring-primary bg-surface transition-all">
+<option>Genel Bağış</option>
+<option>Kurban Bağışı</option>
+<option>Su Kuyusu</option>
+<option>Yetim Hamiliği</option>
+<option>Acil Yardım</option>
+</select>
+</div>
+<div>
+<label class="block text-label font-bold text-on-surface mb-2">Miktar Seçin (₺)</label>
+<div class="grid grid-cols-5 gap-2">
+<button class="h-14 rounded-xl border-2 border-primary-fixed bg-surface hover:bg-primary-fixed text-primary font-bold transition-all">250</button>
+<button class="h-14 rounded-xl border-2 border-primary-fixed bg-surface hover:bg-primary-fixed text-primary font-bold transition-all">500</button>
+<button class="h-14 rounded-xl border-2 border-primary bg-primary text-white font-bold transition-all">1000</button>
+<button class="h-14 rounded-xl border-2 border-primary-fixed bg-surface hover:bg-primary-fixed text-primary font-bold transition-all">2500</button>
+<input class="h-14 rounded-xl border-light-border focus:border-primary focus:ring-primary text-center" placeholder="Diğer" type="text">
+</div>
+</div>
+<div>
+<label class="block text-label font-bold text-on-surface mb-2 invisible">İşlem</label>
+<button class="w-full h-14 bg-donation-gold text-on-surface-variant font-bold rounded-xl shadow-md hover:opacity-90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">payments</span>
+                            Bağışı Tamamla
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Active Campaigns -->
+<section class="py-3xl">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-gutter">
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h2 class="text-section-heading font-section-heading text-primary">Aktif Kampanyalar</h2>
+<p class="text-body-lg text-on-surface-variant mt-2">Desteğinize en çok ihtiyaç duyan projelerimiz</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-1 hover:underline" href="#">Tümünü Gör <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Card 1 -->
+<div class="bg-white rounded-[20px] overflow-hidden shadow-sm border border-light-border group hover:shadow-xl transition-all flex flex-col h-full">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-quality, respectful photo of a traditional communal feast in a remote village during Ramadan, with rows of colorful plates filled with local nutritious food. The setting is clean and organized, conveying the organization's professionalism and respect for the local culture. Soft evening lighting creates a peaceful and communal mood, reflecting the spirit of sharing and humanitarian aid in an international development context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbLNBHOJXN0ogmV714yEw0MkWAuLoedKog6uprV22D0QStwN-sbIh3b1APlO0_ZCTuy9kbxLB4efWYR83UbREuPcXxDm0NTEtuJilXtzMhQ4Q9rz-S7gnGCgRIiee0hmYoPi-ScVjkJvA_JNDY_WpGwrGG3QJnR_XyEx0qKgtRhAyGVSZutvwM2AIGW8136FPLh1C5UL7U4kqsB8ai8IryThf6tBQRQlQEKaD8dgaVgoIrtTRjKeFbn7S3alYkpmFwiVevU945KI6R">
+<div class="absolute top-4 left-4 bg-primary text-white text-[12px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Kurban</div>
+</div>
+<div class="p-lg flex-grow flex flex-col">
+<h3 class="text-card-title font-card-title text-on-surface mb-2">Hisse Kurban Bağışı</h3>
+<p class="text-body text-on-surface-variant mb-6 line-clamp-2">Vacip ve hayır kurbanlarınızı dünyanın 20 farklı ülkesinde muhtaçlara ulaştırıyoruz.</p>
+<div class="mt-auto">
+<div class="flex justify-between text-label font-bold mb-2">
+<span class="text-primary">₺2,450,000 Toplanan</span>
+<span class="text-on-surface-variant">%65</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden mb-6">
+<div class="h-full bg-donation-gold campaign-progress" style="width: 65%;"></div>
+</div>
+<button class="w-full py-3 bg-soft-mint text-primary border border-primary-fixed rounded-full font-button hover:bg-primary hover:text-white transition-all">Bağış Yap</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-[20px] overflow-hidden shadow-sm border border-light-border group hover:shadow-xl transition-all flex flex-col h-full">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A cinematic documentary-style photograph of children playing joyfully around a newly installed clean water well in a rural arid region. The clear, sparkling water contrasts beautifully with the dry, earthy background. The children's genuine smiles and the clear water symbolize life, health, and the transformative impact of humanitarian work. The lighting is bright and optimistic, emphasizing a new beginning for the community." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvxNVbprmzXWPblBzhmTYwLWGUDv4CBirRf2dQXCLc4hGej_SNwmEVS-V_lFFkM2AOSl5UinM7rrW7qqNav9yLGzCJVZMwYxFkN-4zf8PUCpRqasPpjVdjtpdtQGO9gdtKvjHnK-MlrKwhk-5dHxFre1Djos9SPKBGFx2cNAbNhRPHJgS8S5vLtKptLZTFiAaAjlLR7qUz1dJjSOqFUkYDzVlHgW9SvMDKcf3SnYkf_vI7pAJ6TzkF0bKoM3UTEZNUnLsuNZswaGOz">
+<div class="absolute top-4 left-4 bg-secondary text-white text-[12px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Afrika</div>
+</div>
+<div class="p-lg flex-grow flex flex-col">
+<h3 class="text-card-title font-card-title text-on-surface mb-2">Su Kuyusu Projeleri</h3>
+<p class="text-body text-on-surface-variant mb-6 line-clamp-2">Susuzlukla mücadele eden köylerde kalıcı çözümler inşa ediyoruz. Bir kuyu, binlerce hayat.</p>
+<div class="mt-auto">
+<div class="flex justify-between text-label font-bold mb-2">
+<span class="text-primary">₺890,000 Toplanan</span>
+<span class="text-on-surface-variant">%40</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden mb-6">
+<div class="h-full bg-donation-gold campaign-progress" style="width: 40%;"></div>
+</div>
+<button class="w-full py-3 bg-soft-mint text-primary border border-primary-fixed rounded-full font-button hover:bg-primary hover:text-white transition-all">Bağış Yap</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-[20px] overflow-hidden shadow-sm border border-light-border group hover:shadow-xl transition-all flex flex-col h-full">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A focused portrait of an Afghan craftsman working in a small, clean workshop, supported by a micro-loan project. The image highlights skill and self-reliance, moving away from victimhood narratives. The lighting is soft and industrial, focusing on the details of his craft and his expression of concentration and pride. The color palette is earthy and grounded, reflecting the resilient spirit of the Afghan people." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9XGhXf7oA0xqrTMq-Vy6m5l2X_V_BNWOan5GEaOv-ZLu3HamUTO-zPghypXw4wZ_-jJLiMpcmwsSIFxDbV335px1JAeLm5VZfRw0JqWI_jy8dQhCwYpk8NJQ5memf8mN_SvIic2gOWGl4h4oOt6VtvcPrqrIGI81cQuNIWPVeOCLPgUMvpnka9ygeel4kxPxjNflqAjP3EFKzAGvrb92TuHZt5Jo2t272cQ2lm3sGY4YKYGO84B8idzY2t2Ghy-9HFlHYtqEtOHts">
+<div class="absolute top-4 left-4 bg-primary text-white text-[12px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Afganistan</div>
+</div>
+<div class="p-lg flex-grow flex flex-col">
+<h3 class="text-card-title font-card-title text-on-surface mb-2">Eğitim ve Kalkınma</h3>
+<p class="text-body text-on-surface-variant mb-6 line-clamp-2">Afganistan'da yetimlerin eğitimi ve ailelerin kendi ayakları üzerinde durması için çalışıyoruz.</p>
+<div class="mt-auto">
+<div class="flex justify-between text-label font-bold mb-2">
+<span class="text-primary">₺1,200,000 Toplanan</span>
+<span class="text-on-surface-variant">%82</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden mb-6">
+<div class="h-full bg-donation-gold campaign-progress" style="width: 82%;"></div>
+</div>
+<button class="w-full py-3 bg-soft-mint text-primary border border-primary-fixed rounded-full font-button hover:bg-primary hover:text-white transition-all">Bağış Yap</button>
+</div>
+</div>
+</div>
+<!-- Row 2 Card 4 -->
+<div class="bg-white rounded-[20px] overflow-hidden shadow-sm border border-light-border group hover:shadow-xl transition-all flex flex-col h-full">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-angle photo of a clean, organized distribution center where humanitarian workers are neatly stacking boxes labeled with 'Ahde Vefa' logo and 'Ramazan Yardımı' in both Turkish and local language. The scene conveys scale, efficiency, and respect. Soft morning light streams through large windows, creating a sense of organized hope and logistical excellence in aid delivery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC9hfFBE5-jpajAK58kL9GEZTBMSW8P47CuyHHfQeUegEgnwbSAwCjpzLXjMgfxuc59vJrZ3wBCwz94uHFY_O_T3-mRQCfwEx6yKNiA7o15E1a7fXKh50ksFZtIP_NV9tvt12PhTd_Le7D19jDbFtp95diqFfZsbHM5T7v2hHyOHE-Jed1Gcy-HVUyP4U1dTWWVyf37dUlfWubGunHGwq4W6qShr-2rS-RRM5z80gTKDxgVtQrV_Jscw3_TtG2UlB5_cFt4NvpTjiN">
+<div class="absolute top-4 left-4 bg-tertiary text-white text-[12px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Ramazan</div>
+</div>
+<div class="p-lg flex-grow flex flex-col">
+<h3 class="text-card-title font-card-title text-on-surface mb-2">Ramazan Kumanya Paketi</h3>
+<p class="text-body text-on-surface-variant mb-6 line-clamp-2">Bir ailenin bir aylık temel gıda ihtiyacını karşılayan sevgi paketlerini ulaştırın.</p>
+<div class="mt-auto">
+<div class="flex justify-between text-label font-bold mb-2">
+<span class="text-primary">₺3,400,000 Toplanan</span>
+<span class="text-on-surface-variant">%90</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden mb-6">
+<div class="h-full bg-donation-gold campaign-progress" style="width: 90%;"></div>
+</div>
+<button class="w-full py-3 bg-soft-mint text-primary border border-primary-fixed rounded-full font-button hover:bg-primary hover:text-white transition-all">Bağış Yap</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-white rounded-[20px] overflow-hidden shadow-sm border border-light-border group hover:shadow-xl transition-all flex flex-col h-full">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An atmospheric photograph of a temporary medical camp in a flood-affected area of Pakistan. Professional medical staff in clean uniforms are providing care to patients in a dignified and calm environment. The lighting is diffused, emphasizing the professionalism and urgency of the medical aid. The color palette focuses on clean whites and clinical greens, punctuated by the vibrant colors of local textiles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGdByZul_o3BfI0R6vdbCysYqBLsA-VeKtPlQTDV--mDlDXwb78_2ozcFHnZaqONlzkk35-SBpT-A91vBfhNmOsgTv0xCxnxAsjkB5SeF6YJWwREpoozUhz4TkErct4xDpkKPa-6LGM0FEID_5GZa7PXvaoIcwbvHXM_VyvB9KPYt1Hme2hGJ_lvCDlA8iBw5l17Iz8d7vFXCaCSRUaJvuSffqsGxleXMuBINDAFRaWShhzvgngb1TsppTaiYHLIIyNPO_wAj6sHGY">
+<div class="absolute top-4 left-4 bg-secondary text-white text-[12px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Pakistan</div>
+</div>
+<div class="p-lg flex-grow flex flex-col">
+<h3 class="text-card-title font-card-title text-on-surface mb-2">Acil Sağlık Yardımı</h3>
+<p class="text-body text-on-surface-variant mb-6 line-clamp-2">Afet bölgelerinde gezici sağlık ekiplerimizle yaraları sarmaya devam ediyoruz.</p>
+<div class="mt-auto">
+<div class="flex justify-between text-label font-bold mb-2">
+<span class="text-primary">₺450,000 Toplanan</span>
+<span class="text-on-surface-variant">%25</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden mb-6">
+<div class="h-full bg-donation-gold campaign-progress" style="width: 25%;"></div>
+</div>
+<button class="w-full py-3 bg-soft-mint text-primary border border-primary-fixed rounded-full font-button hover:bg-primary hover:text-white transition-all">Bağış Yap</button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-white rounded-[20px] overflow-hidden shadow-sm border border-light-border group hover:shadow-xl transition-all flex flex-col h-full">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A heartwarming image of a diverse group of international volunteers and local community members working together to plant trees or build a community garden. The focus is on cooperation, shared humanity, and sustainable long-term impact. The bright, natural daylight and lush greenery create a vibrant and hopeful aesthetic, emphasizing the 'Ahde Vefa' (loyalty) theme of the organization." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPHTSx7ZiZOFR5AgC1RL790epCyX6MAJAfu8190rsftY9k72qH75sbPEuQlsqtqKeU4L95By5oG52oxMYaaBqJXfGCtTLzb84mr1OKbLEAsxQAmVJucR8cYmg_rxZNIB5p9jqMLfqGxSEpKpcGFJYAAxLPCbuZriIF3r-aIaULABBZYBu0BMV6FO4xi-WFycnmZbJY1V0s17Ke-dBKGheRbQc93R9kQkZdFHqja6aI9ao4IUW3XPVVOZilvodlib7m4K1rhSaWnB_x">
+<div class="absolute top-4 left-4 bg-primary-container text-white text-[12px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Genel</div>
+</div>
+<div class="p-lg flex-grow flex flex-col">
+<h3 class="text-card-title font-card-title text-on-surface mb-2">Zekat ve Sadaka</h3>
+<p class="text-body text-on-surface-variant mb-6 line-clamp-2">Bağışlarınızı ihtiyaç duyulan en öncelikli projelere yönlendirerek iyiliği büyütün.</p>
+<div class="mt-auto">
+<div class="flex justify-between text-label font-bold mb-2">
+<span class="text-primary">₺7,200,000 Toplanan</span>
+<span class="text-on-surface-variant">%78</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden mb-6">
+<div class="h-full bg-donation-gold campaign-progress" style="width: 78%;"></div>
+</div>
+<button class="w-full py-3 bg-soft-mint text-primary border border-primary-fixed rounded-full font-button hover:bg-primary hover:text-white transition-all">Bağış Yap</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact Stats -->
+<section class="py-3xl bg-primary text-white overflow-hidden relative">
+
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-gutter relative z-10 text-center">
+<h2 class="text-section-heading font-section-heading mb-2xl">Bağışlarınız sahada gerçek iyiliğe dönüşüyor</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-xl">
+<div class="p-xl bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 transition-transform hover:-translate-y-2">
+<span class="material-symbols-outlined text-[48px] mb-4 text-donation-gold">groups</span>
+<p class="text-hero-heading-mobile lg:text-hero-heading font-hero-heading">12.500+</p>
+<p class="text-body font-bold uppercase tracking-widest mt-2">Ulaşılan Aile</p>
+</div>
+<div class="p-xl bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 transition-transform hover:-translate-y-2">
+<span class="material-symbols-outlined text-[48px] mb-4 text-donation-gold">restaurant</span>
+<p class="text-hero-heading-mobile lg:text-hero-heading font-hero-heading">45.000+</p>
+<p class="text-body font-bold uppercase tracking-widest mt-2">Dağıtılan İftar</p>
+</div>
+<div class="p-xl bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 transition-transform hover:-translate-y-2">
+<span class="material-symbols-outlined text-[48px] mb-4 text-donation-gold">kettle</span>
+<p class="text-hero-heading-mobile lg:text-hero-heading font-hero-heading">3.200+</p>
+<p class="text-body font-bold uppercase tracking-widest mt-2">Kesilen Kurban</p>
+</div>
+<div class="p-xl bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 transition-transform hover:-translate-y-2">
+<span class="material-symbols-outlined text-[48px] mb-4 text-donation-gold">public</span>
+<p class="text-hero-heading-mobile lg:text-hero-heading font-hero-heading">12</p>
+<p class="text-body font-bold uppercase tracking-widest mt-2">Faaliyet Bölgesi</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust & Transparency -->
+<section class="py-3xl bg-soft-mint">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-gutter">
+<div class="text-center mb-xl">
+<h2 class="text-section-heading font-section-heading text-primary">Güven ve Şeffaflık</h2>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto mt-4">Her kuruşunuzun nereye gittiğini biliyor, tüm süreçlerimizi yasal ve dini hassasiyetler çerçevesinde raporluyoruz.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-md">
+<div class="bg-white p-lg rounded-2xl shadow-sm hover:shadow-md transition-all border border-light-border">
+<div class="w-14 h-14 bg-soft-mint rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">corporate_fare</span>
+</div>
+<h3 class="text-card-title text-on-surface mb-2">Resmi Bilgiler</h3>
+<p class="text-label text-on-surface-variant mb-4">Dernek sicil ve tüzük bilgilerine buradan ulaşabilirsiniz.</p>
+<a class="text-primary font-bold flex items-center gap-1 group" href="#">İncele <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span></a>
+</div>
+<div class="bg-white p-lg rounded-2xl shadow-sm hover:shadow-md transition-all border border-light-border">
+<div class="w-14 h-14 bg-soft-mint rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">photo_library</span>
+</div>
+<h3 class="text-card-title text-on-surface mb-2">Saha Fotoğrafları</h3>
+<p class="text-label text-on-surface-variant mb-4">Yardımların ulaştığı anlara dair güncel görsel arşivimiz.</p>
+<a class="text-primary font-bold flex items-center gap-1 group" href="#">Görüntüle <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span></a>
+</div>
+<div class="bg-white p-lg rounded-2xl shadow-sm hover:shadow-md transition-all border border-light-border">
+<div class="w-14 h-14 bg-soft-mint rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">assessment</span>
+</div>
+<h3 class="text-card-title text-on-surface mb-2">Faaliyet Raporları</h3>
+<p class="text-label text-on-surface-variant mb-4">Aylık ve yıllık bazda detaylı şeffaflık raporları.</p>
+<a class="text-primary font-bold flex items-center gap-1 group" href="#">İndir <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span></a>
+</div>
+<div class="bg-white p-lg rounded-2xl shadow-sm hover:shadow-md transition-all border border-light-border">
+<div class="w-14 h-14 bg-soft-mint rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">info</span>
+</div>
+<h3 class="text-card-title text-on-surface mb-2">Bağış Bilgilendirme</h3>
+<p class="text-label text-on-surface-variant mb-4">SMS ve video ile bağışınızın ulaştığını haber veriyoruz.</p>
+<a class="text-primary font-bold flex items-center gap-1 group" href="#">Detaylar <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_right_alt</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Region Work -->
+<section class="py-3xl">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-gutter">
+<h2 class="text-section-heading font-section-heading text-primary mb-xl">Çalışma Bölgelerimiz</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-lg">
+<div class="group relative h-80 rounded-[20px] overflow-hidden cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A wide-angle landscape of a traditional African village at sunset, showcasing the resilient architecture and community life. The lighting is warm and golden, casting long shadows and creating a peaceful, timeless mood. The focus is on the dignity of the environment where the humanitarian work takes place, styled with high professional photography standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8H-kB7ogXfbwdfpMSf_r_9yCeg4wukAr9IFtFrDH78atHmgB5PcsJ5YZkhe59-Ayx_0ncJJfeH76v1oEzthnvze-AyhPev_lvDkJjNeZWP3GqBX-8h2T3y2Zf1GOGXdgzRvTHBB9O4S6dh76a4O7vYZiAc1MoSUrX7OIyJ4sMscbPqgZoglUIxhJcrCACRtBoAyU8cy-o6FEIe6LNVVP2ovIhxV71e0oeaP9_sUqWDm0G2Wr3wJ0eD2VUZ1KacMgrNk-ty_ZMwavy">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex flex-col justify-end p-lg text-white">
+<h3 class="text-card-title font-bold">Afrika</h3>
+<p class="text-label mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Su kuyusu, eğitim ve gıda yardımları devam ediyor.</p>
+</div>
+</div>
+<div class="group relative h-80 rounded-[20px] overflow-hidden cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A majestic and serene view of the Afghan mountains with a traditional village nestled in the valley. The morning mist creates a layer of depth and tranquility. The photograph captures the rugged beauty of Afghanistan, reflecting the organization's long-term commitment to the people in this challenging geography. The lighting is crisp and cool, highlighting the textures of the landscape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC14g5mZ77tyuPHfkDYQSELWlNPHVobTP-fOofy0BHImDvwrj73XjMeUHyF72PEvVVpMRadzLartJQrNzEemkq1izq0K2zhIpt5fMabxGKPMHc7hSgxeH4F13XHVFNDIqSpD-CmgoBfz3JQBraJ1D1ajEVen2WJSrequvJMAvCC8rGLLDy1aamId7GwlsFrZhdhV2DCzhmCxuKZcjvp5SOCMSo-czLf-4zgpWIR-x1SLjMUo054Cck_Xi4EDwSysUsh9J-8ItNi3wIw">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex flex-col justify-end p-lg text-white">
+<h3 class="text-card-title font-bold">Afganistan</h3>
+<p class="text-label mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Yetimhane ve sürdürülebilir kalkınma projeleri.</p>
+</div>
+</div>
+<div class="group relative h-80 rounded-[20px] overflow-hidden cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A photo showing humanitarian logistics preparation, with neatly organized stacks of medical supplies and building materials ready for transport. The clean, bright lighting in the warehouse emphasizes readiness and professional planning. This image represents the 'Pakistan - Hazırlık' stage, conveying a sense of organized response and proactive aid management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6zi7AKyJ6VyslNZa77rpnqO-0iMiAhLgJoOdORUzHdL4fDHSYcK7TgjKnk7s8xqTMdzeMb7LkU3MxfYk2y-T6EsphDeAdeb8d9mYGIn8mc2DCOldwKP91z-DN9FfdBlUFTwm76xIaPn9Rh4ljrLkAClnxJ5z0ny0AYqruu_KdJJgP-DtYu25sPjAbvUyXxUBVZuGxFiJjQPjHpnjEmPKfPSOplOaKmBvD7Qz9_MTTxySKAbEWyp4hx3jGTAaspqxqPXIyWIVtHYMG">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex flex-col justify-end p-lg text-white">
+<h3 class="text-card-title font-bold">Pakistan</h3>
+<p class="text-label mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Sel sonrası kalıcı konut ve sağlık projeleri hazırlığı.</p>
+</div>
+</div>
+<div class="group relative h-80 rounded-[20px] overflow-hidden cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A warm, indoor scene of a modern community center in Turkey where people of different generations are engaged in a workshop. The environment is bright, inclusive, and clean, reflecting social development and local solidarity work. The soft indoor lighting creates a welcoming and supportive atmosphere, consistent with the organization's domestic humanitarian efforts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhfRFe3MvNpFOCsO5LdI10UnA0oMcq6OuLkZscc9KdzLL7znNojqNMXXwMlon5qUHANcJPd6ffVj9MxRi_RnqovpXgjKUi_OpLmHdQdZ1om7Qiw9jaOp4NaQoMOKwKpAzkElMYG0RvkaSz5vq1YnA8e2ef01WxWpYaFsNTFV2JsoAFVknj9ecWjrv_Ne9L0lcJcuHz814vScUx28umztu9Z6EietFcXifugnPphD_oJKBjxPRzA-7M5u86de9_ppjRx2IL7iqLD1a7">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex flex-col justify-end p-lg text-white">
+<h3 class="text-card-title font-bold">Türkiye</h3>
+<p class="text-label mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Afet yardımları ve sosyal dayanışma projeleri.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Highlighted Campaigns -->
+<section class="py-3xl bg-warm-cream">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-gutter">
+<div class="grid lg:grid-cols-2 gap-xl">
+<div class="bg-white rounded-[32px] p-xl flex flex-col md:flex-row gap-lg items-center shadow-lg border border-donation-gold/20">
+<div class="w-full md:w-1/2 aspect-square rounded-2xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A respectful close-up of healthy livestock in a clean, professional agricultural setting, representing the quality and care taken in the Kurban donation process. The lighting is natural and bright, conveying transparency and religious adherence. The composition is clean and focused, emphasizing the value of the trust given by the donors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr2ZBHWQlvUiMf5E3-djZVVSp0mMfKEbctLzOqvFSB3aNSNS4FvBqrc8jU92QdHh3ovKCVHTcNQCUCGPJEwLGxKF_IAUFQaF6I0dJlvk-ZkRxLC-7ZEpPZypitvo5Twfvm1ac1wgiTOV9Rb3-zGo5x2n1eXuFxAVuz_X5acJYYSMxnyUe5ooHfVeRtLP8a-e6ZSez7YkbwrO7dfxThsu-TC-KJ0tJqBk4Ju9niz8TicJcp-0cjRNBtLWatiCG8C7Mql67nmJ0u2EkI">
+</div>
+<div class="w-full md:w-1/2 space-y-4">
+<h3 class="text-page-heading-mobile lg:text-card-title font-bold text-primary">Kurban 2024</h3>
+<p class="text-body text-on-surface-variant">Vekalet yoluyla kurbanlarınızı dünyanın dört bir yanındaki kardeşlerimize ulaştırıyoruz. İslami usullere tam riayet ve video bilgilendirme ile.</p>
+<button class="px-8 py-3 bg-donation-gold text-on-surface-variant rounded-full font-bold shadow-md hover:scale-105 transition-transform">İncele</button>
+</div>
+</div>
+<div class="bg-white rounded-[32px] p-xl flex flex-col md:flex-row gap-lg items-center shadow-lg border border-primary/20">
+<div class="w-full md:w-1/2 aspect-square rounded-2xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A beautifully set table for an Iftar meal in a dignified, communal setting, featuring local dates and traditional dishes. The warm, inviting lighting of the blue hour creates a spiritual and welcoming atmosphere. The image captures the essence of sharing and brotherhood during Ramadan, reflecting the organization's focus on food security and spiritual solidarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiDgVz_6QIU-D_ftfA3i2_j7uTDjffIQdQeZ-v7BrwsXpk8RMKu4o5UxD87FTEdTZ0IMVX_XVFZaAP0rcF2jzduR896v1aKuxgqa8J8t7xAhD2q8aYWDJOGjSjvhVJP4rvUzDSBa_BV4BstGaaQLake9efxSs6EOfoHT_XV4jE9vnevXTl3pdA6Voe0tUjtjBMqgyv0vQ-LsN-kZ4d6muQKDlSSak30DRX4rSe4PD8ChT4IGBiaB6dNyMmtsK_hod8OaCFLk1y8iqJ">
+</div>
+<div class="w-full md:w-1/2 space-y-4">
+<h3 class="text-page-heading-mobile lg:text-card-title font-bold text-primary">Ramazan Bereketi</h3>
+<p class="text-body text-on-surface-variant">Zekat, sadaka ve kumanya bağışlarınızla binlerce sofrayı bereketlendiriyoruz. İyilik paylaştıkça çoğalır.</p>
+<button class="px-8 py-3 bg-primary text-white rounded-full font-bold shadow-md hover:scale-105 transition-transform">İncele</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest Reports -->
+<section class="py-3xl">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-gutter">
+<div class="flex justify-between items-center mb-xl">
+<h2 class="text-section-heading font-section-heading text-primary">Son Yayınlanan Raporlar</h2>
+<a class="text-primary font-bold hover:underline" href="#">Tüm Raporlar</a>
+</div>
+<div class="grid md:grid-cols-3 gap-lg">
+<div class="bg-white rounded-2xl p-lg border border-light-border group hover:border-primary transition-all">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<span class="material-symbols-outlined">description</span>
+<span class="text-label font-bold">PDF Rapor</span>
+</div>
+<h4 class="text-card-title text-on-surface mb-2">Afrika Su Kuyusu Yıllık Raporu</h4>
+<p class="text-body text-on-surface-variant mb-6">2023 yılında açılan tüm kuyuların koordinatları ve faydalanıcı verileri.</p>
+<button class="flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all">Görüntüle <span class="material-symbols-outlined">download</span></button>
+</div>
+<div class="bg-white rounded-2xl p-lg border border-light-border group hover:border-primary transition-all">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<span class="material-symbols-outlined">play_circle</span>
+<span class="text-label font-bold">Video Rapor</span>
+</div>
+<h4 class="text-card-title text-on-surface mb-2">Ramazan 2023 Faaliyet Özeti</h4>
+<p class="text-body text-on-surface-variant mb-6">Dağıtılan 50.000 kumanya paketinin sahadaki hikayesi.</p>
+<button class="flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all">İzle <span class="material-symbols-outlined">visibility</span></button>
+</div>
+<div class="bg-white rounded-2xl p-lg border border-light-border group hover:border-primary transition-all">
+<div class="flex items-center gap-3 mb-4 text-primary">
+<span class="material-symbols-outlined">assessment</span>
+<span class="text-label font-bold">Finansal Rapor</span>
+</div>
+<h4 class="text-card-title text-on-surface mb-2">2023 Kurban Denetim Raporu</h4>
+<p class="text-body text-on-surface-variant mb-6">Bağımsız denetim kuruluşu tarafından onaylanmış finansal döküm.</p>
+<button class="flex items-center gap-2 text-primary font-bold group-hover:gap-4 transition-all">İncele <span class="material-symbols-outlined">download</span></button>
+</div>
+</div>
+</div>
+</section>
+<!-- Volunteer CTA -->
+<section class="py-3xl bg-primary text-white">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-gutter text-center space-y-lg">
+<h2 class="text-page-heading-mobile lg:text-page-heading font-hero-heading">İyilik yolculuğuna gönüllü olarak katılın</h2>
+<p class="text-body-lg max-w-2xl mx-auto opacity-90">Sadece maddi destekle değil, emeğinizle de yanımızda olabilirsiniz. Sahada veya merkezimizde bize güç katın.</p>
+<button class="px-12 py-5 bg-white text-primary rounded-full font-button text-lg shadow-2xl hover:bg-donation-gold hover:text-on-surface-variant transition-all transform hover:scale-105 active:scale-95">Gönüllü Ol</button>
+</div>
+</section>
+</main>
+<!-- Footer Section (Shared Component) -->
+<footer class="bg-tertiary text-on-tertiary py-3xl border-t border-white/5">
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl">
+<div class="space-y-6">
+<h2 class="text-page-heading font-hero-heading text-white">AHDE VEFA</h2>
+<p class="text-body opacity-80">Dünyanın her yerindeki mazlumlara vefa borcumuzu ödemek için çalışıyoruz. İyiliğin dili, dini, ırkı yoktur.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+</div>
+</div>
+<div>
+<h3 class="text-label font-bold text-white uppercase tracking-widest mb-6">Kurumsal</h3>
+<ul class="space-y-4 text-on-tertiary-container">
+<li class=""><a class="hover:text-donation-gold transition-colors" href="#">Hakkımızda</a></li>
+<li class=""><a class="hover:text-donation-gold transition-colors" href="#">KVKK Aydınlatma Metni</a></li>
+<li class=""><a class="hover:text-donation-gold transition-colors" href="#">Vekalet Bilgileri</a></li>
+<li class=""><a class="hover:text-donation-gold transition-colors" href="#">Sıkça Sorulan Sorular</a></li>
+<li class=""><a class="hover:text-donation-gold transition-colors" href="#">İletişim</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-label font-bold text-white uppercase tracking-widest mb-6">Yardım Kanalları</h3>
+<ul class="space-y-4 text-on-tertiary-container">
+<li class=""><a class="hover:text-donation-gold transition-colors" href="#">Banka Hesapları</a></li>
+<li class=""><a class="hover:text-donation-gold transition-colors" href="#">Online Bağış</a></li>
+<li class=""><a class="hover:text-donation-gold transition-colors" href="#">SMS Bağışı</a></li>
+<li class=""><a class="hover:text-donation-gold transition-colors" href="#">Hesap Numaraları</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-label font-bold text-white uppercase tracking-widest mb-6">Bize Ulaşın</h3>
+<div class="space-y-4 text-on-tertiary-container">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined">location_on</span>
+<p class="">Zeytinburnu, İstanbul, Türkiye</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">call</span>
+<p class="">+90 (212) [Eklenecek]</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">mail</span>
+<p class="">info@ahdevefa.org.tr</p>
+</div>
+</div>
+<div class="mt-8 p-4 bg-white/5 rounded-xl border border-white/10">
+<p class="text-xs font-bold text-donation-gold mb-2">HIZLI IBAN</p>
+<p class="text-sm font-mono break-all">[Eklenecek IBAN Bilgisi]</p>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile lg:px-gutter mt-2xl pt-xl border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-label opacity-60">© 2024 Ahde Vefa Derneği. Tüm Hakları Saklıdır.</p>
+<div class="flex gap-4 grayscale opacity-50">
+<span class="material-symbols-outlined text-4xl">payments</span>
+<span class="material-symbols-outlined text-4xl">account_balance</span>
+<span class="material-symbols-outlined text-4xl">security</span>
+</div>
+</div>
+</footer>
+<script>
+        // Simple interactive donation box logic
+        const buttons = document.querySelectorAll('.grid-cols-5 button');
+        const customInput = document.querySelector('.grid-cols-5 input');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('bg-primary', 'text-white'));
+                buttons.forEach(b => b.classList.add('bg-surface', 'text-primary'));
+                btn.classList.remove('bg-surface', 'text-primary');
+                btn.classList.add('bg-primary', 'text-white');
+                customInput.value = '';
+            });
+        });
+
+        customInput.addEventListener('focus', () => {
+            buttons.forEach(b => {
+                b.classList.remove('bg-primary', 'text-white');
+                b.classList.add('bg-surface', 'text-primary');
+            });
+        });
+
+        // Add a simple scroll reveal for campaign bars
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target.querySelector('.campaign-progress');
+                    if (progressBar) {
+                        const targetWidth = progressBar.style.width;
+                        progressBar.style.width = '0%';
+                        setTimeout(() => {
+                            progressBar.style.width = targetWidth;
+                        }, 100);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.group').forEach(card => observer.observe(card));
+    </script>
+
+
+</body></html>

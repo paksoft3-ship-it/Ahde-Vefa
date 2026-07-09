@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kampanya Oluştur | AHDE VEFA Yönetim Paneli</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#254f3c",
+                    "on-secondary-container": "#006773",
+                    "surface-tint": "#2a6a48",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#4cd8ec",
+                    "surface-container-highest": "#d9e3f1",
+                    "on-secondary": "#ffffff",
+                    "background": "#f7f9ff",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d1dbe8",
+                    "donation-gold": "#F4B740",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#e8f2ff",
+                    "warm-cream": "#FFF8EF",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "on-surface": "#121d26",
+                    "primary": "#0a5132",
+                    "tertiary-container": "#3d6752",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#d9e3f1",
+                    "surface-container": "#e4effd",
+                    "primary-container": "#2a6a48",
+                    "on-tertiary-fixed-variant": "#254f3b",
+                    "muted-text": "#667085",
+                    "surface": "#f7f9ff",
+                    "surface-bright": "#f7f9ff",
+                    "secondary-container": "#61e9fe",
+                    "on-background": "#121d26",
+                    "on-tertiary-fixed": "#002114",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#dfe9f7",
+                    "tertiary-fixed": "#bfedd3",
+                    "secondary-fixed": "#9af0ff",
+                    "light-border": "#E5E7EB",
+                    "on-secondary-fixed": "#001f24",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#aef1c6",
+                    "on-primary-fixed-variant": "#0a5132",
+                    "inverse-surface": "#27313c",
+                    "surface-container-low": "#edf4ff",
+                    "on-primary-container": "#a5e7bd",
+                    "outline-variant": "#bfc9c0",
+                    "secondary": "#006874",
+                    "primary-fixed-dim": "#93d5ab",
+                    "inverse-primary": "#93d5ab",
+                    "on-surface-variant": "#404942",
+                    "outline": "#707971",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#b6e3c9",
+                    "tertiary-fixed-dim": "#a4d1b7",
+                    "soft-mint": "#EEF8F4",
+                    "on-primary-fixed": "#002111",
+                    "action-turquoise": "#04B6CA"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "md": "1rem",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "2xl": "4rem",
+                    "xs": "0.25rem",
+                    "sm": "0.5rem",
+                    "xl": "2.5rem",
+                    "lg": "1.5rem",
+                    "3xl": "6rem"
+            },
+            "fontFamily": {
+                    "hero-heading-mobile": ["Manrope"],
+                    "button": ["Manrope"],
+                    "label": ["Manrope"],
+                    "section-heading-mobile": ["Manrope"],
+                    "body": ["Manrope"],
+                    "page-heading": ["Manrope"],
+                    "section-heading": ["Manrope"],
+                    "page-heading-mobile": ["Manrope"],
+                    "card-title": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "hero-heading": ["Manrope"]
+            },
+            "fontSize": {
+                    "hero-heading-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "label": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "section-heading-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "page-heading": ["48px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "section-heading": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "page-heading-mobile": ["34px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "card-title": ["22px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "hero-heading": ["64px", {"lineHeight": "1.2", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #EEF8F4; font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .form-input-focus:focus { border-color: #2a6a48; ring-color: #2a6a48; }
+        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-primary text-on-primary shadow-lg flex flex-col p-md z-50">
+<div class="mb-xl px-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-on-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">foundation</span>
+</div>
+<div>
+<h1 class="font-page-heading text-[20px] font-extrabold leading-none">AHDE VEFA</h1>
+<p class="text-[12px] opacity-70">Yönetim Paneli</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1 overflow-y-auto scrollbar-hide">
+<a class="flex items-center gap-3 p-3 text-on-primary/80 hover:bg-primary-container/20 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-primary/80 hover:bg-primary-container/20 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label text-label">Donations</span>
+</a>
+<a class="flex items-center gap-3 p-3 bg-primary-container text-on-primary-container rounded-lg font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">campaign</span>
+<span class="font-label text-label">Campaigns</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-primary/80 hover:bg-primary-container/20 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">featured_seasonal_and_gifts</span>
+<span class="font-label text-label">Kurban Tracking</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-primary/80 hover:bg-primary-container/20 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label text-label">Volunteers</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-primary/80 hover:bg-primary-container/20 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label text-label">Settings</span>
+</a>
+</nav>
+<button class="mt-xl bg-action-turquoise text-white py-3 px-4 rounded-xl font-button flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+            Bağış Ekle
+        </button>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-surface-container-lowest border-b border-light-border flex justify-between items-center px-lg z-40">
+<div class="flex-1 max-w-xl">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-label font-label focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Kampanya, bağış, bağışçı ara..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="h-8 w-[1px] bg-light-border mx-2"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right">
+<p class="text-label font-bold text-on-surface leading-none">Admin Profil</p>
+<p class="text-[12px] text-on-surface-variant">Süper Admin</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold">A</div>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="pt-24 pb-12 px-lg max-w-[1400px] mx-auto">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-lg gap-4">
+<div>
+<nav class="flex text-[13px] text-on-surface-variant mb-1">
+<a class="hover:text-primary" href="#">Yönetim Paneli</a>
+<span class="mx-2">/</span>
+<a class="hover:text-primary" href="#">Kampanyalar</a>
+<span class="mx-2">/</span>
+<span class="text-primary font-bold">Kampanya Oluştur</span>
+</nav>
+<h2 class="font-section-heading text-section-heading text-primary">Kampanya Oluştur</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-2.5 rounded-xl border border-light-border bg-white text-on-surface-variant font-button text-label hover:bg-surface-container-low transition-colors">Taslak Kaydet</button>
+<button class="px-6 py-2.5 rounded-xl border border-primary text-primary font-button text-label hover:bg-soft-mint transition-colors">Önizle</button>
+<button class="px-8 py-2.5 rounded-xl bg-action-turquoise text-white font-button text-label shadow-lg shadow-action-turquoise/20 hover:scale-[1.02] active:scale-95 transition-all">Yayınla</button>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-lg items-start">
+<!-- Left Column: Form Sections -->
+<div class="flex-1 flex flex-col gap-md w-full">
+<!-- 1. Status Alert Card -->
+<div class="bg-warm-cream border border-[#F4B740]/30 p-md rounded-2xl flex items-start gap-4">
+<div class="mt-1 flex items-center justify-center bg-donation-gold text-white p-2 rounded-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 bg-donation-gold/20 text-donation-gold text-[12px] font-bold rounded uppercase">Taslak</span>
+<h4 class="font-bold text-on-surface">Önemli Hatırlatma</h4>
+</div>
+<p class="text-label text-on-surface-variant">Pakistan kampanyaları yalnızca <strong class="text-primary">"Hazırlık Aşamasında"</strong> olarak yayınlanmalıdır. Lütfen bölge seçimini kontrol ediniz.</p>
+</div>
+</div>
+<!-- 2. Temel Bilgiler -->
+<section class="bg-white p-lg rounded-2xl shadow-sm border border-light-border">
+<div class="flex items-center gap-2 mb-lg">
+<span class="material-symbols-outlined text-primary">info</span>
+<h3 class="font-card-title text-card-title">Temel Bilgiler</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="md:col-span-2">
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Kampanya Başlığı</label>
+<input class="w-full px-4 py-3 rounded-xl border-light-border focus:border-primary focus:ring-primary transition-all" placeholder="Örn: Afrika Su Kuyusu Projesi" type="text"/>
+</div>
+<div class="md:col-span-2">
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Kısa Açıklama</label>
+<textarea class="w-full px-4 py-3 rounded-xl border-light-border focus:border-primary focus:ring-primary transition-all" placeholder="Listeleme sayfalarında görünecek kısa özet..." rows="2"></textarea>
+</div>
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Kampanya Türü</label>
+<select class="w-full px-4 py-3 rounded-xl border-light-border focus:border-primary focus:ring-primary transition-all">
+<option>Sürekli Kampanya</option>
+<option>Acil Yardım</option>
+<option>Proje Bazlı</option>
+</select>
+</div>
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Kategori</label>
+<select class="w-full px-4 py-3 rounded-xl border-light-border focus:border-primary focus:ring-primary transition-all">
+<option>Su Kuyusu</option>
+<option>Gıda Yardımı</option>
+<option>Eğitim</option>
+<option>Sağlık</option>
+</select>
+</div>
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Bölge / Ülke</label>
+<input class="w-full px-4 py-3 rounded-xl border-light-border focus:border-primary focus:ring-primary transition-all" placeholder="Pakistan, Çad, Gazze vb." type="text"/>
+</div>
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Öncelik Durumu</label>
+<div class="flex gap-2 p-1 bg-surface-container-low rounded-xl">
+<button class="flex-1 py-2 text-label font-bold rounded-lg bg-white shadow-sm text-primary">Normal</button>
+<button class="flex-1 py-2 text-label font-bold rounded-lg text-on-surface-variant hover:bg-white/50">Yüksek</button>
+<button class="flex-1 py-2 text-label font-bold rounded-lg text-on-surface-variant hover:bg-white/50">Kritik</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. İçerik Editörü -->
+<section class="bg-white p-lg rounded-2xl shadow-sm border border-light-border">
+<div class="flex items-center gap-2 mb-lg">
+<span class="material-symbols-outlined text-primary">description</span>
+<h3 class="font-card-title text-card-title">İçerik Detayları</h3>
+</div>
+<div class="space-y-md">
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Detaylı Açıklama</label>
+<div class="border border-light-border rounded-xl overflow-hidden">
+<div class="bg-surface-container-low p-2 border-b border-light-border flex gap-2">
+<button class="p-1 hover:bg-white rounded"><span class="material-symbols-outlined text-[20px]">format_bold</span></button>
+<button class="p-1 hover:bg-white rounded"><span class="material-symbols-outlined text-[20px]">format_italic</span></button>
+<button class="p-1 hover:bg-white rounded"><span class="material-symbols-outlined text-[20px]">format_list_bulleted</span></button>
+<button class="p-1 hover:bg-white rounded"><span class="material-symbols-outlined text-[20px]">link</span></button>
+<button class="p-1 hover:bg-white rounded"><span class="material-symbols-outlined text-[20px]">image</span></button>
+</div>
+<textarea class="w-full border-none focus:ring-0 px-4 py-3" placeholder="Kampanya hikayesi ve tüm detaylar..." rows="6"></textarea>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Kampanya Amacı</label>
+<textarea class="w-full px-4 py-3 rounded-xl border-light-border focus:border-primary focus:ring-primary transition-all" placeholder="Bu kampanya ile neyi hedefliyoruz?" rows="3"></textarea>
+</div>
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Yardım Süreci</label>
+<textarea class="w-full px-4 py-3 rounded-xl border-light-border focus:border-primary focus:ring-primary transition-all" placeholder="Bağışlar nasıl ulaştırılıyor?" rows="3"></textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Bağış Ayarları -->
+<section class="bg-white p-lg rounded-2xl shadow-sm border border-light-border">
+<div class="flex items-center justify-between mb-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">payments</span>
+<h3 class="font-card-title text-card-title">Bağış Ayarları</h3>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-label font-bold text-on-surface-variant">Bağış Alınsın mı?</span>
+</label>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+<div>
+<label class="block text-label font-bold mb-3 text-on-surface-variant">Ödeme Yöntemleri</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-3 border border-light-border rounded-xl cursor-pointer hover:bg-soft-mint transition-colors">
+<input checked="" class="w-5 h-5 rounded text-primary border-light-border focus:ring-primary" type="checkbox"/>
+<span class="font-label">Kredi Kartı / Banka Kartı</span>
+</label>
+<label class="flex items-center gap-3 p-3 border border-light-border rounded-xl cursor-pointer hover:bg-soft-mint transition-colors">
+<input checked="" class="w-5 h-5 rounded text-primary border-light-border focus:ring-primary" type="checkbox"/>
+<span class="font-label">EFT / Havale</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-label font-bold mb-3 text-on-surface-variant">Önerilen Tutarlar (TL)</label>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-4 py-2 bg-soft-mint text-primary font-bold border border-primary/20 rounded-full flex items-center gap-2">250 <button class="hover:text-error">×</button></span>
+<span class="px-4 py-2 bg-soft-mint text-primary font-bold border border-primary/20 rounded-full flex items-center gap-2">500 <button class="hover:text-error">×</button></span>
+<span class="px-4 py-2 bg-soft-mint text-primary font-bold border border-primary/20 rounded-full flex items-center gap-2">1000 <button class="hover:text-error">×</button></span>
+<button class="px-4 py-2 bg-surface-container-low text-on-surface-variant border border-dashed border-outline-variant rounded-full font-label">+ Ekle</button>
+</div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Varsayılan Para Birimi</label>
+<select class="w-full px-4 py-3 rounded-xl border-light-border focus:border-primary focus:ring-primary transition-all">
+<option>Türk Lirası (TRY)</option>
+<option>Amerikan Doları (USD)</option>
+<option>Euro (EUR)</option>
+</select>
+</div>
+</div>
+</section>
+<!-- 5. Hedef ve İlerleme -->
+<section class="bg-white p-lg rounded-2xl shadow-sm border border-light-border">
+<div class="flex items-center gap-2 mb-lg">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+<h3 class="font-card-title text-card-title">Hedef ve Zamanlama</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Hedef Tutar</label>
+<div class="relative">
+<input class="w-full pl-4 pr-12 py-3 rounded-xl border-light-border focus:border-primary focus:ring-primary" placeholder="0.00" type="number"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 font-bold text-on-surface-variant">TL</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<label class="flex items-center cursor-pointer mt-8">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-label text-on-surface-variant">İlerleme Çubuğunu Göster</span>
+</label>
+</div>
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Başlangıç Tarihi</label>
+<input class="w-full px-4 py-3 rounded-xl border-light-border focus:border-primary focus:ring-primary" type="date"/>
+</div>
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Bitiş Tarihi</label>
+<input class="w-full px-4 py-3 rounded-xl border-light-border focus:border-primary focus:ring-primary" type="date"/>
+</div>
+</div>
+</section>
+<!-- 6. Pakistan Hazırlık Bilgileri (Conditional) -->
+<section class="bg-warm-cream p-lg rounded-2xl shadow-sm border border-donation-gold/20">
+<div class="flex items-center justify-between mb-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">flag</span>
+<h3 class="font-card-title text-card-title">Pakistan Hazırlık Bilgileri</h3>
+</div>
+<span class="px-3 py-1 bg-primary text-white text-[12px] font-bold rounded-full">Hazırlık Aşamasında</span>
+</div>
+<div class="space-y-4">
+<p class="text-label text-on-surface-variant">Bölge için yerel onay belgeleri ve saha ekibi koordinasyonu bekleniyor.</p>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Saha Sorumlusu</label>
+<input class="w-full px-4 py-3 rounded-xl border-light-border focus:border-primary focus:ring-primary" placeholder="İsim Soyisim" type="text"/>
+</div>
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Tahmini Başlangıç</label>
+<input class="w-full px-4 py-3 rounded-xl border-light-border focus:border-primary focus:ring-primary" type="month"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Kurban/Ramazan (Collapsible) -->
+<div class="space-y-3">
+<details class="bg-white rounded-2xl shadow-sm border border-light-border overflow-hidden group">
+<summary class="flex items-center justify-between p-lg cursor-pointer hover:bg-surface-container-low transition-colors list-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">featured_seasonal_and_gifts</span>
+<h3 class="font-card-title text-[18px]">Kurban Kampanyası Ayarları</h3>
+</div>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-lg pb-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md pt-4 border-t border-light-border">
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Hisse Bedeli</label>
+<input class="w-full px-4 py-3 rounded-xl border-light-border" type="number"/>
+</div>
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Kurban Türü</label>
+<select class="w-full px-4 py-3 rounded-xl border-light-border">
+<option>Vacip</option>
+<option>Nafile / Adak</option>
+<option>Şükür</option>
+</select>
+</div>
+</div>
+</div>
+</details>
+<details class="bg-white rounded-2xl shadow-sm border border-light-border overflow-hidden group">
+<summary class="flex items-center justify-between p-lg cursor-pointer hover:bg-surface-container-low transition-colors list-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">restaurant</span>
+<h3 class="font-card-title text-[18px]">Ramazan Kampanyası Ayarları</h3>
+</div>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-lg pb-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md pt-4 border-t border-light-border">
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Kumanya / İftar Bedeli</label>
+<input class="w-full px-4 py-3 rounded-xl border-light-border" type="number"/>
+</div>
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Zekat Kabul Notu</label>
+<textarea class="w-full px-4 py-3 rounded-xl border-light-border" placeholder="Zekat şartları ile ilgili bilgilendirme metni..."></textarea>
+</div>
+</div>
+</div>
+</details>
+</div>
+<!-- 8. Medya -->
+<section class="bg-white p-lg rounded-2xl shadow-sm border border-light-border">
+<div class="flex items-center gap-2 mb-lg">
+<span class="material-symbols-outlined text-primary">photo_library</span>
+<h3 class="font-card-title text-card-title">Medya ve Dökümanlar</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md mb-lg">
+<div class="border-2 border-dashed border-outline-variant rounded-2xl p-6 text-center hover:border-primary/50 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary text-[40px] mb-2 group-hover:scale-110 transition-transform">image</span>
+<p class="text-label font-bold mb-1">Kapak Görseli</p>
+<p class="text-[12px] text-outline">1200x600px önerilir</p>
+</div>
+<div class="border-2 border-dashed border-outline-variant rounded-2xl p-6 text-center hover:border-primary/50 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary text-[40px] mb-2 group-hover:scale-110 transition-transform">rectangle</span>
+<p class="text-label font-bold mb-1">Kart Görseli</p>
+<p class="text-[12px] text-outline">800x800px önerilir</p>
+</div>
+<div class="border-2 border-dashed border-outline-variant rounded-2xl p-6 text-center hover:border-primary/50 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary text-[40px] mb-2 group-hover:scale-110 transition-transform">add_a_photo</span>
+<p class="text-label font-bold mb-1">Galeri Ekle</p>
+<p class="text-[12px] text-outline">Birden fazla görsel</p>
+</div>
+</div>
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Rapor PDF Linki (Dış Bağlantı)</label>
+<input class="w-full px-4 py-3 rounded-xl border-light-border" placeholder="https://..." type="url"/>
+</div>
+</section>
+<!-- 9. Resmi Bilgiler -->
+<section class="bg-white p-lg rounded-2xl shadow-sm border border-light-border">
+<div class="flex items-center gap-2 mb-lg">
+<span class="material-symbols-outlined text-primary">gavel</span>
+<h3 class="font-card-title text-card-title">Resmi Bilgiler</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">İzin Numarası</label>
+<input class="w-full px-4 py-3 rounded-xl border-light-border" placeholder="2024-X-001" type="text"/>
+</div>
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Resmi Merci</label>
+<input class="w-full px-4 py-3 rounded-xl border-light-border" placeholder="Valilik / İçişleri" type="text"/>
+</div>
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">İzin Süresi</label>
+<input class="w-full px-4 py-3 rounded-xl border-light-border" placeholder="12 Ay" type="text"/>
+</div>
+</div>
+</section>
+<!-- 10. Yayın ve Görünürlük -->
+<section class="bg-white p-lg rounded-2xl shadow-sm border border-light-border">
+<div class="flex items-center gap-2 mb-lg">
+<span class="material-symbols-outlined text-primary">visibility</span>
+<h3 class="font-card-title text-card-title">Yayın ve Görünürlük</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+<div>
+<label class="block text-label font-bold mb-2 text-on-surface-variant">Yayın Durumu</label>
+<select class="w-full px-4 py-3 rounded-xl border-light-border bg-soft-mint font-bold text-primary">
+<option>Taslak Olarak Kaydet</option>
+<option>İnceleme Bekliyor</option>
+<option>Yayında (Aktif)</option>
+<option>Arşivlendi</option>
+</select>
+</div>
+<div class="space-y-4">
+<label class="flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-label text-on-surface-variant">Anasayfada Öne Çıkar</span>
+</label>
+<label class="flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-label text-on-surface-variant">Bağış Sayfasında Listele</span>
+</label>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Sidebar: Sticky Preview -->
+<aside class="w-full lg:w-80 sticky top-24">
+<div class="bg-white rounded-2xl shadow-lg border border-light-border overflow-hidden">
+<div class="p-md bg-surface-container-low border-b border-light-border flex items-center justify-between">
+<span class="text-label font-bold text-primary">Kart Önizleme</span>
+<span class="material-symbols-outlined text-outline">devices</span>
+</div>
+<!-- Preview Card -->
+<div class="p-4">
+<div class="bg-white border border-light-border rounded-2xl overflow-hidden shadow-sm">
+<div class="relative h-44 bg-surface-container-low flex items-center justify-center">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A cinematic, high-quality photograph of a vibrant field mission in a rural African village. Clean water is being pumped from a newly built well, children are smiling and splashing in the sunlight. The scene is full of life and hope, with warm sunlight illuminating the earth. Professional humanitarian photography style with a shallow depth of field." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCarKVMeGzaGPbDmtIr38WY9H9wZb84rty6GF62pE-ygAavpp2ODC_lYRkxmDtgvEao3VM1hE7C0wTuASbxFhzEqPStBunkpDLkpatMmZW9XIaCSHiIYYz_MT3m9hhFtEw6CIVi34CSpYnDbfzA8CEkoF-GSvcARy-8J8CA3s64x_KFkWSc5CACLTGX5OWsHB6ioeaMN9s2tDvgQPCYhQCV3roGtQHpGfVDg2mA2CO9t29DwLzYEHqSW7QqxXE4nRb04vMGUJ6SIwOX')"></div>
+<span class="absolute top-3 left-3 px-3 py-1 bg-primary text-white text-[10px] font-extrabold rounded-full uppercase tracking-wider">Su Kuyusu</span>
+</div>
+<div class="p-4">
+<h4 class="font-card-title text-[18px] leading-tight mb-2 line-clamp-2">Afrika Temiz Su Kuyusu Projesi</h4>
+<div class="mb-4">
+<div class="flex justify-between text-[12px] mb-1">
+<span class="text-on-surface-variant font-medium">Hedef: 45.000 TL</span>
+<span class="text-primary font-bold">65%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="w-[65%] h-full bg-donation-gold"></div>
+</div>
+</div>
+<button class="w-full py-2 bg-primary text-white font-button text-[14px] rounded-xl">Bağış Yap</button>
+</div>
+</div>
+</div>
+<div class="p-lg bg-soft-mint/50 border-t border-light-border">
+<h5 class="text-label font-bold text-primary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+                                İpucu
+                            </h5>
+<p class="text-[12px] text-on-surface-variant leading-relaxed">
+                                Etkileyici bir başlık ve yüksek kaliteli görseller bağış oranlarını %40'a kadar artırabilir. Hikaye kısmında bireysel başarı öykülerine yer vermeyi unutmayın.
+                            </p>
+</div>
+</div>
+<div class="mt-md p-md bg-white/50 border border-dashed border-outline-variant rounded-2xl text-center">
+<p class="text-[12px] text-outline">Son düzenleme: 2 dakika önce</p>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<script>
+        // Simple Interaction logic
+        document.querySelectorAll('details').forEach((el) => {
+            el.addEventListener('toggle', (e) => {
+                if(el.open) {
+                    document.querySelectorAll('details').forEach((other) => {
+                        if(other !== el) other.removeAttribute('open');
+                    });
+                }
+            });
+        });
+    </script>
+</body></html>

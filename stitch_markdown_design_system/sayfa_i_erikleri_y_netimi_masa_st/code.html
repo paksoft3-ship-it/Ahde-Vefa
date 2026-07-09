@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sayfa İçerikleri Yönetimi - Vefa Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f7f9ff",
+                    "surface-container-low": "#edf4ff",
+                    "on-tertiary-fixed": "#002114",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "light-border": "#E5E7EB",
+                    "inverse-on-surface": "#e8f2ff",
+                    "primary-container": "#2a6a48",
+                    "on-primary-fixed-variant": "#0a5132",
+                    "surface-container-highest": "#d9e3f1",
+                    "on-tertiary-container": "#b6e3c9",
+                    "tertiary-fixed": "#bfedd3",
+                    "secondary": "#006874",
+                    "primary-fixed-dim": "#93d5ab",
+                    "on-secondary-container": "#006773",
+                    "inverse-primary": "#93d5ab",
+                    "on-surface-variant": "#404942",
+                    "muted-text": "#667085",
+                    "outline": "#707971",
+                    "on-tertiary-fixed-variant": "#254f3b",
+                    "tertiary-fixed-dim": "#a4d1b7",
+                    "surface-tint": "#2a6a48",
+                    "on-primary-fixed": "#002111",
+                    "soft-mint": "#EEF8F4",
+                    "tertiary-container": "#3d6752",
+                    "error-container": "#ffdad6",
+                    "donation-gold": "#F4B740",
+                    "outline-variant": "#bfc9c0",
+                    "on-surface": "#121d26",
+                    "primary": "#0a5132",
+                    "primary-fixed": "#aef1c6",
+                    "on-background": "#121d26",
+                    "tertiary": "#254f3c",
+                    "inverse-surface": "#27313c",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#001f24",
+                    "background": "#f7f9ff",
+                    "surface-bright": "#f7f9ff",
+                    "surface-container": "#e4effd",
+                    "on-primary-container": "#a5e7bd",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#dfe9f7",
+                    "surface-dim": "#d1dbe8",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#61e9fe",
+                    "secondary-fixed-dim": "#4cd8ec",
+                    "secondary-fixed": "#9af0ff",
+                    "surface-variant": "#d9e3f1",
+                    "warm-cream": "#FFF8EF"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "0.5rem",
+                    "xl": "2.5rem",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "2xl": "4rem",
+                    "container-max": "1280px",
+                    "xs": "0.25rem",
+                    "3xl": "6rem",
+                    "lg": "1.5rem",
+                    "md": "1rem"
+            },
+            "fontFamily": {
+                    "body": ["Manrope"],
+                    "label": ["Manrope"],
+                    "page-heading": ["Manrope"],
+                    "button": ["Manrope"],
+                    "card-title": ["Manrope"],
+                    "section-heading": ["Manrope"]
+            },
+            "fontSize": {
+                    "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "page-heading": ["48px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "card-title": ["22px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "section-heading": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sidebar-active {
+            @apply bg-primary-container text-on-primary-container;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #bfc9c0;
+            border-radius: 10px;
+        }
+        .drawer-open {
+            transform: translateX(0);
+        }
+        .drawer-closed {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-hidden h-screen">
+<!-- Sidebar Layout Container -->
+<div class="flex h-full w-full">
+<!-- SIDEBAR (Immutable Content from JSON mapping) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-primary dark:bg-on-tertiary-fixed shadow-xl flex flex-col py-6 z-50">
+<div class="px-6 mb-8">
+<h1 class="font-page-heading text-[24px] font-extrabold text-on-primary leading-tight">Vefa İnsani Yardım</h1>
+<p class="text-primary-fixed text-xs opacity-70">Yönetici Paneli</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim hover:text-white mx-2 my-1 transition-colors hover:bg-primary-fixed-variant/20 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label">Dashboard</span>
+</a>
+<!-- Bağışlar -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim hover:text-white mx-2 my-1 transition-colors hover:bg-primary-fixed-variant/20 rounded-lg" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label">Bağışlar</span>
+</a>
+<!-- Kampanyalar -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim hover:text-white mx-2 my-1 transition-colors hover:bg-primary-fixed-variant/20 rounded-lg" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label">Kampanyalar</span>
+</a>
+<!-- Sayfa İçerikleri (Active highlight based on prompt) -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg mx-2 my-1 scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="font-label">Sayfa İçerikleri</span>
+</a>
+<!-- Yardım Takibi -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim hover:text-white mx-2 my-1 transition-colors hover:bg-primary-fixed-variant/20 rounded-lg" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-label">Yardım Takibi</span>
+</a>
+<!-- Gönüllüler -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim hover:text-white mx-2 my-1 transition-colors hover:bg-primary-fixed-variant/20 rounded-lg" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label">Gönüllüler</span>
+</a>
+<!-- Ayarlar -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary-fixed-dim hover:text-white mx-2 my-1 transition-colors hover:bg-primary-fixed-variant/20 rounded-lg mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label">Ayarlar</span>
+</a>
+</nav>
+<div class="px-4 mt-6">
+<button class="w-full bg-donation-gold text-on-tertiary-fixed font-button py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                    Yeni Kampanya
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 h-screen flex flex-col overflow-hidden">
+<!-- TOP NAV BAR -->
+<header class="h-16 flex justify-between items-center px-8 bg-surface border-b border-light-border shrink-0">
+<div class="flex items-center gap-4">
+<h2 class="font-section-heading text-[20px] text-primary font-bold">Sayfa İçerikleri</h2>
+<div class="h-4 w-[1px] bg-outline-variant mx-2"></div>
+<nav class="flex gap-4">
+<button class="text-primary font-bold border-b-2 border-primary pb-1 font-label text-sm">Web Sitesi</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors font-label text-sm">Mobil Uygulama</button>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-secondary text-white px-4 py-2 rounded-lg font-button flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+                        Yeni İçerik Bloğu
+                    </button>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">help_outline</span>
+<div class="w-8 h-8 rounded-full bg-primary-fixed overflow-hidden border border-primary/20">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged Turkish man with a warm and trustworthy expression, wearing a clean white shirt. He is an NGO administrator in a high-key, modern office setting with soft natural light. The style is clean, corporate, and minimalist with a focus on empathy and professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdGia55tuM_actBHQnulxL5h3Goba0vCvTiAegqrp-gD_WBYS3ZN5W42Dbb2fME_ig9XpS8rMK_bCkWPLDj01vx_HWggczKYYCSdLgPmEYX8qK7AUcVtpGyL95UGvG57r-nBmQtlI9fetR-pfnnLcSwolkCjWs4E12C4x-t7tA7WH7oQSoweix0wcWHEPNpEWoK880sIiEARAHpev8u39fmdrsx6ZxkpTwhTx07yl0QLyJ8D7-aSH56bcbsLwSjIMfDELbjsGPlEax"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+<!-- SUMMARY CARDS -->
+<div class="grid grid-cols-5 gap-6 mb-8">
+<!-- Toplam Sayfa -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl border border-light-border flex flex-col justify-between">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-primary bg-soft-mint p-2 rounded-lg">description</span>
+<span class="text-primary text-xs font-bold bg-primary-fixed px-2 py-0.5 rounded-full">+4%</span>
+</div>
+<p class="text-muted-text font-label text-xs">Toplam Sayfa</p>
+<h3 class="text-3xl font-extrabold text-on-surface mt-1">42</h3>
+</div>
+<!-- Yayında -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl border border-light-border flex flex-col justify-between">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-green-600 bg-green-50 p-2 rounded-lg">check_circle</span>
+</div>
+<p class="text-muted-text font-label text-xs">Yayında</p>
+<h3 class="text-3xl font-extrabold text-on-surface mt-1">36</h3>
+</div>
+<!-- Taslak -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl border border-light-border flex flex-col justify-between">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-amber-600 bg-amber-50 p-2 rounded-lg">edit_document</span>
+</div>
+<p class="text-muted-text font-label text-xs">Taslak</p>
+<h3 class="text-3xl font-extrabold text-on-surface mt-1">4</h3>
+</div>
+<!-- Güncelleme Gerekli -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl border border-light-border flex flex-col justify-between">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-orange-600 bg-orange-50 p-2 rounded-lg">update</span>
+</div>
+<p class="text-muted-text font-label text-xs">Güncelleme Gerekli</p>
+<h3 class="text-3xl font-extrabold text-on-surface mt-1">2</h3>
+</div>
+<!-- Eksik SEO -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl border border-light-border flex flex-col justify-between">
+<div class="flex justify-between items-start mb-2">
+<span class="material-symbols-outlined text-red-600 bg-red-50 p-2 rounded-lg">search_off</span>
+</div>
+<p class="text-muted-text font-label text-xs">Eksik SEO</p>
+<h3 class="text-3xl font-extrabold text-on-surface mt-1">5</h3>
+</div>
+</div>
+<!-- TABLE SECTION -->
+<div class="bg-surface-container-lowest rounded-2xl border border-light-border shadow-sm overflow-hidden">
+<!-- Tab Navigation -->
+<div class="px-6 border-b border-light-border flex items-center gap-8 h-14">
+<button class="h-full border-b-2 border-primary text-primary font-bold px-1 transition-all">Tüm Sayfalar</button>
+<button class="h-full border-b-2 border-transparent text-on-surface-variant hover:text-primary px-1 transition-all">Ana Sayfa</button>
+<button class="h-full border-b-2 border-transparent text-on-surface-variant hover:text-primary px-1 transition-all">Bağış Sayfaları</button>
+<button class="h-full border-b-2 border-transparent text-on-surface-variant hover:text-primary px-1 transition-all">Haberler</button>
+<button class="h-full border-b-2 border-transparent text-on-surface-variant hover:text-primary px-1 transition-all">Kurumsal</button>
+</div>
+<!-- Table -->
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface/50 text-muted-text text-[12px] uppercase font-bold border-b border-light-border">
+<th class="px-6 py-4">Sayfa</th>
+<th class="px-6 py-4">URL</th>
+<th class="px-6 py-4">Sayfa Türü</th>
+<th class="px-6 py-4">Durum</th>
+<th class="px-6 py-4">Son Güncelleme</th>
+<th class="px-6 py-4">SEO</th>
+<th class="px-6 py-4">İşlem</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-light-border text-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-soft-mint/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface border border-light-border flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">home</span>
+</div>
+<span class="font-bold text-on-surface">Ana Sayfa</span>
+</div>
+</td>
+<td class="px-6 py-4 text-muted-text">/</td>
+<td class="px-6 py-4">Statik Sayfa</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-green-100 text-green-700 text-[11px] font-bold">YAYINDA</span>
+</td>
+<td class="px-6 py-4 text-muted-text">2 saat önce</td>
+<td class="px-6 py-4">
+<span class="material-symbols-outlined text-green-500" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="px-6 py-4">
+<button class="p-2 hover:bg-primary/10 rounded-lg text-primary transition-all" onclick="toggleDrawer()">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-soft-mint/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface border border-light-border flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">volunteer_activism</span>
+</div>
+<span class="font-bold text-on-surface">Kurban Bağışı</span>
+</div>
+</td>
+<td class="px-6 py-4 text-muted-text">/kurban-bagisi</td>
+<td class="px-6 py-4">Bağış Akışı</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-green-100 text-green-700 text-[11px] font-bold">YAYINDA</span>
+</td>
+<td class="px-6 py-4 text-muted-text">Dün, 14:20</td>
+<td class="px-6 py-4">
+<span class="material-symbols-outlined text-green-500" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="px-6 py-4">
+<button class="p-2 hover:bg-primary/10 rounded-lg text-primary transition-all">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-soft-mint/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface border border-light-border flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">public</span>
+</div>
+<span class="font-bold text-on-surface">Pakistan Faaliyetleri</span>
+</div>
+</td>
+<td class="px-6 py-4 text-muted-text">/faaliyetler/pakistan</td>
+<td class="px-6 py-4">Dinamik İçerik</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-bold">HAZIRLIK AŞAMASI</span>
+</td>
+<td class="px-6 py-4 text-muted-text">3 gün önce</td>
+<td class="px-6 py-4">
+<span class="material-symbols-outlined text-amber-500" style="font-variation-settings: 'FILL' 1;">warning</span>
+</td>
+<td class="px-6 py-4">
+<button class="p-2 hover:bg-primary/10 rounded-lg text-primary transition-all">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+</td>
+</tr>
+<!-- More rows for visual density -->
+<tr class="hover:bg-soft-mint/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface border border-light-border flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">article</span>
+</div>
+<span class="font-bold text-on-surface">Hakkımızda</span>
+</div>
+</td>
+<td class="px-6 py-4 text-muted-text">/kurumsal/hakkimizda</td>
+<td class="px-6 py-4">Statik Sayfa</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-green-100 text-green-700 text-[11px] font-bold">YAYINDA</span>
+</td>
+<td class="px-6 py-4 text-muted-text">1 hafta önce</td>
+<td class="px-6 py-4">
+<span class="material-symbols-outlined text-green-500" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</td>
+<td class="px-6 py-4">
+<button class="p-2 hover:bg-primary/10 rounded-lg text-primary transition-all">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<!-- EDIT DRAWER (Open by Default for the task) -->
+<div class="fixed right-0 top-0 h-screen w-[480px] bg-white shadow-2xl z-[60] drawer-open transition-transform duration-300 flex flex-col border-l border-light-border" id="edit-drawer">
+<!-- Drawer Header -->
+<div class="h-16 px-6 border-b border-light-border flex items-center justify-between bg-white shrink-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">edit_square</span>
+<h2 class="font-bold text-lg">Sayfa İçeriğini Düzenle</h2>
+</div>
+<button class="p-2 hover:bg-surface rounded-full text-on-surface-variant" onclick="toggleDrawer()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Drawer Content -->
+<div class="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar bg-surface/30">
+<!-- Hero Alanı Section -->
+<section>
+<div class="flex items-center gap-2 mb-4">
+<div class="w-1.5 h-6 bg-primary rounded-full"></div>
+<h3 class="font-bold text-on-surface">Hero Alanı</h3>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-muted-text mb-1.5 uppercase">Ana Başlık</label>
+<input class="w-full rounded-xl border-light-border focus:ring-primary focus:border-primary text-sm px-4 py-3 bg-white" type="text" value="Geleceği Birlikte İnşa Ediyoruz"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-muted-text mb-1.5 uppercase">Alt Metin</label>
+<textarea class="w-full rounded-xl border-light-border focus:ring-primary focus:border-primary text-sm px-4 py-3 bg-white" rows="3">Dünyanın dört bir yanındaki ihtiyaç sahiplerine umut olmaya devam ediyoruz. Sizin bağışlarınızla hayatlar değişiyor.</textarea>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-bold text-muted-text mb-1.5 uppercase">Buton Metni</label>
+<input class="w-full rounded-xl border-light-border focus:ring-primary focus:border-primary text-sm px-4 py-3 bg-white" type="text" value="Bağış Yap"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-muted-text mb-1.5 uppercase">Görsel</label>
+<div class="relative w-full h-[46px] bg-white border border-dashed border-outline-variant rounded-xl flex items-center justify-center text-xs text-primary font-bold cursor-pointer hover:bg-soft-mint transition-all">
+<span class="material-symbols-outlined text-sm mr-1">upload</span> Değiştir
+                                </div>
+</div>
+</div>
+</div>
+</section>
+<!-- İçerik Bölümleri (Drag & Drop Mock) -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<div class="w-1.5 h-6 bg-secondary rounded-full"></div>
+<h3 class="font-bold text-on-surface">İçerik Bölümleri</h3>
+</div>
+<button class="text-xs text-secondary font-bold hover:underline">+ Yeni Bölüm</button>
+</div>
+<div class="space-y-3">
+<!-- Block 1 -->
+<div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-light-border shadow-sm group hover:border-primary transition-all cursor-move">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">drag_indicator</span>
+<div class="flex-1">
+<p class="text-sm font-bold text-on-surface">Hızlı Bağış Kutusu</p>
+<p class="text-[10px] text-muted-text uppercase font-bold">Widget / Bağış</p>
+</div>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-sm text-on-surface-variant cursor-pointer p-1 hover:bg-surface rounded">visibility</span>
+<span class="material-symbols-outlined text-sm text-red-500 cursor-pointer p-1 hover:bg-red-50 rounded">delete</span>
+</div>
+</div>
+<!-- Block 2 -->
+<div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-light-border shadow-sm group hover:border-primary transition-all cursor-move">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">drag_indicator</span>
+<div class="flex-1">
+<p class="text-sm font-bold text-on-surface">Etki Rakamları</p>
+<p class="text-[10px] text-muted-text uppercase font-bold">Veri Görselleştirme</p>
+</div>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-sm text-on-surface-variant cursor-pointer p-1 hover:bg-surface rounded">visibility</span>
+<span class="material-symbols-outlined text-sm text-red-500 cursor-pointer p-1 hover:bg-red-50 rounded">delete</span>
+</div>
+</div>
+<!-- Block 3 -->
+<div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-light-border shadow-sm group hover:border-primary transition-all cursor-move">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">drag_indicator</span>
+<div class="flex-1">
+<p class="text-sm font-bold text-on-surface">Son Kampanyalar Grid</p>
+<p class="text-[10px] text-muted-text uppercase font-bold">Slider / Liste</p>
+</div>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-sm text-on-surface-variant cursor-pointer p-1 hover:bg-surface rounded">visibility</span>
+<span class="material-symbols-outlined text-sm text-red-500 cursor-pointer p-1 hover:bg-red-50 rounded">delete</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SEO Ayarları Section -->
+<section>
+<div class="flex items-center gap-2 mb-4">
+<div class="w-1.5 h-6 bg-donation-gold rounded-full"></div>
+<h3 class="font-bold text-on-surface">SEO Ayarları</h3>
+</div>
+<div class="bg-white p-4 rounded-xl border border-light-border space-y-4">
+<div>
+<label class="block text-xs font-bold text-muted-text mb-1.5 uppercase">Meta Başlık (Title)</label>
+<input class="w-full rounded-xl border-light-border focus:ring-primary focus:border-primary text-sm px-4 py-3" placeholder="Geleceği Birlikte İnşa Ediyoruz | Vefa İnsani Yardım" type="text"/>
+<div class="mt-1 flex justify-between">
+<span class="text-[10px] text-green-600 font-bold">İdeal Uzunluk</span>
+<span class="text-[10px] text-muted-text">52 / 60</span>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold text-muted-text mb-1.5 uppercase">Meta Açıklama (Description)</label>
+<textarea class="w-full rounded-xl border-light-border focus:ring-primary focus:border-primary text-sm px-4 py-3" placeholder="Vefa İnsani Yardım Derneği olarak eğitim, sağlık ve insani yardım alanlarında..." rows="2"></textarea>
+</div>
+</div>
+</section>
+</div>
+<!-- Drawer Footer -->
+<div class="h-20 px-6 border-t border-light-border bg-white flex items-center gap-3 shrink-0">
+<button class="flex-1 bg-primary text-white font-button py-3 rounded-xl shadow-lg shadow-primary/20 hover:opacity-95 active:scale-95 transition-all">Değişiklikleri Kaydet</button>
+<button class="px-5 border border-light-border text-on-surface-variant font-button py-3 rounded-xl hover:bg-surface transition-all">Önizleme</button>
+</div>
+</div>
+</div>
+<!-- Micro-interaction Script -->
+<script>
+        function toggleDrawer() {
+            const drawer = document.getElementById('edit-drawer');
+            if (drawer.classList.contains('drawer-open')) {
+                drawer.classList.remove('drawer-open');
+                drawer.classList.add('drawer-closed');
+            } else {
+                drawer.classList.remove('drawer-closed');
+                drawer.classList.add('drawer-open');
+            }
+        }
+
+        // Add a subtle drag indicator effect for the list items
+        document.querySelectorAll('.cursor-move').forEach(item => {
+            item.addEventListener('mousedown', () => {
+                item.style.transform = 'scale(0.98)';
+                item.style.boxShadow = '0 10px 15px -3px rgb(0 0 0 / 0.1)';
+            });
+            item.addEventListener('mouseup', () => {
+                item.style.transform = 'scale(1)';
+                item.style.boxShadow = '';
+            });
+        });
+    </script>
+</body></html>

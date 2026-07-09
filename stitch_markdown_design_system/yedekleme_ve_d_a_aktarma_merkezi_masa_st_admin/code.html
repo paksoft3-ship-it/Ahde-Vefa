@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AHDE VEFA | Yedekleme ve Dışa Aktarma Merkezi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#121d26",
+                        "surface-bright": "#f7f9ff",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-primary-fixed-variant": "#0a5132",
+                        "on-secondary-fixed": "#001f24",
+                        "on-tertiary-container": "#b6e3c9",
+                        "on-secondary-container": "#006773",
+                        "tertiary-container": "#3d6752",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#bfedd3",
+                        "surface-container-highest": "#d9e3f1",
+                        "surface": "#f7f9ff",
+                        "inverse-surface": "#27313c",
+                        "inverse-on-surface": "#e8f2ff",
+                        "inverse-primary": "#93d5ab",
+                        "outline": "#707971",
+                        "background": "#f7f9ff",
+                        "on-tertiary-fixed": "#002114",
+                        "primary": "#0a5132",
+                        "donation-gold": "#F4B740",
+                        "secondary-fixed": "#9af0ff",
+                        "on-surface-variant": "#404942",
+                        "surface-container": "#e4effd",
+                        "muted-text": "#667085",
+                        "secondary-fixed-dim": "#4cd8ec",
+                        "surface-container-low": "#edf4ff",
+                        "primary-container": "#2a6a48",
+                        "surface-container-lowest": "#ffffff",
+                        "soft-mint": "#EEF8F4",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#61e9fe",
+                        "on-primary-fixed": "#002111",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#bfc9c0",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#254f3c",
+                        "tertiary-fixed-dim": "#a4d1b7",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#93d5ab",
+                        "secondary": "#006874",
+                        "surface-tint": "#2a6a48",
+                        "surface-dim": "#d1dbe8",
+                        "on-primary-container": "#a5e7bd",
+                        "surface-variant": "#d9e3f1",
+                        "warm-cream": "#FFF8EF",
+                        "on-tertiary-fixed-variant": "#254f3b",
+                        "primary-fixed": "#aef1c6",
+                        "light-border": "#E5E7EB",
+                        "surface-container-high": "#dfe9f7",
+                        "on-background": "#121d26"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "1rem",
+                        "container-max": "1280px",
+                        "xl": "2.5rem",
+                        "lg": "1.5rem",
+                        "xs": "0.25rem",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "2xl": "4rem",
+                        "sm": "0.5rem",
+                        "3xl": "6rem"
+                    },
+                    "fontFamily": {
+                        "hero-heading": ["Manrope"],
+                        "section-heading": ["Manrope"],
+                        "page-heading": ["Manrope"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"],
+                        "card-title": ["Manrope"],
+                        "button": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .sidebar-active { @apply bg-surface-tint text-white font-bold rounded-lg mx-2; }
+    </style>
+</head>
+<body class="bg-background text-on-surface overflow-x-hidden">
+<!-- Admin SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-primary dark:bg-inverse-surface shadow-lg flex flex-col py-6 z-50">
+<div class="px-6 mb-8 flex flex-col items-center">
+<h1 class="font-page-heading text-page-heading text-white text-2xl">AHDE VEFA</h1>
+<span class="text-on-primary-fixed-variant text-xs opacity-80 mt-1">İnsani Yardım Derneği</span>
+</div>
+<nav class="flex-1 space-y-1 overflow-y-auto hide-scrollbar">
+<!-- Navigation Items Mapping -->
+<a class="text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label text-label">Dashboard</span>
+</a>
+<a class="text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label text-label">Donations</span>
+</a>
+<a class="text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label text-label">Campaigns</span>
+</a>
+<a class="text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">featured_seasonal_and_gifts</span>
+<span class="font-label text-label">Kurban</span>
+</a>
+<a class="text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-label text-label">Ramazan</span>
+</a>
+<a class="text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label text-label">Donors</span>
+</a>
+<a class="text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">person_celebrate</span>
+<span class="font-label text-label">Volunteers</span>
+</a>
+<a class="text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-label text-label">Reports</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-primary-container/30 pt-4">
+<!-- Active State: Ayarlar (Settings) mapped from JSON labels -->
+<a class="bg-surface-tint text-white font-bold rounded-lg mx-2 px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label text-label">Settings</span>
+</a>
+<a class="text-on-primary-fixed-variant hover:text-white transition-colors duration-200 px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label text-label">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="h-16 fixed top-0 right-0 left-64 bg-surface dark:bg-surface-dim border-b border-light-border dark:border-outline flex justify-between items-center px-lg z-40">
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-muted-text">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-secondary transition-all outline-none" placeholder="Yedek, dışa aktarım, kayıt ara..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low text-on-surface-variant transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<div class="h-8 w-[1px] bg-light-border mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold text-on-surface">Admin Kullanıcı</p>
+<p class="text-[10px] text-muted-text">Sistem Yöneticisi</p>
+</div>
+<img class="w-10 h-10 rounded-full border-2 border-primary-fixed object-cover" data-alt="A professional headshot of a Middle Eastern male administrator in business attire, clean-cut, against a neutral studio background, looking confident and approachable. The lighting is soft and even, emphasizing a modern light-mode office aesthetic with high clarity and detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUgaC3trmRKv5Yr1CQ2on8hKEPffxKHh3_4tffjhe-In7drmOnt7LQM9cTJvjaDP3rn7g-XklyHjfWDQOsRAYpkK5GunUG_kHcmt7VdxHiZ-inw4jSqY1AAXT2Id4b7teDgOEe0mEBkkICk9x-X-Bb1zNjvPbLYZJN6woQP-Ju2g5vPGfswinDRVJ1qSNBrpBmY8E_m5vHqOzSw81JH20WsV52LevX1dMvy2J5FLbwv98yb7pqlt18vSx2uQZjdPntkZ02Gy0lS1d-"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="mt-16 p-lg flex-1">
+<!-- Breadcrumbs & Header -->
+<section class="mb-lg">
+<nav class="flex items-center gap-2 text-xs text-muted-text mb-2">
+<a class="hover:text-primary" href="#">Yönetim Paneli</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Ayarlar</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Yedekleme ve Dışa Aktarma</span>
+</nav>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div>
+<h2 class="font-page-heading text-page-heading-mobile lg:text-page-heading text-on-surface">Yedekleme ve Dışa Aktarma Merkezi</h2>
+<p class="text-muted-text max-w-2xl mt-1">Bağış, bağışçı, kampanya, gönüllü, dekont, rapor ve işlem kayıtlarını güvenli şekilde dışa aktarın veya verilerinizi yedekleyin.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container-highest text-on-surface-variant px-4 py-2.5 rounded-lg font-button flex items-center gap-2 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">settings</span>
+                            Ayarlar
+                        </button>
+<button class="bg-secondary text-white px-4 py-2.5 rounded-lg font-button flex items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">cloud_upload</span>
+                            Yedekleme Başlat
+                        </button>
+<button class="bg-primary text-white px-6 py-2.5 rounded-lg font-button flex items-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined">add</span>
+                            Yeni Dışa Aktarım
+                        </button>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Security Warning Card -->
+<div class="lg:col-span-12">
+<div class="bg-error-container/20 border border-error/20 rounded-xl p-lg flex gap-lg items-start">
+<div class="w-12 h-12 rounded-full bg-error/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error text-3xl">gpp_maybe</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-error text-lg mb-2">Veri güvenliği uyarısı</h3>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">
+                                Bu paneldeki veriler 6698 sayılı KVKK kapsamında korunmaktadır. Dışa aktarılan dosyalar hassas kişisel veriler içermektedir. Dosyaları yalnızca yetkili kişilerle paylaşın ve işlem sonrası güvenli bir şekilde imha edin.
+                            </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    Yetkili kullanıcı kontrolü aktif
+                                </div>
+<div class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    KVKK hassasiyeti (Maskelenmiş veriler)
+                                </div>
+<div class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    İşlem logları kaydediliyor
+                                </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Summary Cards -->
+<div class="lg:col-span-3">
+<div class="bg-surface-container-lowest p-md rounded-xl border border-light-border shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">update</span>
+</div>
+<div>
+<p class="text-xs text-muted-text font-medium">Son Yedekleme</p>
+<p class="text-lg font-bold text-on-surface">1 saat önce</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-3">
+<div class="bg-surface-container-lowest p-md rounded-xl border border-light-border shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="text-xs text-muted-text font-medium">Yedekleme Durumu</p>
+<p class="text-lg font-bold text-primary">Güvenli</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-3">
+<div class="bg-surface-container-lowest p-md rounded-xl border border-light-border shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 bg-donation-gold/10 rounded-lg flex items-center justify-center text-donation-gold">
+<span class="material-symbols-outlined">hourglass_empty</span>
+</div>
+<div>
+<p class="text-xs text-muted-text font-medium">Bekleyen Dışa Aktarım</p>
+<p class="text-lg font-bold text-on-surface">3 Dosya</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-3">
+<div class="bg-surface-container-lowest p-md rounded-xl border border-light-border shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 bg-tertiary/10 rounded-lg flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<p class="text-xs text-muted-text font-medium">Bu Ay Oluşturulan Dosya</p>
+<p class="text-lg font-bold text-on-surface">142 Adet</p>
+</div>
+</div>
+</div>
+<!-- Create Export Form -->
+<div class="lg:col-span-4 h-full">
+<div class="bg-surface-container-lowest rounded-xl border border-light-border shadow-sm h-full flex flex-col overflow-hidden">
+<div class="p-lg border-b border-light-border bg-soft-mint/30">
+<h3 class="font-bold text-lg text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">add_circle</span>
+                                Yeni Dışa Aktarım Oluştur
+                            </h3>
+</div>
+<div class="p-lg space-y-5 flex-1">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-2">Veri Türü</label>
+<select class="w-full rounded-xl border-light-border bg-surface-bright focus:ring-primary focus:border-primary text-sm py-3">
+<option>Bağışlar</option>
+<option>Bağışçılar</option>
+<option>Kampanyalar</option>
+<option>Gönüllüler</option>
+<option>Sistem Logları</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-2">Dosya Formatı</label>
+<select class="w-full rounded-xl border-light-border bg-surface-bright focus:ring-primary focus:border-primary text-sm py-3">
+<option>Excel (.xlsx)</option>
+<option>CSV (.csv)</option>
+<option>PDF (.pdf)</option>
+<option>JSON (.json)</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-2">Ayırıcı</label>
+<select class="w-full rounded-xl border-light-border bg-surface-bright focus:ring-primary focus:border-primary text-sm py-3">
+<option>Noktalı Virgül (;)</option>
+<option>Virgül (,)</option>
+<option>Tab (\t)</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-2">Tarih Aralığı</label>
+<div class="grid grid-cols-2 gap-2">
+<input class="rounded-xl border-light-border bg-surface-bright focus:ring-primary focus:border-primary text-sm py-3" type="date"/>
+<input class="rounded-xl border-light-border bg-surface-bright focus:ring-primary focus:border-primary text-sm py-3" type="date"/>
+</div>
+</div>
+<div class="space-y-3 pt-2">
+<label class="block text-sm font-semibold text-on-surface-variant">Hassas Veri Dahil Etme</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-light-border text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Telefon Numaraları</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-light-border text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">E-posta Adresleri</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-light-border text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm text-on-surface-variant group-hover:text-primary transition-colors">Adres Bilgileri</span>
+</label>
+</div>
+</div>
+</div>
+<div class="p-lg border-t border-light-border">
+<button class="w-full bg-primary text-white py-3 rounded-xl font-button hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">download</span>
+                                Dışa Aktarım Oluştur
+                            </button>
+</div>
+</div>
+</div>
+<!-- Export History Table -->
+<div class="lg:col-span-8">
+<div class="bg-surface-container-lowest rounded-xl border border-light-border shadow-sm flex flex-col h-full overflow-hidden">
+<div class="p-lg border-b border-light-border flex justify-between items-center">
+<h3 class="font-bold text-lg text-on-surface">Geçmiş Dışa Aktarımlar</h3>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-low rounded-lg text-muted-text">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="p-2 hover:bg-surface-container-low rounded-lg text-muted-text">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left">
+<thead class="bg-surface-bright text-on-surface-variant font-bold border-b border-light-border">
+<tr>
+<th class="px-6 py-4 font-semibold">Dosya Adı</th>
+<th class="px-6 py-4 font-semibold">Veri Türü</th>
+<th class="px-6 py-4 font-semibold">Format</th>
+<th class="px-6 py-4 font-semibold">Tarih</th>
+<th class="px-6 py-4 font-semibold">Durum</th>
+<th class="px-6 py-4 font-semibold">Boyut</th>
+<th class="px-6 py-4 font-semibold text-right">İşlemler</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-light-border">
+<tr class="hover:bg-soft-mint/20 transition-colors">
+<td class="px-6 py-4 font-medium">bagislar_mayis_2024.xlsx</td>
+<td class="px-6 py-4">Bağışlar</td>
+<td class="px-6 py-4"><span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold uppercase">Excel</span></td>
+<td class="px-6 py-4 text-muted-text">24.05.2024 14:22</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Hazır
+                                            </span>
+</td>
+<td class="px-6 py-4 text-muted-text">2.4 MB</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors" title="İndir">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-colors" title="Sil">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-soft-mint/20 transition-colors">
+<td class="px-6 py-4 font-medium">bagiscilar_liste_full.csv</td>
+<td class="px-6 py-4">Bağışçılar</td>
+<td class="px-6 py-4"><span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold uppercase">CSV</span></td>
+<td class="px-6 py-4 text-muted-text">24.05.2024 13:05</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-donation-gold/10 text-donation-gold text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-donation-gold animate-bounce"></span> Hazırlanıyor
+                                            </span>
+</td>
+<td class="px-6 py-4 text-muted-text">--</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-muted-text opacity-50 cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-soft-mint/20 transition-colors">
+<td class="px-6 py-4 font-medium">kurban_vekalet_raporu.pdf</td>
+<td class="px-6 py-4">Kurban</td>
+<td class="px-6 py-4"><span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold uppercase">PDF</span></td>
+<td class="px-6 py-4 text-muted-text">23.05.2024 18:40</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-full bg-secondary/10 text-secondary text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> İndirildi
+                                            </span>
+</td>
+<td class="px-6 py-4 text-muted-text">4.8 MB</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors" title="İndir">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-colors" title="Sil">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-auto p-4 border-t border-light-border bg-surface-bright flex items-center justify-between">
+<span class="text-xs text-muted-text">Toplam 1,245 kayıt gösteriliyor</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-light-border bg-white text-muted-text hover:bg-surface-container-low">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-light-border bg-primary text-white font-bold">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-light-border bg-white text-muted-text hover:bg-surface-container-low">3</button>
+<span class="px-2 self-center">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-light-border bg-white text-muted-text hover:bg-surface-container-low">12</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Backup & Settings Section -->
+<div class="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Backup History -->
+<div class="bg-surface-container-lowest rounded-xl border border-light-border shadow-sm">
+<div class="p-lg border-b border-light-border">
+<h3 class="font-bold text-lg text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">history</span>
+                                Yedekleme Geçmişi
+                            </h3>
+</div>
+<div class="p-lg space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-bright border border-light-border/50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">storage</span>
+</div>
+<div>
+<p class="text-sm font-bold">Tam Sistem Yedeği</p>
+<p class="text-xs text-muted-text">24.05.2024 - 03:00 (Otomatik)</p>
+</div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">1.2 GB</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-bright border border-light-border/50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">storage</span>
+</div>
+<div>
+<p class="text-sm font-bold">Veritabanı Yedeği</p>
+<p class="text-xs text-muted-text">23.05.2024 - 15:45 (Manuel)</p>
+</div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">420 MB</span>
+</div>
+<button class="w-full py-3 text-sm font-bold text-secondary hover:underline text-center">Tüm Yedekleri Görüntüle</button>
+</div>
+</div>
+<!-- Auto Backup Settings -->
+<div class="bg-surface-container-lowest rounded-xl border border-light-border shadow-sm">
+<div class="p-lg border-b border-light-border">
+<h3 class="font-bold text-lg text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">settings_suggest</span>
+                                Otomatik Yedekleme Ayarları
+                            </h3>
+</div>
+<div class="p-lg space-y-5">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-bold">Otomatik Yedekleme</p>
+<p class="text-xs text-muted-text">Belirli aralıklarla sistemi yedekler</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-bold">Yedekleme Sıklığı</p>
+<p class="text-xs text-muted-text">Yedekler ne zaman oluşturulsun?</p>
+</div>
+<select class="bg-surface-bright border-light-border rounded-lg text-xs py-2 px-3 focus:ring-primary">
+<option>Her Gün</option>
+<option>Haftalık</option>
+<option>Aylık</option>
+</select>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-bold">Veri Saklama Süresi</p>
+<p class="text-xs text-muted-text">Eski yedekler ne zaman silinsin?</p>
+</div>
+<select class="bg-surface-bright border-light-border rounded-lg text-xs py-2 px-3 focus:ring-primary">
+<option>30 Gün</option>
+<option>90 Gün</option>
+<option>1 Yıl</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Permission & Audit Log -->
+<div class="lg:col-span-12 grid grid-cols-1 xl:grid-cols-3 gap-lg mb-2xl">
+<!-- Roles Overview -->
+<div class="xl:col-span-1 bg-surface-container-lowest rounded-xl border border-light-border shadow-sm overflow-hidden">
+<div class="p-lg border-b border-light-border bg-warm-cream/30">
+<h3 class="font-bold text-lg text-on-surface">Yetki ve Erişim Kontrolü</h3>
+</div>
+<div class="p-lg space-y-6">
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">admin_panel_settings</span>
+</div>
+<div>
+<p class="text-sm font-bold">Süper Admin</p>
+<p class="text-xs text-muted-text">Tam yetki, dışa aktarma, yedek silme.</p>
+<div class="mt-1 flex gap-1">
+<span class="px-1.5 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded">2 Kişi</span>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-secondary/5 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">person</span>
+</div>
+<div>
+<p class="text-sm font-bold">Yönetici</p>
+<p class="text-xs text-muted-text">Sınırlı dışa aktarma, yedekleme görüntüleme.</p>
+<div class="mt-1 flex gap-1">
+<span class="px-1.5 py-0.5 bg-secondary/10 text-secondary text-[10px] font-bold rounded">5 Kişi</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full border-2 border-primary/20 text-primary py-2.5 rounded-lg font-button hover:bg-primary/5 transition-colors">
+                                Rol Yetkilerini Düzenle
+                            </button>
+</div>
+</div>
+<!-- Audit Log Table -->
+<div class="xl:col-span-2 bg-surface-container-lowest rounded-xl border border-light-border shadow-sm flex flex-col overflow-hidden">
+<div class="p-lg border-b border-light-border flex justify-between items-center">
+<h3 class="font-bold text-lg text-on-surface">Son Veri İşlemleri (Log)</h3>
+<span class="text-xs text-muted-text">Canlı Takip</span>
+</div>
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-xs text-left">
+<thead class="bg-surface-bright text-on-surface-variant font-bold border-b border-light-border">
+<tr>
+<th class="px-6 py-3">İşlem Tipi</th>
+<th class="px-6 py-3">Kullanıcı</th>
+<th class="px-6 py-3">Detay</th>
+<th class="px-6 py-3">IP Adresi</th>
+<th class="px-6 py-3 text-right">Zaman</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-light-border">
+<tr>
+<td class="px-6 py-3"><span class="text-primary font-bold">DIŞA AKTARIM</span></td>
+<td class="px-6 py-3">Ahmet Y.</td>
+<td class="px-6 py-3">Bağışlar (Excel) dışa aktarıldı.</td>
+<td class="px-6 py-3 text-muted-text">192.168.1.10</td>
+<td class="px-6 py-3 text-right text-muted-text">Az önce</td>
+</tr>
+<tr>
+<td class="px-6 py-3"><span class="text-secondary font-bold">YEDEKLEME</span></td>
+<td class="px-6 py-3">Sistem</td>
+<td class="px-6 py-3">Otomatik günlük yedek oluşturuldu.</td>
+<td class="px-6 py-3 text-muted-text">Server-01</td>
+<td class="px-6 py-3 text-right text-muted-text">2 saat önce</td>
+</tr>
+<tr>
+<td class="px-6 py-3"><span class="text-error font-bold">ERİŞİM</span></td>
+<td class="px-6 py-3">Mehmet K.</td>
+<td class="px-6 py-3 text-error">Yetkisiz dışa aktarma denemesi.</td>
+<td class="px-6 py-3 text-muted-text">176.22.45.1</td>
+<td class="px-6 py-3 text-right text-muted-text">5 saat önce</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-3 border-t border-light-border bg-surface-bright text-center">
+<button class="text-xs font-bold text-primary hover:underline">Tüm Kayıtları Gör</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-4 px-lg bg-surface-container-lowest border-t border-light-border flex justify-between items-center text-xs">
+<div class="flex items-center gap-4">
+<span class="font-label text-primary font-bold">AHDE VEFA</span>
+<p class="text-muted-text">© 2024 AHDE VEFA İnsani Yardım Derneği. All rights reserved.</p>
+</div>
+<div class="flex gap-6 text-muted-text">
+<a class="hover:text-secondary transition-colors" href="#">Security Policy</a>
+<a class="hover:text-secondary transition-colors" href="#">System Status</a>
+<a class="hover:text-secondary transition-colors" href="#">Support</a>
+</div>
+</footer>
+</main>
+<script>
+        // Simple interactivity for the switches and basic micro-interactions
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    console.log('Setting updated');
+                }
+            });
+        });
+
+        // Hover effects for rows
+        const rows = document.querySelectorAll('tr');
+        rows.forEach(row => {
+            row.addEventListener('mouseenter', () => row.classList.add('shadow-inner'));
+            row.addEventListener('mouseleave', () => row.classList.remove('shadow-inner'));
+        });
+    </script>
+</body></html>

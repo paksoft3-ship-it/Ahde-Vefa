@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary-green: #2a6a48;
+  --color-action-turquoise: #04b6ca;
+  --color-dark-green: #123d2b;
+  --color-soft-mint: #eef8f4;
+  --color-warm-cream: #fff8ef;
+  --color-donation-gold: #f4b740;
+  --color-text-dark: #1f2933;
+  --color-text-muted: #667085;
+  --color-border-light: #e5e7eb;
+  --color-white: #ffffff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-ink antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  /* Visible, accessible focus states */
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-turquoise ring-offset-2 ring-offset-white;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-container px-5 md:px-8;
+  }
+
+  /* Buttons — design.md §7 */
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-full font-bold transition-all disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-md {
+    @apply h-12 px-6 text-[15px];
+  }
+  .btn-sm {
+    @apply h-10 px-4 text-sm;
+  }
+  .btn-lg {
+    @apply h-14 px-8 text-base;
+  }
+  .btn-primary {
+    @apply bg-brand-turquoise text-white shadow-sm hover:bg-brand-turquoise-dark active:scale-[0.98];
+  }
+  .btn-green {
+    @apply bg-brand-green text-white shadow-sm hover:bg-brand-dark active:scale-[0.98];
+  }
+  .btn-gold {
+    @apply bg-brand-gold text-brand-dark shadow-sm hover:brightness-95 active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply border-2 border-brand-green bg-white text-brand-green hover:bg-brand-green hover:text-white;
+  }
+  .btn-ghost {
+    @apply bg-brand-mint text-brand-green hover:bg-brand-green/10;
+  }
+
+  /* Form controls — design.md §14 */
+  .field-label {
+    @apply mb-1.5 block text-sm font-semibold text-ink;
+  }
+  .field-input {
+    @apply h-12 w-full rounded-md border border-hairline bg-white px-3.5 text-[15px] text-ink placeholder:text-muted/70 transition-colors focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20;
+  }
+  .field-help {
+    @apply mt-1 text-sm text-muted;
+  }
+  .field-error {
+    @apply mt-1 text-sm font-medium text-red-600;
+  }
+
+  .card {
+    @apply rounded-lg border border-hairline bg-white shadow-card;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+  }
+}
+
+/* Custom scrollbar for admin tables */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}

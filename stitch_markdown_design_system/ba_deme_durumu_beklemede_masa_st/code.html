@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ödeme Beklemede | AHDE VEFA İnsani Yardım Derneği</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#254f3c",
+                    "primary": "#0a5132",
+                    "surface-container-highest": "#d9e3f1",
+                    "error-container": "#ffdad6",
+                    "on-background": "#121d26",
+                    "background": "#f7f9ff",
+                    "warm-cream": "#FFF8EF",
+                    "secondary-container": "#61e9fe",
+                    "on-primary-fixed-variant": "#0a5132",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d1dbe8",
+                    "surface": "#f7f9ff",
+                    "on-tertiary-fixed": "#002114",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#e4effd",
+                    "outline": "#707971",
+                    "surface-variant": "#d9e3f1",
+                    "primary-fixed-dim": "#93d5ab",
+                    "on-secondary-fixed": "#001f24",
+                    "on-surface-variant": "#404942",
+                    "soft-mint": "#EEF8F4",
+                    "muted-text": "#667085",
+                    "primary-container": "#2a6a48",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "on-secondary-container": "#006773",
+                    "tertiary-container": "#3d6752",
+                    "outline-variant": "#bfc9c0",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#aef1c6",
+                    "surface-tint": "#2a6a48",
+                    "inverse-on-surface": "#e8f2ff",
+                    "on-surface": "#121d26",
+                    "on-primary-container": "#a5e7bd",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#4cd8ec",
+                    "tertiary-fixed": "#bfedd3",
+                    "surface-container-high": "#dfe9f7",
+                    "surface-container-low": "#edf4ff",
+                    "secondary-fixed": "#9af0ff",
+                    "on-tertiary-fixed-variant": "#254f3b",
+                    "inverse-primary": "#93d5ab",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#002111",
+                    "on-secondary": "#ffffff",
+                    "light-border": "#E5E7EB",
+                    "tertiary-fixed-dim": "#a4d1b7",
+                    "secondary": "#006874",
+                    "donation-gold": "#F4B740",
+                    "inverse-surface": "#27313c",
+                    "surface-bright": "#f7f9ff",
+                    "on-tertiary-container": "#b6e3c9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "md": "1rem",
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "sm": "0.5rem",
+                    "xl": "2.5rem",
+                    "3xl": "6rem",
+                    "lg": "1.5rem",
+                    "2xl": "4rem",
+                    "xs": "0.25rem"
+            },
+            "fontFamily": {
+                    "section-heading-mobile": ["Manrope"],
+                    "page-heading": ["Manrope"],
+                    "label": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "section-heading": ["Manrope"],
+                    "button": ["Manrope"],
+                    "page-heading-mobile": ["Manrope"],
+                    "card-title": ["Manrope"],
+                    "hero-heading": ["Manrope"],
+                    "hero-heading-mobile": ["Manrope"],
+                    "body": ["Manrope"]
+            },
+            "fontSize": {
+                    "section-heading-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "page-heading": ["48px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "label": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "section-heading": ["36px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "button": ["16px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "page-heading-mobile": ["34px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "card-title": ["22px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "hero-heading": ["64px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "hero-heading-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .pending-glow {
+            filter: drop-shadow(0 0 15px rgba(244, 183, 64, 0.3));
+        }
+        @keyframes subtle-pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-subtle-pulse {
+            animation: subtle-pulse 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/95 dark:bg-on-background/95 backdrop-blur-md border-b border-light-border dark:border-outline-variant shadow-sm transition-all duration-300">
+<nav class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="font-page-heading text-page-heading-mobile text-primary dark:text-primary-fixed tracking-tight transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer">
+                AHDE VEFA
+            </div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-lg">
+<a class="font-button text-button text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Anasayfa</a>
+<a class="font-button text-button text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1" href="#">Bağış Yap</a>
+<a class="font-button text-button text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Kurban</a>
+<a class="font-button text-button text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Faaliyetler</a>
+<a class="font-button text-button text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Hakkımızda</a>
+</div>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-button text-button hover:bg-primary-container transition-all hover:scale-105 shadow-md">
+                Bağış Yap
+            </button>
+</nav>
+</header>
+<main class="pt-3xl pb-3xl">
+<div class="max-w-container-max mx-auto px-gutter">
+<!-- Status Section -->
+<section class="flex flex-col items-center text-center mt-xl mb-3xl">
+<div class="w-32 h-32 bg-warm-cream rounded-full flex items-center justify-center mb-lg pending-glow">
+<span class="material-symbols-outlined text-[64px] text-donation-gold animate-subtle-pulse" style="font-variation-settings: 'FILL' 0;">
+                        schedule
+                    </span>
+</div>
+<h1 class="font-page-heading text-page-heading-mobile md:text-page-heading text-on-surface mb-md">
+                    Bağış işleminiz beklemede
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Bağış işleminiz bankanız veya ödeme sağlayıcınız tarafından doğrulanıyor. Bu işlem genellikle birkaç dakika sürebilir. Onaylandığında size e-posta ile bilgi vereceğiz.
+                </p>
+<div class="flex flex-col md:flex-row gap-md mt-xl">
+<button class="bg-primary text-on-primary px-xl py-md rounded-full font-button text-button shadow-lg hover:bg-primary-container transition-all hover:scale-105 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">track_changes</span>
+                        Bağışımı Takip Et
+                    </button>
+<button class="border-2 border-primary text-primary px-xl py-md rounded-full font-button text-button hover:bg-soft-mint transition-all">
+                        Ana Sayfaya Dön
+                    </button>
+</div>
+</section>
+<!-- Grid Layout for Details and Notes -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-xl items-start">
+<!-- Summary Card -->
+<div class="lg:col-span-1 bg-surface-container-lowest border border-light-border rounded-3xl p-lg shadow-sm">
+<h2 class="font-card-title text-card-title mb-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">receipt_long</span>
+                        Bağış Özeti
+                    </h2>
+<div class="space-y-md">
+<div class="flex justify-between items-center py-sm border-b border-light-border">
+<span class="text-on-surface-variant">Bağış No</span>
+<span class="font-bold">#AVD-829471</span>
+</div>
+<div class="flex justify-between items-center py-sm border-b border-light-border">
+<span class="text-on-surface-variant">Durum</span>
+<span class="bg-donation-gold/10 text-donation-gold px-sm py-xs rounded-lg font-bold text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">pending</span>
+                                Beklemede
+                            </span>
+</div>
+<div class="flex justify-between items-center py-sm border-b border-light-border">
+<span class="text-on-surface-variant">Bağış Türü</span>
+<span class="font-bold">Genel Bağış</span>
+</div>
+<div class="flex justify-between items-center pt-md">
+<span class="font-bold text-lg">Toplam Tutar</span>
+<span class="text-primary font-extrabold text-2xl">500,00 ₺</span>
+</div>
+</div>
+</div>
+<!-- Special Note & FAQ -->
+<div class="lg:col-span-2 space-y-xl">
+<!-- Pakistan Note (Placeholder Style) -->
+<div class="bg-soft-mint border-l-4 border-primary rounded-xl p-lg flex gap-lg relative overflow-hidden">
+<div class="flex-1">
+<h3 class="font-card-title text-card-title text-primary mb-sm">Pakistan Hazırlık Çalışmaları</h3>
+<p class="font-body text-body text-on-surface-variant mb-md leading-relaxed">
+                                Bu bağışınızın bir kısmı, yaklaşan Pakistan insani yardım misyonumuz için planlanan gıda ve hijyen paketi stoklarına aktarılacaktır. Ekiplerimiz bölgedeki ihtiyaç sahipleri için hazırlıklarını titizlikle sürdürmektedir.
+                            </p>
+<div class="flex items-center gap-2 text-primary font-button text-sm">
+<span class="material-symbols-outlined text-sm">info</span>
+                                Bağışınız onaylandığında emanetiniz yola çıkacaktır.
+                            </div>
+</div>
+<div class="hidden md:block w-48 h-40 rounded-xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional, respectful photograph of humanitarian aid workers in Pakistan, wearing green vests with an NGO logo, organizing stacked boxes of food and supplies in a clean warehouse setting. The lighting is bright and natural, conveying a sense of organized efficiency and sincere commitment to the cause. The color palette emphasizes soft greens and warm earth tones, aligned with a trustworthy NGO aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-IK0aOSSC8eBtlQeepZWykkTohlS51ys06fc75MUSOdBHolHDDLYPsv53mp2eKExUBCNcSOXyDf8FzR4lSq7tfEmV3Uu2gostog0FELLj_t400LSL4PyrCvkFe2eiUglNd8ywfYFUqSOe57ZtVndZfOGiAnISDBnT5IBA7n5te4Mg6O72OK-_My1HzVCC9i1XKVNXiI8me0Ov8BL3n0qnH2Dsz7FJbRRnstpstYgsz6poMMNLQ6lxqAvF6nMFFr6n7Z7hTdFcndcv"/>
+</div>
+</div>
+<!-- FAQ Section -->
+<section>
+<h2 class="font-section-heading text-section-heading mb-lg">Sıkça Sorulan Sorular</h2>
+<div class="space-y-md">
+<details class="group bg-surface-container border border-light-border rounded-xl transition-all open:bg-surface-container-high" open="">
+<summary class="flex justify-between items-center p-md cursor-pointer list-none">
+<span class="font-bold font-label">Ödemem neden "Beklemede" görünüyor?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-md pb-md text-on-surface-variant font-body">
+                                    Banka onay süreçleri veya 3D Secure doğrulamaları bazen sistemler arasında gecikmeye neden olabilir. Endişelenmeyin, ödeme bilgileriniz güvenle işlenmektedir.
+                                </div>
+</details>
+<details class="group bg-surface-container border border-light-border rounded-xl transition-all open:bg-surface-container-high">
+<summary class="flex justify-between items-center p-md cursor-pointer list-none">
+<span class="font-bold font-label">Bağışım ne zaman onaylanır?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-md pb-md text-on-surface-variant font-body">
+                                    Kredi kartı bağışları genellikle 5-10 dakika içerisinde sisteme düşer. Banka havalesi yapıyorsanız, işleminiz mesai saatleri içerisinde onaylanır.
+                                </div>
+</details>
+<details class="group bg-surface-container border border-light-border rounded-xl transition-all open:bg-surface-container-high">
+<summary class="flex justify-between items-center p-md cursor-pointer list-none">
+<span class="font-bold font-label">Ödeme gerçekleşmezse ne yapmalıyım?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-md pb-md text-on-surface-variant font-body">
+                                    Eğer 1 saat içinde onay e-postası almazsanız, lütfen banka ekstrenizi kontrol edin ve +90 212 XXX XX XX numaralı hattımızdan veya WhatsApp destek hattımızdan bize ulaşın.
+                                </div>
+</details>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-3xl bg-on-background dark:bg-surface-container-lowest text-surface-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-gutter py-3xl max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-page-heading text-card-title text-surface-container-lowest dark:text-primary mb-md">AHDE VEFA</div>
+<p class="text-sm opacity-80 leading-relaxed mb-md">
+                    Dünyanın her yerinde mazlumun yanında, zalimin karşısındayız. Emanetiniz, emanetimizdir anlayışıyla şeffaf ve hesap verebilir yardım faaliyetleri yürütüyoruz.
+                </p>
+<div class="flex gap-md">
+<button class="w-10 h-10 rounded-full border border-surface-variant/30 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-lg">share</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-surface-variant/30 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-lg">mail</span>
+</button>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-white mb-lg">Kurumsal</h4>
+<ul class="space-y-sm text-sm">
+<li><a class="hover:text-donation-gold transition-colors" href="#">Hakkımızda</a></li>
+<li><a class="hover:text-donation-gold transition-colors" href="#">KVKK Aydınlatma Metni</a></li>
+<li><a class="hover:text-donation-gold transition-colors" href="#">Tüzük</a></li>
+<li><a class="hover:text-donation-gold transition-colors" href="#">Sıkça Sorulan Sorular</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-white mb-lg">Bağışçı Köşesi</h4>
+<ul class="space-y-sm text-sm">
+<li><a class="hover:text-donation-gold transition-colors" href="#">Banka Hesap Numaraları</a></li>
+<li><a class="hover:text-donation-gold transition-colors" href="#">Vekalet Bilgisi</a></li>
+<li><a class="hover:text-donation-gold transition-colors" href="#">Online Bağış</a></li>
+<li><a class="hover:text-donation-gold transition-colors" href="#">Raporlar</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-white mb-lg">İletişim</h4>
+<ul class="space-y-sm text-sm opacity-80">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                        İstanbul, Türkiye
+                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">call</span>
+                        +90 212 XXX XX XX
+                    </li>
+<li class="flex items-center gap-2 text-primary-fixed font-bold">
+<span class="material-symbols-outlined text-sm">chat</span>
+                        WhatsApp Destek
+                    </li>
+</ul>
+</div>
+</div>
+<div class="border-t border-surface-variant/10 max-w-container-max mx-auto py-md px-gutter text-center text-xs opacity-60">
+            © 2024 Ahde Vefa Derneği. Emanetiniz, Emanetimizdir.
+        </div>
+</footer>
+<!-- WhatsApp Floating Action Button (Suppressed on Success/Pending as per mandate) -->
+<!-- Determined as task-focused page, so FAB is hidden -->
+<script>
+        // Micro-interactions for details elements
+        document.querySelectorAll('details').forEach((el) => {
+            el.addEventListener('toggle', (e) => {
+                if (el.open) {
+                    document.querySelectorAll('details').forEach((otherEl) => {
+                        if (otherEl !== el) otherEl.open = false;
+                    });
+                }
+            });
+        });
+
+        // Simple animation on scroll logic
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section, .bg-surface-container-lowest').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

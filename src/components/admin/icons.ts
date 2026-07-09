@@ -1,0 +1,37 @@
+import {
+  ClipboardList,
+  FileText,
+  HandCoins,
+  HeartHandshake,
+  Images,
+  LayoutDashboard,
+  LayoutTemplate,
+  Mail,
+  Megaphone,
+  Moon,
+  ReceiptText,
+  ScrollText,
+  Settings,
+  ShieldCheck,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
+
+/** Resolves an ADMIN_NAV icon name to a Lucide component. */
+export const ADMIN_ICONS: Record<string, LucideIcon> = {
+  LayoutDashboard,
+  HandCoins,
+  Megaphone,
+  ClipboardList,
+  Moon,
+  Users,
+  HeartHandshake,
+  ReceiptText,
+  FileText,
+  Images,
+  Mail,
+  LayoutTemplate,
+  Settings,
+  ShieldCheck,
+  ScrollText,
+};
