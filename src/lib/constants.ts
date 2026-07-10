@@ -8,7 +8,7 @@ export const SITE = {
   tagline: "Emanetlerinizi ihtiyaç sahiplerine ulaştırıyoruz",
   description:
     "Afrika, Afganistan ve Türkiye başta olmak üzere ihtiyaç sahiplerine şeffaf, izlenebilir ve güvenilir yardım ulaştıran insani yardım derneği.",
-  logo: "/logo/ahde-vefa-logo.jpeg",
+  logo: "/logo/favicon.png",
 };
 
 /** Legal / trust fields — always placeholders, never fabricated (cloude.md §15). */
@@ -20,10 +20,14 @@ export const LEGAL = {
   yetkiliMakam: PLACEHOLDER,
 };
 
-/** Contact placeholders — never fabricated. */
+/**
+ * Contact info. Phone/WhatsApp provided by the project owner (verified against
+ * the association's Facebook page). Email/address remain placeholders until a
+ * verified value is supplied — never fabricated.
+ */
 export const CONTACT = {
-  phone: PLACEHOLDER,
-  whatsapp: PLACEHOLDER,
+  phone: "0533 191 35 66",
+  whatsapp: "+90 533 191 35 66", // international form for wa.me links
   email: PLACEHOLDER,
   address: PLACEHOLDER,
   workingHours: PLACEHOLDER,

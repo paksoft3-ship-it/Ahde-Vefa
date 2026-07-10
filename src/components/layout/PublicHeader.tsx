@@ -3,12 +3,19 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, MessageCircle, X } from "lucide-react";
-import { PUBLIC_NAV } from "@/lib/constants";
+import { Menu, X } from "lucide-react";
+import { CONTACT, PUBLIC_NAV } from "@/lib/constants";
 import { routes } from "@/lib/routes";
 import { cn } from "@/lib/utils";
+import { whatsappLink } from "@/lib/integrations/whatsapp";
 import { LogoHorizontal } from "@/components/ui/LogoHorizontal";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { ButtonLink } from "@/components/ui/Button";
+
+const WHATSAPP_HREF = whatsappLink(
+  CONTACT.whatsapp,
+  "Merhaba, AHDE VEFA hakkında bilgi almak istiyorum.",
+);
 
 export function PublicHeader() {
   const [open, setOpen] = useState(false);
@@ -41,12 +48,14 @@ export function PublicHeader() {
 
         <div className="flex items-center gap-2">
           <ButtonLink
-            href={routes.iletisim}
+            href={WHATSAPP_HREF}
             variant="ghost"
             size="sm"
             className="hidden md:inline-flex"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <MessageCircle className="h-4 w-4" /> Bilgi Al
+            <WhatsAppIcon className="h-4 w-4" /> Bilgi Al
           </ButtonLink>
           <ButtonLink href={routes.bagis} variant="primary" size="sm">
             Bağış Yap
@@ -83,8 +92,16 @@ export function PublicHeader() {
               </Link>
             ))}
             <div className="mt-2 flex gap-2 px-1 pb-2">
-              <ButtonLink href={routes.iletisim} variant="secondary" size="sm" className="flex-1">
-                Bilgi Al
+              <ButtonLink
+                href={WHATSAPP_HREF}
+                variant="secondary"
+                size="sm"
+                className="flex-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+              >
+                <WhatsAppIcon className="h-4 w-4" /> Bilgi Al
               </ButtonLink>
               <ButtonLink href={routes.bagis} variant="primary" size="sm" className="flex-1">
                 Bağış Yap

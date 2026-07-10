@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Clock, Mail, MapIcon, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, Mail, MapIcon, MapPin, Phone } from "lucide-react";
 import { routes } from "@/lib/routes";
 import { CONTACT } from "@/lib/constants";
 import { whatsappLink } from "@/lib/integrations/whatsapp";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ContactForm } from "./ContactForm";
@@ -72,7 +73,7 @@ export default function IletisimPage() {
                 rel="noopener noreferrer"
                 className="btn btn-green btn-lg mt-5 w-full"
               >
-                <MessageCircle className="h-5 w-5" />
+                <WhatsAppIcon className="h-5 w-5" />
                 WhatsApp ile Yazın
               </a>
               <p className="mt-2 text-center text-xs text-muted">

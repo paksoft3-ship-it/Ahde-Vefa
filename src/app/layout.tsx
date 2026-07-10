@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     "dernek",
   ],
   icons: {
-    icon: "/logo/ahde-vefa-logo.jpeg",
-    apple: "/logo/ahde-vefa-logo.jpeg",
+    icon: "/logo/favicon.png",
+    apple: "/logo/favicon.png",
   },
   openGraph: {
     type: "website",

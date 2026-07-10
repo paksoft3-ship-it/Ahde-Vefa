@@ -1,7 +1,8 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { CheckCircle2, Copy, Facebook, Twitter, MessageCircle, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Copy, Facebook, Twitter, ShieldCheck } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { campaigns } from "@/lib/mock-data";
 import { routes } from "@/lib/routes";
 import { GENERAL_FAQ } from "@/lib/content";
@@ -112,7 +113,7 @@ export function SuccessView() {
                   <Twitter className="h-4 w-4" /> X
                 </button>
                 <button type="button" className="btn btn-secondary btn-sm" aria-label="WhatsApp'ta paylaş">
-                  <MessageCircle className="h-4 w-4" /> WhatsApp
+                  <WhatsAppIcon className="h-4 w-4" /> WhatsApp
                 </button>
               </div>
             </div>

@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 
 /**
  * Horizontal AHDE VEFA lockup (hand + leaves + wordmark) — the full logo image.
- * The wordmark is green, so on dark backgrounds pass `onDark` to place it on a
- * white chip for legibility.
+ * `onDark` uses the dark-background version (white wordmark) for use on the
+ * dark green footer; the default uses the green-wordmark version for light areas.
  */
 export function LogoHorizontal({
   href = "/",
@@ -18,23 +18,23 @@ export function LogoHorizontal({
   className?: string;
   priority?: boolean;
 }) {
-  const img = (
+  const content = (
     <Image
-      src="/logo/ahde-vefa-horizontal.png"
+      src={
+        onDark
+          ? "/logo/ahde-vefa-horizontal-dark.png"
+          : "/logo/ahde-vefa-horizontal.png"
+      }
       alt="AHDE VEFA İnsani Yardım Derneği logosu"
       width={2508}
       height={627}
       priority={priority}
-      className={cn("w-auto object-contain", onDark ? "h-9" : "h-10 md:h-11", className)}
+      className={cn(
+        "w-auto object-contain",
+        onDark ? "h-12 rounded-md" : "h-10 md:h-11",
+        className,
+      )}
     />
-  );
-
-  const content = onDark ? (
-    <span className="inline-flex items-center rounded-lg bg-white px-3 py-2 shadow-sm">
-      {img}
-    </span>
-  ) : (
-    img
   );
 
   if (!href) return content;
