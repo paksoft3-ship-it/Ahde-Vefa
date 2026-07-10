@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { CONTACT, FOOTER_LINKS, LEGAL, SITE } from "@/lib/constants";
 import { routes } from "@/lib/routes";
-import { Logo } from "@/components/ui/Logo";
+import { LogoHorizontal } from "@/components/ui/LogoHorizontal";
 import { DevCredit } from "@/components/layout/DevCredit";
 
 function LinkColumn({
@@ -36,7 +36,7 @@ export function PublicFooter() {
       <div className="container-page py-14">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <Logo href={routes.home} variant="light" />
+            <LogoHorizontal href={routes.home} onDark />
             <p className="mt-4 max-w-sm text-sm text-white/70">{SITE.description}</p>
             <div className="mt-6 space-y-2.5 text-sm text-white/70">
               <div className="flex items-center gap-2">

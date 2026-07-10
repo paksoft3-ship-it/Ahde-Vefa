@@ -7,7 +7,7 @@ import { Menu, MessageCircle, X } from "lucide-react";
 import { PUBLIC_NAV } from "@/lib/constants";
 import { routes } from "@/lib/routes";
 import { cn } from "@/lib/utils";
-import { Logo } from "@/components/ui/Logo";
+import { LogoHorizontal } from "@/components/ui/LogoHorizontal";
 import { ButtonLink } from "@/components/ui/Button";
 
 export function PublicHeader() {
@@ -20,7 +20,7 @@ export function PublicHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-hairline bg-white/95 backdrop-blur">
       <div className="container-page flex h-20 items-center justify-between gap-4">
-        <Logo />
+        <LogoHorizontal priority />
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Ana menü">
           {PUBLIC_NAV.map((item) => (
